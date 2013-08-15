@@ -62,54 +62,6 @@
 <wire x1="0" y1="59.68" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
-<library name="teensy">
-<packages>
-<package name="TEENSY_HEADERS">
-<wire x1="15.24" y1="8.89" x2="-15.24" y2="8.89" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="-8.89" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
-<wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="8.89" x2="-15.24" y2="6.35" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="-8.89" x2="-15.24" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="1.016" x2="-15.24" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
-<wire x1="-15.24" y1="6.35" x2="-15.24" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="15.24" y1="6.35" x2="15.24" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="-6.35" x2="15.24" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="-6.35" x2="-15.24" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="15.24" y1="-6.35" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
-<wire x1="-15.24" y1="6.35" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
-<pad name="GND" x="-13.97" y="-7.62" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
-<pad name="B7" x="-1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D2" x="6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D3" x="8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D0" x="1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D1" x="3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D6" x="13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D7" x="11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="C6" x="11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="C7" x="13.97" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F7" x="1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F6" x="-1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F5" x="-3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F4" x="-6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F1" x="-8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F0" x="-11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B0" x="-11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B1" x="-8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B2" x="-6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B3" x="-3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B4" x="8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B5" x="6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B6" x="3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="+5V" x="-13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<text x="3.175" y="1.905" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-15.748" y="-8.255" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="-15.24" y="-11.43" size="1.27" layer="51" font="vector">Licensed Under Creative Commons</text>
-<text x="-15.24" y="-13.97" size="1.27" layer="51" font="vector">Attribution-ShareAlike 3.0 Unported </text>
-<text x="-15.24" y="-16.51" size="1.27" layer="51" font="vector">Designed by Tamir Emran</text>
-<text x="-15.24" y="-19.05" size="1.27" layer="51" font="vector">July 2011</text>
-</package>
-</packages>
-</library>
 <library name="custom">
 <packages>
 <package name="NINTENDO-MULTI">
@@ -205,6 +157,50 @@
 <pad name="5" x="6.477" y="-3.9624" drill="2" shape="octagon" rot="R90"/>
 <rectangle x1="5.9817" y1="-4.4577" x2="6.9723" y2="-3.4671" layer="21" rot="R180"/>
 <wire x1="7.4676" y1="-1.9812" x2="5.4864" y2="-1.9812" width="0.1524" layer="21"/>
+</package>
+<package name="TEENSY_HEADERS">
+<wire x1="15.24" y1="8.89" x2="-15.24" y2="8.89" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="-8.89" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
+<wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="8.89" x2="-15.24" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="-8.89" x2="-15.24" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="1.016" x2="-15.24" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-15.24" y1="6.35" x2="-15.24" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="15.24" y1="6.35" x2="15.24" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="-6.35" x2="15.24" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="-6.35" x2="-15.24" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="15.24" y1="-6.35" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
+<wire x1="-15.24" y1="6.35" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
+<pad name="GND" x="-13.97" y="-7.62" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
+<pad name="B7" x="-1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D2" x="6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D3" x="8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D0" x="1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D1" x="3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D6" x="13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="D7" x="11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="C6" x="11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="C7" x="13.97" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F7" x="1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F6" x="-1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F5" x="-3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F4" x="-6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F1" x="-8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="F0" x="-11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B0" x="-11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B1" x="-8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B2" x="-6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B3" x="-3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B4" x="8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B5" x="6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="B6" x="3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="+5V" x="-13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="3.175" y="1.905" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-15.748" y="-8.255" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-15.24" y="-11.43" size="1.27" layer="51" font="vector">Licensed Under Creative Commons</text>
+<text x="-15.24" y="-13.97" size="1.27" layer="51" font="vector">Attribution-ShareAlike 3.0 Unported </text>
+<text x="-15.24" y="-16.51" size="1.27" layer="51" font="vector">Designed by Tamir Emran</text>
+<text x="-15.24" y="-19.05" size="1.27" layer="51" font="vector">July 2011</text>
 </package>
 </packages>
 </library>
@@ -480,7 +476,7 @@ design rules under a new name.</description>
 <element name="IC3" library="74xx-little-de" package="DBV_R-PDSO-G6" value="741G3157DBVR" x="26.035" y="40.64"/>
 <element name="IC4" library="74xx-little-de" package="DBV_R-PDSO-G6" value="741G3157DBVR" x="23.495" y="25.4"/>
 <element name="IC5" library="74xx-little-de" package="DBV_R-PDSO-G6" value="741G3157DBVR" x="24.765" y="12.7"/>
-<element name="U$5" library="teensy" package="TEENSY_HEADERS" value="TEENSY_HEADERS" x="19.685" y="37.465" rot="MR180"/>
+<element name="U$5" library="custom" package="TEENSY_HEADERS" value="TEENSY_HEADERS" x="19.685" y="37.465" rot="MR180"/>
 </elements>
 <signals>
 <signal name="N$1">
