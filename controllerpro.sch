@@ -58,7 +58,7 @@
 <libraries>
 <library name="teensy">
 <packages>
-<package name="TEENSY">
+<package name="TEENSY_HEADERS">
 <wire x1="15.24" y1="8.89" x2="-15.24" y2="8.89" width="0.1524" layer="21"/>
 <wire x1="-15.24" y1="-8.89" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
 <wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
@@ -77,8 +77,6 @@
 <pad name="D3" x="8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D0" x="1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D1" x="3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="D4" x="13.97" y="5.08" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="D5" x="13.97" y="-5.08" drill="1.016" diameter="1.8796" rot="R180"/>
 <pad name="D6" x="13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D7" x="11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="C6" x="11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
@@ -89,9 +87,6 @@
 <pad name="F4" x="-6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F1" x="-8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F0" x="-11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="REF" x="-3.81" y="5.08" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="GRND1" x="13.97" y="0" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="E6" x="-3.81" y="-5.08" drill="1.016" diameter="1.8796"/>
 <pad name="B0" x="-11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B1" x="-8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B2" x="-6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
@@ -100,8 +95,6 @@
 <pad name="B5" x="6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B6" x="3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="+5V" x="-13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="5V2" x="13.97" y="-2.54" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="RST" x="13.97" y="2.54" drill="1.016" diameter="1.8796" rot="R180"/>
 <text x="3.175" y="1.905" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <text x="-15.748" y="-8.255" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-15.24" y="-11.43" size="1.27" layer="51" font="vector">Licensed Under Creative Commons</text>
@@ -111,7 +104,7 @@
 </package>
 </packages>
 <symbols>
-<symbol name="TEENSY">
+<symbol name="TEENSY_HEADERS">
 <wire x1="-7.62" y1="35.56" x2="7.62" y2="35.56" width="0.254" layer="94"/>
 <wire x1="7.62" y1="35.56" x2="7.62" y2="-33.02" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-33.02" x2="-7.62" y2="-33.02" width="0.254" layer="94"/>
@@ -128,8 +121,6 @@
 <pin name="_D1" x="-12.7" y="25.4" length="middle"/>
 <pin name="_D2" x="-12.7" y="22.86" length="middle"/>
 <pin name="_D3" x="-12.7" y="20.32" length="middle"/>
-<pin name="_D4" x="-12.7" y="17.78" length="middle"/>
-<pin name="_D5" x="-12.7" y="15.24" length="middle"/>
 <pin name="_D6" x="-12.7" y="12.7" length="middle"/>
 <pin name="_D7" x="-12.7" y="10.16" length="middle"/>
 <pin name="_C6" x="-12.7" y="-12.7" length="middle"/>
@@ -142,33 +133,23 @@
 <pin name="_B2" x="12.7" y="20.32" length="middle" rot="R180"/>
 <pin name="_B1" x="12.7" y="17.78" length="middle" rot="R180"/>
 <pin name="_B0" x="12.7" y="15.24" length="middle" rot="R180"/>
-<pin name="_E6" x="12.7" y="10.16" length="middle" rot="R180"/>
-<pin name="_GND1" x="12.7" y="-27.94" length="middle" rot="R180"/>
-<pin name="_REF" x="12.7" y="2.54" length="middle" rot="R180"/>
 <pin name="_F0" x="12.7" y="-2.54" length="middle" rot="R180"/>
 <pin name="_F1" x="12.7" y="-5.08" length="middle" rot="R180"/>
 <pin name="_F4" x="12.7" y="-10.16" length="middle" rot="R180"/>
 <pin name="_F5" x="12.7" y="-12.7" length="middle" rot="R180"/>
 <pin name="_F6" x="12.7" y="-15.24" length="middle" rot="R180"/>
 <pin name="_F7" x="12.7" y="-17.78" length="middle" rot="R180"/>
-<pin name="_5V2" x="12.7" y="-22.86" length="middle" rot="R180"/>
-<pin name="_RST" x="12.7" y="-25.4" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TEENSY" prefix="_">
-<description>&lt;b&gt;Teensy 2.0&lt;/b&gt;&lt;br&gt;
-Original Design by Clint Fisher&lt;br&gt;
-Modified Design by Tamir Emran&lt;br&gt;
-Licensed Under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</description>
+<deviceset name="TEENSY_HEADERS">
 <gates>
-<gate name="G$1" symbol="TEENSY" x="0" y="-2.54"/>
+<gate name="G$1" symbol="TEENSY_HEADERS" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TEENSY">
+<device name="" package="TEENSY_HEADERS">
 <connects>
 <connect gate="G$1" pin="5V" pad="+5V"/>
-<connect gate="G$1" pin="_5V2" pad="5V2"/>
 <connect gate="G$1" pin="_B0" pad="B0"/>
 <connect gate="G$1" pin="_B1" pad="B1"/>
 <connect gate="G$1" pin="_B2" pad="B2"/>
@@ -183,11 +164,8 @@ Licensed Under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.
 <connect gate="G$1" pin="_D1" pad="D1"/>
 <connect gate="G$1" pin="_D2" pad="D2"/>
 <connect gate="G$1" pin="_D3" pad="D3"/>
-<connect gate="G$1" pin="_D4" pad="D4"/>
-<connect gate="G$1" pin="_D5" pad="D5"/>
 <connect gate="G$1" pin="_D6" pad="D6"/>
 <connect gate="G$1" pin="_D7" pad="D7"/>
-<connect gate="G$1" pin="_E6" pad="E6"/>
 <connect gate="G$1" pin="_F0" pad="F0"/>
 <connect gate="G$1" pin="_F1" pad="F1"/>
 <connect gate="G$1" pin="_F4" pad="F4"/>
@@ -195,9 +173,6 @@ Licensed Under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.
 <connect gate="G$1" pin="_F6" pad="F6"/>
 <connect gate="G$1" pin="_F7" pad="F7"/>
 <connect gate="G$1" pin="_GND" pad="GND"/>
-<connect gate="G$1" pin="_GND1" pad="GRND1"/>
-<connect gate="G$1" pin="_REF" pad="REF"/>
-<connect gate="G$1" pin="_RST" pad="RST"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -761,9 +736,12 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
+<class number="1" name="VCC" width="0.3048" drill="0">
+</class>
+<class number="2" name="GND" width="0.3048" drill="0">
+</class>
 </classes>
 <parts>
-<part name="_1" library="teensy" deviceset="TEENSY" device=""/>
 <part name="U$1" library="custom" deviceset="NINTENDO-MULTI" device=""/>
 <part name="U$2" library="custom" deviceset="NINTENDO-MULTI" device=""/>
 <part name="U$3" library="custom" deviceset="NINTENDO-MULTI" device=""/>
@@ -778,13 +756,13 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <part name="IC5" library="74xx-little-de" deviceset="74*1G3157" device="DBVR"/>
 <part name="SUPPLY4" library="supply2" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
+<part name="U$5" library="teensy" deviceset="TEENSY_HEADERS" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="_1" gate="G$1" x="53.34" y="53.34" rot="R180"/>
 <instance part="U$1" gate="G$1" x="121.92" y="86.36" rot="R270"/>
 <instance part="U$2" gate="G$1" x="116.84" y="55.88" rot="R270"/>
 <instance part="U$3" gate="G$1" x="157.48" y="66.04" rot="R270"/>
@@ -803,6 +781,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <instance part="IC4" gate="P" x="-2.54" y="109.22"/>
 <instance part="SUPPLY4" gate="G$1" x="-25.4" y="121.92"/>
 <instance part="SUPPLY5" gate="GND" x="-25.4" y="96.52"/>
+<instance part="U$5" gate="G$1" x="53.34" y="53.34" rot="R180"/>
 </instances>
 <busses>
 <bus name="N64_OR_NES[0..3]">
@@ -827,7 +806,6 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <nets>
 <net name="N$1" class="0">
 <segment>
-<pinref part="_1" gate="G$1" pin="_D7"/>
 <wire x1="66.04" y1="43.18" x2="78.74" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="43.18" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="63.5" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
@@ -843,11 +821,11 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <pinref part="U$3" gate="G$1" pin="2"/>
 <wire x1="154.94" y1="73.66" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
 <junction x="78.74" y="73.66"/>
+<pinref part="U$5" gate="G$1" pin="_D7"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="_1" gate="G$1" pin="_D6"/>
 <wire x1="66.04" y1="40.64" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="91.44" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="71.12" x2="81.28" y2="60.96" width="0.1524" layer="91"/>
@@ -863,13 +841,14 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <junction x="81.28" y="71.12"/>
 <pinref part="U$3" gate="G$1" pin="3"/>
 <wire x1="81.28" y1="71.12" x2="154.94" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="_D6"/>
 </segment>
 </net>
 <net name="VCC" class="0">
 <segment>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
-<pinref part="_1" gate="G$1" pin="5V"/>
 <wire x1="35.56" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="5V"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="10"/>
@@ -953,7 +932,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <junction x="-25.4" y="101.6"/>
 </segment>
 </net>
-<net name="N$11" class="0">
+<net name="V33" class="0">
 <segment>
 <wire x1="170.18" y1="114.3" x2="127" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="127" y1="114.3" x2="127" y2="83.82" width="0.1524" layer="91"/>
@@ -1026,85 +1005,85 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 </net>
 <net name="N64_OR_NES0" class="0">
 <segment>
-<pinref part="_1" gate="G$1" pin="_B0"/>
-<wire x1="40.64" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="IC2" gate="G$1" pin="!A!/B"/>
 <wire x1="109.22" y1="111.76" x2="109.22" y2="88.9" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_B3"/>
+<wire x1="40.64" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N64_OR_NES1" class="0">
-<segment>
-<pinref part="_1" gate="G$1" pin="_B1"/>
-<wire x1="40.64" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <wire x1="86.36" y1="111.76" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="!A!/B"/>
 <wire x1="86.36" y1="66.04" x2="109.22" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="66.04" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="N64_OR_NES2" class="0">
 <segment>
-<pinref part="_1" gate="G$1" pin="_B2"/>
+<pinref part="U$5" gate="G$1" pin="_B2"/>
 <wire x1="40.64" y1="33.02" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
 </segment>
+</net>
+<net name="N64_OR_NES2" class="0">
 <segment>
 <pinref part="IC4" gate="G$1" pin="!A!/B"/>
 <wire x1="147.32" y1="68.58" x2="147.32" y2="111.76" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_B1"/>
+<wire x1="40.64" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N64_OR_NES3" class="0">
-<segment>
-<pinref part="_1" gate="G$1" pin="_B3"/>
-<wire x1="40.64" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="!A!/B"/>
 <wire x1="152.4" y1="38.1" x2="152.4" y2="111.76" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_B0"/>
+<wire x1="40.64" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="S_OR_NES0" class="0">
-<segment>
-<pinref part="_1" gate="G$1" pin="_F4"/>
-<wire x1="40.64" y1="63.5" x2="33.02" y2="63.5" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="96.52" x2="119.38" y2="109.22" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_F7"/>
+<wire x1="40.64" y1="71.12" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="S_OR_NES1" class="0">
-<segment>
-<pinref part="_1" gate="G$1" pin="_F5"/>
-<wire x1="40.64" y1="66.04" x2="33.02" y2="66.04" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="1"/>
 <wire x1="114.3" y1="66.04" x2="114.3" y2="109.22" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="S_OR_NES2" class="0">
 <segment>
-<pinref part="_1" gate="G$1" pin="_F6"/>
+<pinref part="U$5" gate="G$1" pin="_F6"/>
 <wire x1="40.64" y1="68.58" x2="33.02" y2="68.58" width="0.1524" layer="91"/>
 </segment>
+</net>
+<net name="S_OR_NES2" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="76.2" x2="154.94" y2="109.22" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_F5"/>
+<wire x1="40.64" y1="66.04" x2="33.02" y2="66.04" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="S_OR_NES3" class="0">
-<segment>
-<pinref part="_1" gate="G$1" pin="_F7"/>
-<wire x1="40.64" y1="71.12" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <wire x1="162.56" y1="109.22" x2="162.56" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="45.72" x2="157.48" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="_F4"/>
+<wire x1="40.64" y1="63.5" x2="33.02" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -1130,8 +1109,8 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <pinref part="IC2" gate="G$1" pin="X"/>
 </segment>
 <segment>
-<pinref part="_1" gate="G$1" pin="_D0"/>
-<wire x1="66.04" y1="25.4" x2="71.12" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="_D3"/>
+<wire x1="66.04" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DATA1" class="0">
@@ -1143,8 +1122,8 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <wire x1="86.36" y1="25.4" x2="86.36" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="_1" gate="G$1" pin="_D1"/>
-<wire x1="66.04" y1="27.94" x2="71.12" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="_D2"/>
+<wire x1="66.04" y1="30.48" x2="71.12" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DATA2" class="0">
@@ -1155,8 +1134,8 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <wire x1="129.54" y1="25.4" x2="129.54" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="_1" gate="G$1" pin="_D2"/>
-<wire x1="66.04" y1="30.48" x2="71.12" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="_D1"/>
+<wire x1="66.04" y1="27.94" x2="71.12" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DATA3" class="0">
@@ -1165,8 +1144,8 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <wire x1="134.62" y1="25.4" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="_1" gate="G$1" pin="_D3"/>
-<wire x1="66.04" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="_D0"/>
+<wire x1="66.04" y1="25.4" x2="71.12" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
