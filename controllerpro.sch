@@ -726,11 +726,11 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.4064" drill="0">
+<clearance class="0" value="0.2032"/>
 </class>
-<class number="1" name="VCC" width="0.3048" drill="0">
-</class>
-<class number="2" name="GND" width="0.3048" drill="0">
+<class number="1" name="power" width="0.6096" drill="0">
+<clearance class="1" value="0.3048"/>
 </class>
 </classes>
 <parts>
@@ -836,7 +836,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <pinref part="U$5" gate="G$1" pin="_D6"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 <wire x1="35.56" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
