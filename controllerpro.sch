@@ -749,6 +749,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <part name="SUPPLY4" library="supply2" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="U$5" library="custom" deviceset="TEENSY_HEADERS" device=""/>
+<part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -774,6 +775,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <instance part="SUPPLY4" gate="G$1" x="-25.4" y="121.92"/>
 <instance part="SUPPLY5" gate="GND" x="-25.4" y="96.52"/>
 <instance part="U$5" gate="G$1" x="53.34" y="53.34" rot="R180"/>
+<instance part="SUPPLY6" gate="GND" x="66.04" y="15.24"/>
 </instances>
 <busses>
 <bus name="N64_OR_NES[0..3]">
@@ -796,7 +798,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 </bus>
 </busses>
 <nets>
-<net name="N$1" class="0">
+<net name="CLOCK" class="0">
 <segment>
 <wire x1="66.04" y1="43.18" x2="78.74" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="43.18" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
@@ -816,7 +818,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <pinref part="U$5" gate="G$1" pin="_D7"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="LATCH" class="0">
 <segment>
 <wire x1="66.04" y1="40.64" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="91.44" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
@@ -922,6 +924,11 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <junction x="-10.16" y="101.6"/>
 <junction x="-2.54" y="101.6"/>
 <junction x="-25.4" y="101.6"/>
+</segment>
+<segment>
+<pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<pinref part="U$5" gate="G$1" pin="_GND"/>
+<wire x1="66.04" y1="17.78" x2="66.04" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="V33" class="0">
