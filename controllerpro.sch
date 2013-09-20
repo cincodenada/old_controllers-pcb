@@ -152,7 +152,7 @@
 <rectangle x1="5.9817" y1="-4.4577" x2="6.9723" y2="-3.4671" layer="21" rot="R180"/>
 <wire x1="7.4676" y1="-1.9812" x2="5.4864" y2="-1.9812" width="0.1524" layer="21"/>
 </package>
-<package name="TEENSY_HEADERS">
+<package name="TEENSY_MC_PINS">
 <wire x1="15.24" y1="8.89" x2="-15.24" y2="8.89" width="0.1524" layer="21"/>
 <wire x1="-15.24" y1="-8.89" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
 <wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
@@ -166,28 +166,20 @@
 <wire x1="15.24" y1="-6.35" x2="15.24" y2="-8.89" width="0.1524" layer="21"/>
 <wire x1="-15.24" y1="6.35" x2="15.24" y2="6.35" width="0.1524" layer="21"/>
 <pad name="GND" x="-13.97" y="-7.62" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
-<pad name="B7" x="-1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D2" x="6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D3" x="8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D0" x="1.27" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D1" x="3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D6" x="13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="D7" x="11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="C6" x="11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="C7" x="13.97" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F7" x="1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F6" x="-1.27" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F5" x="-3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="F4" x="-6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F1" x="-8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="F0" x="-11.43" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B0" x="-11.43" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B1" x="-8.89" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B2" x="-6.35" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B3" x="-3.81" y="-7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B4" x="8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B5" x="6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="B6" x="3.81" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="+5V" x="-13.97" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <text x="3.175" y="1.905" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <text x="-15.748" y="-8.255" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
@@ -219,7 +211,7 @@
 <wire x1="0" y1="1.27" x2="0" y2="3.81" width="0.4064" layer="94"/>
 <wire x1="0" y1="3.81" x2="-7.874" y2="3.81" width="0.4064" layer="94"/>
 </symbol>
-<symbol name="TEENSY_HEADERS">
+<symbol name="TEENSY_MC_PINS">
 <wire x1="-7.62" y1="35.56" x2="7.62" y2="35.56" width="0.254" layer="94"/>
 <wire x1="7.62" y1="35.56" x2="7.62" y2="-33.02" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-33.02" x2="-7.62" y2="-33.02" width="0.254" layer="94"/>
@@ -231,25 +223,17 @@
 <text x="-17.78" y="-48.26" size="1.27" layer="97" font="vector">Library Designed by Tamir Emran</text>
 <text x="-5.08" y="-53.34" size="1.27" layer="97" font="vector">July 2011</text>
 <pin name="_GND" x="-12.7" y="33.02" length="middle"/>
-<pin name="_B7" x="-12.7" y="30.48" length="middle"/>
 <pin name="_D0" x="-12.7" y="27.94" length="middle"/>
 <pin name="_D1" x="-12.7" y="25.4" length="middle"/>
 <pin name="_D2" x="-12.7" y="22.86" length="middle"/>
 <pin name="_D3" x="-12.7" y="20.32" length="middle"/>
 <pin name="_D6" x="-12.7" y="12.7" length="middle"/>
 <pin name="_D7" x="-12.7" y="10.16" length="middle"/>
-<pin name="_C6" x="-12.7" y="-12.7" length="middle"/>
-<pin name="_C7" x="-12.7" y="-15.24" length="middle"/>
 <pin name="5V" x="12.7" y="33.02" length="middle" rot="R180"/>
-<pin name="_B6" x="12.7" y="30.48" length="middle" rot="R180"/>
-<pin name="_B5" x="12.7" y="27.94" length="middle" rot="R180"/>
-<pin name="_B4" x="12.7" y="25.4" length="middle" rot="R180"/>
 <pin name="_B3" x="12.7" y="22.86" length="middle" rot="R180"/>
 <pin name="_B2" x="12.7" y="20.32" length="middle" rot="R180"/>
 <pin name="_B1" x="12.7" y="17.78" length="middle" rot="R180"/>
 <pin name="_B0" x="12.7" y="15.24" length="middle" rot="R180"/>
-<pin name="_F0" x="12.7" y="-2.54" length="middle" rot="R180"/>
-<pin name="_F1" x="12.7" y="-5.08" length="middle" rot="R180"/>
 <pin name="_F4" x="12.7" y="-10.16" length="middle" rot="R180"/>
 <pin name="_F5" x="12.7" y="-12.7" length="middle" rot="R180"/>
 <pin name="_F6" x="12.7" y="-15.24" length="middle" rot="R180"/>
@@ -281,32 +265,24 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="TEENSY_HEADERS">
+<deviceset name="TEENSY_MC_PINS">
 <gates>
-<gate name="G$1" symbol="TEENSY_HEADERS" x="0" y="0"/>
+<gate name="G$1" symbol="TEENSY_MC_PINS" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TEENSY_HEADERS">
+<device name="" package="TEENSY_MC_PINS">
 <connects>
 <connect gate="G$1" pin="5V" pad="+5V"/>
 <connect gate="G$1" pin="_B0" pad="B0"/>
 <connect gate="G$1" pin="_B1" pad="B1"/>
 <connect gate="G$1" pin="_B2" pad="B2"/>
 <connect gate="G$1" pin="_B3" pad="B3"/>
-<connect gate="G$1" pin="_B4" pad="B4"/>
-<connect gate="G$1" pin="_B5" pad="B5"/>
-<connect gate="G$1" pin="_B6" pad="B6"/>
-<connect gate="G$1" pin="_B7" pad="B7"/>
-<connect gate="G$1" pin="_C6" pad="C6"/>
-<connect gate="G$1" pin="_C7" pad="C7"/>
 <connect gate="G$1" pin="_D0" pad="D0"/>
 <connect gate="G$1" pin="_D1" pad="D1"/>
 <connect gate="G$1" pin="_D2" pad="D2"/>
 <connect gate="G$1" pin="_D3" pad="D3"/>
 <connect gate="G$1" pin="_D6" pad="D6"/>
 <connect gate="G$1" pin="_D7" pad="D7"/>
-<connect gate="G$1" pin="_F0" pad="F0"/>
-<connect gate="G$1" pin="_F1" pad="F1"/>
 <connect gate="G$1" pin="_F4" pad="F4"/>
 <connect gate="G$1" pin="_F5" pad="F5"/>
 <connect gate="G$1" pin="_F6" pad="F6"/>
@@ -748,7 +724,7 @@ Source: http://focus.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf</description>
 <part name="IC5" library="74xx-little-de" deviceset="74*1G3157" device="DBVR"/>
 <part name="SUPPLY4" library="supply2" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
-<part name="U$5" library="custom" deviceset="TEENSY_HEADERS" device=""/>
+<part name="U$5" library="custom" deviceset="TEENSY_MC_PINS" device=""/>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
