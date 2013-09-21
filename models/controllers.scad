@@ -4,27 +4,25 @@ $fs=1;
 
 NES_width=51;
 NES_height=29.5;
-NES_tall=29;
 
 SNES_width=88;
 SNES_height=21.5;
-SNES_tall=29;
 SNES_gap=4;
 
 N64_width=40;
 N64_height=29;
 N64_gap=15;
 N64_button=6;
-N64_tall=29;
 
 wall_thick=2;
 wall_gap=3;
 socket_thick=1.5;
 socket_width=8;
+socket_depth=29;
 
 ps=10;
-csy=ps*5.5;
-csx=ps*14;
+csy=ps*5.5/2;
+csx=ps*14/2;
 
 module pin(x,y) {
 	translate([ps*x,ps*y,0])
@@ -148,35 +146,78 @@ module lump_top() {
     }
 }
 
-fudge=ps*0;
-color("steelblue")
-%linear_extrude(height=NES_height)
+*color("steelblue")
+linear_extrude(height=socket_depth)
 difference() {
     minkowski() {
         hull() {
             union() {
-                lump();
-                translate([csx,fudge,0]) lump();
-                translate([0,csy,0]) lump();
+                translate([-csx,-csy,0]) lump();
+                translate([csx,-csy,0]) lump();
+                translate([-csx,csy,0]) rotate([0,0,180]) lump();
                 translate([csx,csy,0]) rotate([0,0,180]) lump();
             }
         }
         circle(r=10);
     }
 
-    lump();
-    translate([csx,fudge,0]) lump();
-    translate([0,csy,0]) lump();
+    translate([-csx,-csy,0]) lump();
+    translate([csx,-csy,0]) lump();
+    translate([-csx,csy,0]) rotate([0,0,180]) lump();
     translate([csx,csy,0]) rotate([0,0,180]) lump();
 }
 
-color("dimgray")
-translate([0,0,N64_height])
-%linear_extrude(height=N64_height) {
-    lump_top();
-    translate([csx,fudge,0]) lump_top();
-    translate([0,csy,0]) lump_top();
+*color("dimgray")
+translate([0,0,socket_depth])
+linear_extrude(height=socket_depth) {
+    translate([-csx,-csy,0]) lump_top();
+    translate([csx,-csy,0]) lump_top();
+    translate([-csx,csy,0]) rotate([0,0,180]) lump_top();
     translate([csx,csy,0]) rotate([0,0,180]) lump_top();
 }
 
-translate([csx/2,csy/2,0]) teensy();
+board_length=3.325*64;
+board_width=1.475*64;
+board_thick=4;
+board_offset=10;
+pin_base=.125*64;
+pin_length=.4*64;
+ledge_width=5;
+
+box_thick=3;
+box_height=
+    box_thick+
+    board_offset+
+    board_thick+
+    box_thick+
+    socket_depth;
+
+box_length=board_length+box_thick*2;
+box_width=board_width+box_thick*2;
+
+color("green")
+translate([0,0,board_offset+box_thick])
+cube(size=[
+    board_length,
+    board_width,
+    board_thick
+], center=true);
+
+translate([0,0,board_offset+box_thick+board_thick])
+teensy();
+
+color("slateblue",0.5)
+translate([0,0,box_height/2])
+difference() {
+    translate([0,0,box_thick/2])
+    cube(size=[box_length,box_width-box_thick*2,box_height-box_thick],center=true);
+    cube(size=[box_length-box_thick*2,box_width-box_thick*2,box_height-box_thick*2],center=true);
+}
+
+color("darkblue",0.5)
+translate([0,0,box_height/2])
+difference() {
+    cube(size=[box_length,box_width,box_height],center=true);
+    translate([0,0,box_thick])
+    cube(size=[box_length,box_width-box_thick*2,box_height-box_thick],center=true);
+}
