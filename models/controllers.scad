@@ -23,7 +23,8 @@ socket_thick=1.5;
 socket_width=8;
 
 ps=10;
-cs=ps*6;
+csy=ps*5.5;
+csx=ps*14;
 
 module pin(x,y) {
 	translate([ps*x,ps*y,0])
@@ -112,42 +113,70 @@ module N64_top() {
     circle(r=N64_width/2+6.5,center=true);
 }
 
-module lump() {
-    translate([0,0,0]) NES(true);
-    translate([0,0,0]) SNES(true);
-    translate([ps*5.5,0,0]) N64(true);
-}
-module lump_top() {
-    translate([ps*1.5,ps*(.5),0]) NES_top();
-    translate([ps*3.25,0,0]) SNES_top();
-    translate([ps*5.5,0,0]) N64_top();
+module teensy() {
+    header_height=.340*64;
+    teensy_width=0.7*64;
+    teensy_length=1.2*64;
+    thick=5;
+
+    translate([0,0,header_height/2]) {
+        color("green")
+        translate([0,0,(header_height+thick)/2])
+        cube(size=[teensy_width,teensy_length,thick],center=true);
+
+        color("darkgray") {
+            translate([-(teensy_width-thick)/2,0,0])
+            cube(size=[thick,teensy_length,header_height],center=true);
+            translate([(teensy_width-thick)/2,0,0])
+            cube(size=[thick,teensy_length,header_height],center=true);
+        }
+    }
 }
 
+module lump() {
+    translate([-ps*3.25,0,0]) {
+        translate([0,0,0]) NES(false);
+        translate([0,0,0]) SNES(false);
+        translate([ps*5.5,0,0]) N64(false);
+    }
+}
+module lump_top() {
+    translate([-ps*3.25,0,0]) {
+        translate([ps*1.5,ps*(.5),0]) NES_top();
+        translate([ps*3.25,0,0]) SNES_top();
+        translate([ps*5.5,0,0]) N64_top();
+    }
+}
+
+fudge=ps*0;
 color("steelblue")
-linear_extrude(height=NES_height)
+%linear_extrude(height=NES_height)
 difference() {
     minkowski() {
         hull() {
             union() {
                 lump();
-                translate([0,3*cs,0]) lump();
+                translate([csx,fudge,0]) lump();
+                translate([0,csy,0]) lump();
+                translate([csx,csy,0]) rotate([0,0,180]) lump();
             }
         }
         circle(r=10);
     }
 
     lump();
-    translate([0,cs,0]) lump();
-    translate([0,2*cs,0]) lump();
-    translate([0,3*cs,0]) lump();
+    translate([csx,fudge,0]) lump();
+    translate([0,csy,0]) lump();
+    translate([csx,csy,0]) rotate([0,0,180]) lump();
 }
 
 color("dimgray")
 translate([0,0,N64_height])
-linear_extrude(height=N64_height) {
+%linear_extrude(height=N64_height) {
     lump_top();
-    translate([0,cs,0]) lump_top();
-    translate([0,2*cs,0]) lump_top();
-    translate([0,3*cs,0]) lump_top();
+    translate([csx,fudge,0]) lump_top();
+    translate([0,csy,0]) lump_top();
+    translate([csx,csy,0]) rotate([0,0,180]) lump_top();
 }
 
+translate([csx/2,csy/2,0]) teensy();
