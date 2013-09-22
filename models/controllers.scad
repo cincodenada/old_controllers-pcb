@@ -182,13 +182,13 @@ difference() {
 *color("dimgray")
 translate([0,0,socket_depth])
 linear_extrude(height=socket_depth) {
-    translate([-csx,-csy,0]) lump_top();
-    translate([csx,-csy,0]) lump_top();
-    translate([-csx,csy,0]) rotate([0,0,180]) lump_top();
-    translate([csx,csy,0]) rotate([0,0,180]) lump_top();
+    translate([-ctoh_N64,-ctoh_bot,0]) lump_top();
+    translate([ctoh_NES,-ctoh_bot,0]) lump_top();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump_top();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump_top();
 }
 
-board_length=3.325*64;
+board_length=3.3*64;
 board_width=1.475*64;
 board_thick=4;
 board_offset=10;
@@ -231,17 +231,17 @@ module pin_cutout() {
 }
 
 module controller_holes() {
-    translate([-csx,-csy,0]) lump();
-    translate([csx,-csy,0]) lump();
-    translate([-csx,csy,0]) rotate([0,0,180]) lump();
-    translate([csx,csy,0]) rotate([0,0,180]) lump();
+    translate([-ctoh_N64,-ctoh_bot,0]) lump();
+    translate([ctoh_NES,-ctoh_bot,0]) lump();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump();
 }
 
 module pin_cutouts() {
-    translate([-csx,-csy,0]) pin_cutout();
-    translate([csx,-csy,0]) pin_cutout();
-    translate([-csx,csy,0]) rotate([0,0,180]) pin_cutout();
-    translate([csx,csy,0]) rotate([0,0,180]) pin_cutout();
+    translate([-ctoh_N64,-ctoh_bot,0]) pin_cutout();
+    translate([ctoh_NES,-ctoh_bot,0]) pin_cutout();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) pin_cutout();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) pin_cutout();
 }
 
 fudge=.1;
