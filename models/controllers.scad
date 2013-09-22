@@ -7,7 +7,7 @@ NES_height=29.5;
 
 SNES_width=88;
 SNES_height=21.5;
-SNES_gap=4;
+SNES_gap=.25*64;
 
 N64_width=40;
 N64_height=29;
@@ -20,9 +20,20 @@ socket_thick=1.5;
 socket_width=8;
 socket_depth=29;
 
-ps=10;
+ps=.156*64;
 csy=ps*5.5/2;
 csx=ps*14/2;
+//Total pin width
+tpw=ps*5+SNES_gap;
+//Center-to-handle adjust
+ctoh=SNES_gap/2;
+
+//Center to handle
+//N64 and NES-first
+ctoh_N64=1.025*64;
+ctoh_NES=0.925*64;
+ctoh_bot=0.3875*64+ps;
+ctoh_top=0.3375*64+ps;
 
 module pin(x,y) {
 	translate([ps*x,ps*y,0])
@@ -38,25 +49,25 @@ module NES(solid=false) {
             circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
             translate([ps*3,0,0])
             circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
-            translate([ps*2,ps,0])
+            translate([ps*3,ps,0])
             circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
-            translate([0,ps,0])
+            translate([ps,ps,0])
             circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
         }
         if(!solid) {
             hull() {
                 circle(r=socket_width/2 + wall_gap, center=true);
-                translate([ps*2,0,0])
+                translate([ps*3,0,0])
                 circle(r=socket_width/2 + wall_gap, center=true);
                 translate([ps*3,ps,0])
                 circle(r=socket_width/2 + wall_gap, center=true);
-                translate([0,ps,0])
+                translate([ps,ps,0])
                 circle(r=socket_width/2 + wall_gap, center=true);
             }
         }
     }
 
-    for(x=[0:2]) { pin(x,1); }
+    for(x=[1:3]) { pin(x,1); }
     for(x=[0:3]) { pin(x,0); }
 }
 module NES_top() {
@@ -66,13 +77,13 @@ module NES_top() {
 module SNES(solid=false) {
     difference() {
         hull() {
-            translate([ps*6.5,0,0])
+            translate([ps*5+SNES_gap,0,0])
             circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
             square(size=socket_width + (wall_gap + wall_thick)*2,center=true);
         }
         if(!solid) {
             hull() {
-                translate([ps*6.5,0,0])
+                translate([ps*5+SNES_gap,0,0])
                 circle(r=socket_width/2 + wall_gap, center=true);
                 square(size=socket_width + wall_gap*2,center=true);
             }
@@ -80,9 +91,10 @@ module SNES(solid=false) {
     }
 
     for(x=[0:3]) { pin(x,0); }
-    for(x=[4:6]) { pin(x+0.5,0); }
+    translate([SNES_gap,0,0])
+    for(x=[3:5]) { pin(x,0); }
 
-    translate([ps*3.75,0,0])
+    translate([ps*3+SNES_gap/2,0,0])
     square(size=[wall_thick,socket_width + wall_gap*2],center=true);
 }
 module SNES_top() {
@@ -99,7 +111,7 @@ module N64(solid=false) {
         if(!solid) {
             difference() {
                 circle(r=N64_width/2-wall_thick,center=true);
-                translate([0,N64_height,0])
+                translate([0,-N64_height,0])
                 square(size=N64_width+wall_thick*2,center=true);
             }
         }
@@ -132,17 +144,17 @@ module teensy() {
 }
 
 module lump() {
-    translate([-ps*3.25,0,0]) {
-        translate([0,0,0]) NES(false);
-        translate([0,0,0]) SNES(false);
-        translate([ps*5.5,0,0]) N64(false);
+    translate([-ps*3,0,0]) {
+        translate([0,0,0]) NES(true);
+        translate([0,0,0]) SNES(true);
+        translate([ps*4+SNES_gap,0,0]) N64(true);
     }
 }
 module lump_top() {
-    translate([-ps*3.25,0,0]) {
+    translate([-ps*3,0,0]) {
         translate([ps*1.5,ps*(.5),0]) NES_top();
-        translate([ps*3.25,0,0]) SNES_top();
-        translate([ps*5.5,0,0]) N64_top();
+        translate([tpw/2,0,0]) SNES_top();
+        translate([ps*4+SNES_gap,0,0]) N64_top();
     }
 }
 
@@ -152,19 +164,19 @@ difference() {
     minkowski() {
         hull() {
             union() {
-                translate([-csx,-csy,0]) lump();
-                translate([csx,-csy,0]) lump();
-                translate([-csx,csy,0]) rotate([0,0,180]) lump();
-                translate([csx,csy,0]) rotate([0,0,180]) lump();
+                translate([-ctoh_N64,-ctoh_bot,0]) lump();
+                translate([ctoh_NES,-ctoh_bot,0]) lump();
+                translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump();
+                translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump();
             }
         }
         circle(r=10);
     }
 
-    translate([-csx,-csy,0]) lump();
-    translate([csx,-csy,0]) lump();
-    translate([-csx,csy,0]) rotate([0,0,180]) lump();
-    translate([csx,csy,0]) rotate([0,0,180]) lump();
+    translate([-ctoh_N64,-ctoh_bot,0]) lump();
+    translate([ctoh_NES,-ctoh_bot,0]) lump();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump();
 }
 
 *color("dimgray")
@@ -182,6 +194,7 @@ board_thick=4;
 board_offset=10;
 pin_base=.125*64;
 pin_length=.4*64;
+pin_d=.045*64;
 ledge_width=5;
 
 box_thick=3;
@@ -206,18 +219,62 @@ cube(size=[
 translate([0,0,board_offset+box_thick+board_thick])
 teensy();
 
-color("slateblue",0.5)
-translate([0,0,box_height/2])
-difference() {
-    translate([0,0,box_thick/2])
-    cube(size=[box_length,box_width-box_thick*2,box_height-box_thick],center=true);
-    cube(size=[box_length-box_thick*2,box_width-box_thick*2,box_height-box_thick*2],center=true);
+module pin_cutout() {
+    hull() {
+        translate([-tpw/2,0,0]) circle(r=pin_d,center=true);
+        translate([tpw/2,0,0]) circle(r=pin_d,center=true);
+    }
+    hull() {
+        translate([ps*-2.25,ps,0]) circle(r=pin_d,center=true);
+        translate([ps*-.25,ps,0]) circle(r=pin_d,center=true);
+    }
 }
 
+module controller_holes() {
+    translate([-csx,-csy,0]) lump();
+    translate([csx,-csy,0]) lump();
+    translate([-csx,csy,0]) rotate([0,0,180]) lump();
+    translate([csx,csy,0]) rotate([0,0,180]) lump();
+}
+
+module pin_cutouts() {
+    translate([-csx,-csy,0]) pin_cutout();
+    translate([csx,-csy,0]) pin_cutout();
+    translate([-csx,csy,0]) rotate([0,0,180]) pin_cutout();
+    translate([csx,csy,0]) rotate([0,0,180]) pin_cutout();
+}
+
+fudge=.1;
+
+//Box top
+translate([0,0,50])
+color("slateblue",0.5)
+difference() {
+    union() {
+        translate([0,0,box_height/2])
+        difference() {
+            translate([0,0,box_thick/2])
+            cube(size=[box_length,box_width-box_thick*2,box_height-box_thick],center=true);
+            translate([0,0,-fudge])
+            cube(size=[box_length-box_thick*2,box_width-box_thick*2+fudge,box_height-box_thick*2+fudge],center=true);
+        }
+        translate([0,0,box_height-socket_depth])
+        minkowski() {
+            linear_extrude(height=socket_depth-box_thick) controller_holes();
+            cube(size=[box_thick*2,box_thick*2,box_thick*2],center=true);
+        }
+    }
+    translate([0,0,box_height-socket_depth])
+    linear_extrude(height=socket_depth+fudge) controller_holes();
+    translate([0,0,box_height-socket_depth-box_thick])
+    linear_extrude(height=box_thick) pin_cutouts();
+}
+
+//Box bottom
 color("darkblue",0.5)
 translate([0,0,box_height/2])
 difference() {
     cube(size=[box_length,box_width,box_height],center=true);
     translate([0,0,box_thick])
-    cube(size=[box_length,box_width-box_thick*2,box_height-box_thick],center=true);
+    cube(size=[box_length+fudge,box_width-box_thick*2,box_height-box_thick],center=true);
 }
