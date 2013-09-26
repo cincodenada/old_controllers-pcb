@@ -283,7 +283,7 @@ translate([0,0,box_thick+board_offset+board_thick]) all_pins();
 
 //Box top
 //translate([0,0,50])
-color("slateblue")
+color("slateblue",0.5)
 difference() {
     union() {
         translate([0,0,box_height/2])
@@ -306,7 +306,7 @@ difference() {
 }
 
 //Box bottom
-color("darkblue")
+color("darkblue",0.5)
 translate([0,0,box_height/2])
 difference() {
     cube(size=[box_length-fudge,box_width,box_height-fudge],center=true);
