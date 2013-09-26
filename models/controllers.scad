@@ -15,8 +15,8 @@ N64_gap=15;
 N64_button=6;
 
 wall_thick=2;
-wall_gap=3;
-socket_thick=1.5;
+wall_gap=4;
+socket_thick=2;
 socket_width=8;
 socket_depth=29;
 
@@ -30,8 +30,8 @@ ctoh=SNES_gap/2;
 
 //Center to handle
 //N64 and NES-first
-ctoh_N64=1.025*64;
-ctoh_NES=0.925*64;
+ctoh_N64=1.2*64;
+ctoh_NES=1.1*64;
 ctoh_bot=0.3875*64+ps;
 ctoh_top=0.3375*64+ps;
 
@@ -182,7 +182,7 @@ difference() {
     translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump();
 }
 
-board_length=3.3*64;
+board_length=3.65*64;
 board_width=1.475*64;
 board_thick=4;
 board_offset=10;
@@ -283,7 +283,7 @@ translate([0,0,box_thick+board_offset+board_thick]) all_pins();
 
 //Box top
 //translate([0,0,50])
-color("slateblue",0.5)
+color("slateblue")
 difference() {
     union() {
         translate([0,0,box_height/2])
@@ -299,27 +299,26 @@ difference() {
             cube(size=[box_thick*2,box_thick*2,box_thick*2],center=true);
         }
     }
-    translate([0,0,box_height-socket_depth])
+    translate([0,0,box_height-socket_depth+fudge])
     linear_extrude(height=socket_depth+fudge) controller_holes();
     translate([0,0,box_height-socket_depth-box_thick])
     linear_extrude(height=box_thick) pin_cutouts();
 }
 
 //Box bottom
-color("darkblue",0.5)
+color("darkblue")
 translate([0,0,box_height/2])
 difference() {
-    cube(size=[box_length,box_width,box_height],center=true);
+    cube(size=[box_length-fudge,box_width,box_height-fudge],center=true);
     translate([0,0,box_thick])
     cube(size=[box_length+fudge,box_width-box_thick*2,box_height-box_thick],center=true);
 }
 
-color("dimgray")
-%translate([0,0,box_height])
+*color("dimgray")
+translate([0,0,box_height])
 linear_extrude(height=socket_depth) {
     translate([-ctoh_N64,-ctoh_bot,0]) lump_top();
     translate([ctoh_NES,-ctoh_bot,0]) lump_top();
     translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump_top();
     translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump_top();
 }
-
