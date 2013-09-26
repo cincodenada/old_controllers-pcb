@@ -35,7 +35,10 @@ ctoh_NES=0.925*64;
 ctoh_bot=0.3875*64+ps;
 ctoh_top=0.3375*64+ps;
 
-module pin(x,y) {
+top_to_teensy=0.1*64;
+bottom_to_teensy=0.175*64;
+
+module socket(x,y) {
 	translate([ps*x,ps*y,0])
 	difference() {
         circle(r=socket_width/2, center=true);
@@ -67,8 +70,8 @@ module NES(solid=false) {
         }
     }
 
-    for(x=[1:3]) { pin(x,1); }
-    for(x=[0:3]) { pin(x,0); }
+    for(x=[1:3]) { socket(x,1); }
+    for(x=[0:3]) { socket(x,0); }
 }
 module NES_top() {
     square(size=[60,40],center=true);
@@ -90,9 +93,9 @@ module SNES(solid=false) {
         }
     }
 
-    for(x=[0:3]) { pin(x,0); }
+    for(x=[0:3]) { socket(x,0); }
     translate([SNES_gap,0,0])
-    for(x=[3:5]) { pin(x,0); }
+    for(x=[3:5]) { socket(x,0); }
 
     translate([ps*3+SNES_gap/2,0,0])
     square(size=[wall_thick,socket_width + wall_gap*2],center=true);
@@ -117,7 +120,7 @@ module N64(solid=false) {
         }
 	}
 
-	for(x=[-1:1]) { pin(x,0); }
+	for(x=[-1:1]) { socket(x,0); }
 }
 module N64_top() {
     circle(r=N64_width/2+6.5,center=true);
@@ -143,11 +146,11 @@ module teensy() {
     }
 }
 
-module lump() {
+module lump(solid=true) {
     translate([-ps*3,0,0]) {
-        translate([0,0,0]) NES(true);
-        translate([0,0,0]) SNES(true);
-        translate([ps*4+SNES_gap,0,0]) N64(true);
+        translate([0,0,0]) NES(solid);
+        translate([0,0,0]) SNES(solid);
+        translate([ps*4+SNES_gap,0,0]) N64(solid);
     }
 }
 module lump_top() {
@@ -179,22 +182,16 @@ difference() {
     translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump();
 }
 
-*color("dimgray")
-translate([0,0,socket_depth])
-linear_extrude(height=socket_depth) {
-    translate([-ctoh_N64,-ctoh_bot,0]) lump_top();
-    translate([ctoh_NES,-ctoh_bot,0]) lump_top();
-    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump_top();
-    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump_top();
-}
-
 board_length=3.3*64;
 board_width=1.475*64;
 board_thick=4;
 board_offset=10;
 pin_base=.125*64;
+pin_gap=pin_base*0.5;
 pin_length=.4*64;
+pin_below=.125*64;
 pin_d=.045*64;
+pin_taper=pin_d/2;
 ledge_width=5;
 
 box_thick=3;
@@ -202,31 +199,48 @@ box_height=
     box_thick+
     board_offset+
     board_thick+
+    pin_base+
+    pin_gap+
     box_thick+
     socket_depth;
 
 box_length=board_length+box_thick*2;
 box_width=board_width+box_thick*2;
 
-color("green")
-translate([0,0,board_offset+box_thick])
-cube(size=[
-    board_length,
-    board_width,
-    board_thick
-], center=true);
+module pin(x,y) {
+	translate([ps*x,ps*y,0]) {
+        color("silver") {
+            translate([0,0,-pin_below + pin_taper/2])
+            cylinder(h=pin_length+pin_base+pin_below-pin_taper, r=pin_d/2);
+            translate([0,0,-pin_below])
+            cylinder(h=pin_taper/2,r2=pin_d/2,r1=pin_taper/2);
+            translate([0,0,pin_length+pin_base-pin_taper/2])
+            cylinder(h=pin_taper/2,r1=pin_d/2,r2=pin_taper/2);
+        }
 
-translate([0,0,board_offset+box_thick+board_thick])
-teensy();
+        color("white")
+        linear_extrude(height=pin_base)
+        square(size=ps,center=true);
+    }
+}
+
+module pin_set() {
+    translate([-ps*3,0,0]) {
+        for(x=[1:3]) { pin(x,1); }
+        for(x=[0:3]) { pin(x,0); }
+        translate([SNES_gap,0,0])
+        for(x=[3:5]) { pin(x,0); }
+    }
+}
 
 module pin_cutout() {
     hull() {
-        translate([-tpw/2,0,0]) circle(r=pin_d,center=true);
-        translate([tpw/2,0,0]) circle(r=pin_d,center=true);
+        translate([-ps*3,0,0]) circle(r=pin_d,center=true);
+        translate([SNES_gap+ps*2,0,0]) circle(r=pin_d,center=true);
     }
     hull() {
-        translate([ps*-2.25,ps,0]) circle(r=pin_d,center=true);
-        translate([ps*-.25,ps,0]) circle(r=pin_d,center=true);
+        translate([ps*-2,ps,0]) circle(r=pin_d,center=true);
+        translate([0,ps,0]) circle(r=pin_d,center=true);
     }
 }
 
@@ -244,10 +258,31 @@ module pin_cutouts() {
     translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) pin_cutout();
 }
 
+module all_pins() {
+    translate([-ctoh_N64,-ctoh_bot,0]) pin_set();
+    translate([ctoh_NES,-ctoh_bot,0]) pin_set();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) pin_set();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) pin_set();
+}
+
 fudge=.1;
 
+color("darkgreen")
+translate([0,0,board_offset+box_thick+board_thick/2])
+cube(size=[
+    board_length,
+    board_width,
+    board_thick
+], center=true);
+
+teensy_trans=(bottom_to_teensy-top_to_teensy)/2;
+translate([0,teensy_trans,board_offset+box_thick+board_thick])
+teensy();
+
+translate([0,0,box_thick+board_offset+board_thick]) all_pins();
+
 //Box top
-translate([0,0,50])
+//translate([0,0,50])
 color("slateblue",0.5)
 difference() {
     union() {
@@ -278,3 +313,13 @@ difference() {
     translate([0,0,box_thick])
     cube(size=[box_length+fudge,box_width-box_thick*2,box_height-box_thick],center=true);
 }
+
+color("dimgray")
+%translate([0,0,box_height])
+linear_extrude(height=socket_depth) {
+    translate([-ctoh_N64,-ctoh_bot,0]) lump_top();
+    translate([ctoh_NES,-ctoh_bot,0]) lump_top();
+    translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump_top();
+    translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump_top();
+}
+
