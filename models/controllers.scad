@@ -293,7 +293,7 @@ cube(size=[
 ], center=true);
 
 teensy_trans=(bottom_to_teensy-top_to_teensy)/2;
-translate([0,teensy_trans,board_offset+box_thick+board_thick])
+*translate([0,teensy_trans,board_offset+box_thick+board_thick])
 teensy();
 
 translate([0,0,box_thick+board_offset+board_thick]) all_pins();
@@ -346,6 +346,21 @@ cutout_size=[
     box_height-box_thick-cutout_offset,
 ];
 cutout_pos=[-cutout_size[0]/2,-box_width/2,cutout_offset];
+
+module connector_cap() {
+    translate([
+        box_thick,
+        cutout_size[1] - connector_overhang,
+        connector_size[2]+
+        (cutout_size[2]-connector_size[2])/2
+    ])
+    cube(size=[
+        cutout_size[0]-box_thick*2,
+        connector_overhang,
+        (cutout_size[2]-connector_size[2])/2
+    ]);
+}
+
 //TODO: Have the top have a thing that comes down to cover the top of the Teensy connector
 translate(cutout_pos)
 difference() {
@@ -364,8 +379,13 @@ difference() {
         (cutout_size[2]-connector_size[2])/2
     ])
     cube(size=connector_size);
+    connector_cap();
 }
+
+translate(cutout_pos) connector_cap();
+
 }
+
 
 *color("dimgray")
 translate([0,0,box_height])
