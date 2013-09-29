@@ -32,11 +32,11 @@ ctoh=SNES_gap/2;
 //N64 and NES-first
 ctoh_N64=1.2*64;
 ctoh_NES=1.1*64;
-ctoh_bot=0.3875*64+ps;
-ctoh_top=0.3375*64+ps;
+ctoh_bot=(0.2625)*64+ps;
+ctoh_top=(0.3125)*64+ps;
 
-top_to_teensy=0.1*64;
-bottom_to_teensy=0.175*64;
+top_to_teensy=0.05*64;
+bottom_to_teensy=0.075*64;
 
 module socket(x,y) {
 	translate([ps*x,ps*y,0])
@@ -126,24 +126,39 @@ module N64_top() {
     circle(r=N64_width/2+6.5,center=true);
 }
 
-module teensy() {
-    header_height=.340*64;
-    teensy_width=0.7*64;
-    teensy_length=1.2*64;
-    thick=5;
+header_height=.340*64;
+teensy_width=0.7*64;
+teensy_length=1.2*64;
+teensy_thick=5;
 
+connector_overhang=2;
+connector_size=[20,23,10];
+
+module teensy_connector() {
+    color("silver")
+    translate([
+        0,
+        -(teensy_length/2 - connector_size[1]/2 + connector_overhang),
+        header_height + connector_size[2]/2 + teensy_thick
+    ])
+    cube(connector_size,center=true);
+}
+
+module teensy() {
     translate([0,0,header_height/2]) {
         color("green")
-        translate([0,0,(header_height+thick)/2])
-        cube(size=[teensy_width,teensy_length,thick],center=true);
+        translate([0,0,(header_height+teensy_thick)/2])
+        cube(size=[teensy_width,teensy_length,teensy_thick],center=true);
 
         color("darkgray") {
-            translate([-(teensy_width-thick)/2,0,0])
-            cube(size=[thick,teensy_length,header_height],center=true);
-            translate([(teensy_width-thick)/2,0,0])
-            cube(size=[thick,teensy_length,header_height],center=true);
+            translate([-(teensy_width-teensy_thick)/2,0,0])
+            cube(size=[teensy_thick,teensy_length,header_height],center=true);
+            translate([(teensy_width-teensy_thick)/2,0,0])
+            cube(size=[teensy_thick,teensy_length,header_height],center=true);
         }
     }
+
+    teensy_connector();
 }
 
 module lump(solid=true) {
@@ -183,7 +198,7 @@ difference() {
 }
 
 board_length=3.65*64;
-board_width=1.475*64;
+board_width=1.325*64;
 board_thick=4;
 board_offset=10;
 pin_base=.125*64;
@@ -267,6 +282,8 @@ module all_pins() {
 
 fudge=.1;
 
+module box() {
+
 color("darkgreen")
 translate([0,0,board_offset+box_thick+board_thick/2])
 cube(size=[
@@ -283,7 +300,7 @@ translate([0,0,box_thick+board_offset+board_thick]) all_pins();
 
 //Box top
 //translate([0,0,50])
-color("slateblue",0.5)
+*color("slateblue",0.5)
 difference() {
     union() {
         translate([0,0,box_height/2])
@@ -305,6 +322,8 @@ difference() {
     linear_extrude(height=box_thick) pin_cutouts();
 }
 
+
+
 //Box bottom
 color("darkblue",0.5)
 translate([0,0,box_height/2])
@@ -312,6 +331,40 @@ difference() {
     cube(size=[box_length-fudge,box_width,box_height-fudge],center=true);
     translate([0,0,box_thick])
     cube(size=[box_length+fudge,box_width-box_thick*2,box_height-box_thick],center=true);
+    translate(cutout_pos-[0,0,box_height/2])
+    cube(size=cutout_size);
+}
+
+cutout_offset=box_thick
+    +board_offset
+    +board_thick
+    +header_height;
+
+cutout_size=[
+    connector_size[0]*2,
+    bottom_to_teensy+box_thick,
+    box_height-box_thick-cutout_offset,
+];
+cutout_pos=[-cutout_size[0]/2,-box_width/2,cutout_offset];
+//TODO: Have the top have a thing that comes down to cover the top of the Teensy connector
+translate(cutout_pos)
+difference() {
+    union() {
+        cube(size=cutout_size);
+        translate([0,box_thick,0])
+        rotate([0,90,0])
+        linear_extrude(height=cutout_size[0])
+        polygon(points=[[0,0],[bottom_to_teensy,0],[0,bottom_to_teensy]]);
+    }
+    translate([box_thick,0,box_thick])
+    cube(size=cutout_size-[box_thick*2,connector_overhang,box_thick]);
+    translate([
+        (cutout_size[0]-connector_size[0])/2,
+        bottom_to_teensy+box_thick-connector_overhang,
+        (cutout_size[2]-connector_size[2])/2
+    ])
+    cube(size=connector_size);
+}
 }
 
 *color("dimgray")
@@ -322,3 +375,6 @@ linear_extrude(height=socket_depth) {
     translate([-ctoh_NES,ctoh_top,0]) rotate([0,0,180]) lump_top();
     translate([ctoh_N64,ctoh_top,0]) rotate([0,0,180]) lump_top();
 }
+
+
+box();
