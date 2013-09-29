@@ -54,6 +54,7 @@ cutout_size=[
 cutout_pos=[-cutout_size[0]/2,-box_width/2,cutout_offset];
 
 holder_offset=box_thick+board_offset+board_thick;
+holder_height=box_height-(socket_depth+box_thick+holder_offset);
 
 module lump(solid=true) {
     translate([-ps*3,0,0]) {
@@ -89,6 +90,23 @@ module connector_cap() {
         connector_overhang,
         (cutout_size[2]-connector_size[2])/2
     ]);
+}
+
+module grabber() {
+    translate([-ledge_width,0,holder_offset])
+    difference() {
+        cube([ledge_width,ledge_width,holder_height]);
+        translate([ledge_width/2,ledge_width/2,0])
+        cube([ledge_width/2,ledge_width/2,holder_height]);
+    }
+}
+
+module grabee() {
+    difference() {
+        translate([-ledge_width*1.5,0,holder_offset])
+        cube([ledge_width*1.5,ledge_width*1.5,holder_height]);
+        grabber();
+    }
 }
 
 module box_top() {
@@ -131,9 +149,7 @@ module box_top() {
 
         bothends() {
             bothsides() union() {
-                translate([-ledge_width,0,holder_offset])
-                translate([ledge_width/2,0,0])
-                cube([ledge_width/2,ledge_width/2,box_height-holder_offset]);
+                grabber();
             }
         }
     }
@@ -186,12 +202,7 @@ module box_bottom() {
         //Top holder
         bothends() {
             bothsides() union() {
-                translate([-ledge_width,0,holder_offset])
-                difference() {
-                    cube([ledge_width,ledge_width,box_height-holder_offset]);
-                    translate([ledge_width/2,0,0])
-                    cube([ledge_width/2,ledge_width/2,box_height-holder_offset]);
-                }
+                grabee();
             }
         }
     }
@@ -217,7 +228,7 @@ module bothends() {
 module box() {
     //translate([0,0,50])
     box_top();
-    //box_bottom();
+    box_bottom();
 }
 
 //Socket mockups
@@ -227,7 +238,7 @@ linear_extrude(height=socket_depth)
 timesfour() lump_top();
 
 //Board
-color("darkgreen")
+*color("darkgreen")
 translate([0,0,board_offset+box_thick+board_thick/2])
 cube(size=[
     board_length,
