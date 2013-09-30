@@ -92,21 +92,23 @@ module connector_cap() {
     ]);
 }
 
-module grabber() {
-    translate([-ledge_width,0,holder_offset])
-    difference() {
-        cube([ledge_width,ledge_width,holder_height]);
-        translate([ledge_width/2,ledge_width/2,0])
-        cube([ledge_width/2,ledge_width/2,holder_height]);
+module grab_top() {
+    translate([0,0,holder_offset]) {
+        difference() {
+            cube([ledge_width,ledge_width,holder_height]);
+            cube([ledge_width/2,ledge_width/2,holder_height]);
+            translate([ledge_width/2,ledge_width/4,holder_height/2])
+            sphere(r=ledge_width/4);
+        }
     }
 }
 
-module grabee() {
-    difference() {
-        translate([-ledge_width*1.5,0,holder_offset])
-        cube([ledge_width*1.5,ledge_width*1.5,holder_height]);
-        grabber();
-    }
+module grab_bottom() {
+    translate([0,0,holder_offset]) {
+        cube([ledge_width*.5,ledge_width*.5,holder_height]);
+        translate([ledge_width/2,ledge_width/4,holder_height/2])
+        sphere(r=ledge_width/4);
+    }     
 }
 
 module box_top() {
@@ -149,7 +151,7 @@ module box_top() {
 
         bothends() {
             bothsides() union() {
-                grabber();
+                grab_top();
             }
         }
     }
@@ -202,7 +204,7 @@ module box_bottom() {
         //Top holder
         bothends() {
             bothsides() union() {
-                grabee();
+                grab_bottom();
             }
         }
     }
