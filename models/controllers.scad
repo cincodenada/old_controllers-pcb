@@ -218,10 +218,10 @@ module bothsides() {
 }
 
 module bothends() {
-    translate([box_length/2-box_thick,0,0])
+    translate([-(box_length/2-box_thick),0,0])
     child(0);
-    mirror([1,0,0])
     translate([box_length/2-box_thick,0,0])
+    mirror([1,0,0])
     child(0);
 }
 
