@@ -22,7 +22,7 @@ bottom_to_teensy=0.075*64;
 
 board_length=3.65*64;
 board_width=1.325*64;
-board_thick=4;
+board_thick=.063*64;
 board_offset=10;
 ledge_width=5;
 
@@ -239,8 +239,9 @@ translate([0,0,box_height])
 linear_extrude(height=socket_depth)
 timesfour() lump_top();
 
+union() {
 //Board
-*color("darkgreen")
+color("darkgreen")
 translate([0,0,board_offset+box_thick+board_thick/2])
 cube(size=[
     board_length,
@@ -253,8 +254,13 @@ translate([0,0,box_thick+board_offset+board_thick])
 timesfour() pin_set();
 
 //Teensy
-translate([0,teensy_trans,board_offset+box_thick+board_thick])
+translate([
+    -teensy_width/2,
+    teensy_trans-teensy_length/2,
+    board_offset+box_thick+board_thick
+])
 teensy();
+}
 
 box();
 *difference() {
