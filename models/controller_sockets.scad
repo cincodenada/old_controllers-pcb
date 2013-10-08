@@ -1,10 +1,16 @@
+ps=in(.156);
 
 NES_width=20.3;
 NES_height=12.21;
+NES_corner_radius=(
+    (NES_height-ps)/2+
+    ((NES_width-(ps*3))/2)
+)/2;
 NES_top_size=[26.75,15.95];
 
 SNES_width=35.11;
 SNES_height=8.71;
+SNES_corner_radius=SNES_height/2;
 SNES_clip_offset=1.7;
 SNES_gap=(4.7+8.18)/2;
 SNES_top_size=[43.55,16.8];
@@ -22,7 +28,6 @@ socket_thick=1;
 socket_width=3.23;
 socket_depth=12.45+tolerance;
 
-ps=in(.156);
 //Total pin width
 tpw=ps*5+SNES_gap;
 //Center-to-handle adjust
@@ -39,23 +44,23 @@ module socket(x,y) {
 module NES(solid=false) {
     difference() {
         hull() {
-            circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
+            circle(r=NES_corner_radius, center=true);
             translate([ps*3,0,0])
-            circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
+            circle(r=NES_corner_radius, center=true);
             translate([ps*3,ps,0])
-            circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
+            circle(r=NES_corner_radius, center=true);
             translate([ps,ps,0])
-            circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
+            circle(r=NES_corner_radius, center=true);
         }
         if(!solid) {
             hull() {
-                circle(r=socket_width/2 + wall_gap, center=true);
+                circle(r=NES_corner_radius-wall_thick, center=true);
                 translate([ps*3,0,0])
-                circle(r=socket_width/2 + wall_gap, center=true);
+                circle(r=NES_corner_radius-wall_thick, center=true);
                 translate([ps*3,ps,0])
-                circle(r=socket_width/2 + wall_gap, center=true);
+                circle(r=NES_corner_radius-wall_thick, center=true);
                 translate([ps,ps,0])
-                circle(r=socket_width/2 + wall_gap, center=true);
+                circle(r=NES_corner_radius-wall_thick, center=true);
             }
         }
     }
@@ -71,14 +76,14 @@ module SNES(solid=false) {
     difference() {
         hull() {
             translate([ps*5+SNES_gap,0,0])
-            circle(r=socket_width/2 + wall_gap + wall_thick, center=true);
-            square(size=socket_width + (wall_gap + wall_thick)*2,center=true);
+            circle(r=SNES_corner_radius, center=true);
+            square(size=SNES_corner_radius*2,center=true);
         }
         if(!solid) {
             hull() {
                 translate([ps*5+SNES_gap,0,0])
-                circle(r=socket_width/2 + wall_gap, center=true);
-                square(size=socket_width + wall_gap*2,center=true);
+                circle(r=SNES_corner_radius-wall_thick, center=true);
+                square(size=(SNES_corner_radius-wall_thick)*2,center=true);
             }
         }
     }

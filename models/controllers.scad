@@ -249,7 +249,7 @@ module bothends() {
 
 module box() {
     //translate([0,0,50])
-    union() { box_top(); }
+    !union() { box_top(); }
     *union() { box_bottom(); }
 }
 
