@@ -1,8 +1,8 @@
-pin_base=.125*64;
+pin_base=in(.125);
 pin_gap=pin_base*0.5;
-pin_length=.4*64;
-pin_below=.125*64;
-pin_d=.045*64;
+pin_length=in(.4);
+pin_below=in(.125);
+pin_d=in(.045);
 pin_taper=pin_d/2;
 
 module pin(x,y) {

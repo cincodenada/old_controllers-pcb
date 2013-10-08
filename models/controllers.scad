@@ -1,6 +1,10 @@
+function in(in) = in*25.4;
 $fa=1;
 $fs=1;
 fudge=.1;
+tolerance=.1;
+foot_thick=.2;
+foot_radius=5;
 
 
 include <controller_sockets.scad>;
@@ -12,21 +16,22 @@ csx=ps*14/2;
 
 //Center to handle
 //N64 and NES-first
-ctoh_N64=1.2*64;
-ctoh_NES=1.1*64;
-ctoh_bot=(0.2625)*64+ps;
-ctoh_top=(0.3125)*64+ps;
+ctoh_N64=in(1.2);
+ctoh_NES=in(1.1);
+ctoh_bot=in(0.2625)+ps-in(0.01);
+ctoh_top=in(0.3125)+ps-in(0.01);
 
-top_to_teensy=0.05*64;
-bottom_to_teensy=0.075*64;
+top_to_teensy=in(0.05);
+bottom_to_teensy=in(0.075);
 
-board_length=3.65*64;
-board_width=1.325*64;
-board_thick=.063*64;
-board_offset=10;
-ledge_width=5;
+board_length=in(3.65);
+board_width=in(1.325);
+board_thick=in(.063);
+board_offset=5;
+ledge_width=2.5;
 
-box_thick=3;
+multisocket_thick=1.5;
+box_thick=2.5;
 box_height=
     box_thick+
     board_offset+
@@ -54,7 +59,7 @@ cutout_size=[
 cutout_pos=[-cutout_size[0]/2,-box_width/2,cutout_offset];
 
 holder_offset=box_thick+board_offset+board_thick;
-holder_height=box_height-(socket_depth+box_thick+holder_offset);
+holder_height=box_height-(socket_depth+multisocket_thick+holder_offset);
 
 module lump(solid=true) {
     translate([-ps*3,0,0]) {
@@ -65,7 +70,7 @@ module lump(solid=true) {
 }
 module lump_top() {
     translate([-ps*3,0,0]) {
-        translate([ps*1.5,ps*(.5),0]) NES_top();
+        %translate([ps*1.5,ps*(.5),0]) NES_top();
         translate([tpw/2,0,0]) SNES_top();
         translate([ps*4+SNES_gap,0,0]) N64_top();
     }
@@ -95,10 +100,10 @@ module connector_cap() {
 module grab_top() {
     translate([0,0,holder_offset]) {
         difference() {
-            cube([ledge_width,ledge_width,holder_height]);
+            cube([ledge_width*1.25,ledge_width,holder_height]);
             cube([ledge_width/2,ledge_width/2,holder_height]);
             translate([ledge_width/2,ledge_width/4,holder_height/2])
-            sphere(r=ledge_width/4);
+            sphere(r=ledge_width/4,$fs=30);
         }
     }
 }
@@ -107,7 +112,13 @@ module grab_bottom() {
     translate([0,0,holder_offset]) {
         cube([ledge_width*.5,ledge_width*.5,holder_height]);
         translate([ledge_width/2,ledge_width/4,holder_height/2])
-        sphere(r=ledge_width/4);
+        sphere(r=ledge_width/4,$fs=30);
+
+        translate([0,0,0])
+        rotate(90,[0,1,0])
+        linear_extrude(height=ledge_width*.5) {
+            polygon(points=[[0,0],[ledge_width*.5,0],[0,ledge_width*.5]]);
+        }
     }     
 }
 
@@ -134,9 +145,9 @@ module box_top() {
                 //Add chunks for the sockets to carve out of
                 translate([0,0,box_height-socket_depth])
                 minkowski() {
-                    linear_extrude(height=socket_depth-box_thick)
+                    linear_extrude(height=socket_depth-multisocket_thick)
                     timesfour() lump();
-                    cube(size=[box_thick*2,box_thick*2,box_thick*2],center=true);
+                    cube(size=[multisocket_thick*2,multisocket_thick*2,multisocket_thick*2],center=true);
                 }
                 translate(cutout_pos)
                 connector_cap();
@@ -149,6 +160,15 @@ module box_top() {
             timesfour() pin_cutout();
         }
 
+        difference() {
+            bothends() bothsides()
+            translate([0,0,box_height-foot_thick])
+            cylinder(r=foot_radius,h=foot_thick);
+            translate([0,0,box_height-socket_depth])
+            linear_extrude(height=socket_depth+fudge)
+            timesfour() lump();
+        }
+
         bothends() {
             bothsides() union() {
                 grab_top();
@@ -158,7 +178,7 @@ module box_top() {
 }
 
 module box_bottom() {
-    color("darkblue",0.5) {
+    color("darkblue") {
         //Base outline
         translate([0,0,box_height/2])
         difference() {
@@ -229,8 +249,8 @@ module bothends() {
 
 module box() {
     //translate([0,0,50])
-    box_top();
-    box_bottom();
+    union() { box_top(); }
+    *union() { box_bottom(); }
 }
 
 //Socket mockups
@@ -259,7 +279,7 @@ translate([
     teensy_trans-teensy_length/2,
     board_offset+box_thick+board_thick
 ])
-teensy();
+teensy_headers();
 }
 
 box();

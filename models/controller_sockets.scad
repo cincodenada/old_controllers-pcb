@@ -1,23 +1,28 @@
 
-NES_width=51;
-NES_height=29.5;
+NES_width=20.3;
+NES_height=12.21;
+NES_top_size=[26.75,15.95];
 
-SNES_width=88;
-SNES_height=21.5;
-SNES_gap=.25*64;
+SNES_width=35.11;
+SNES_height=8.71;
+SNES_clip_offset=1.7;
+SNES_gap=(4.7+8.18)/2;
+SNES_top_size=[43.55,16.8];
 
-N64_width=40;
-N64_height=29;
-N64_gap=15;
-N64_button=6;
+N64_width=16.24;
+N64_height=12.35;
+N64_clip_offset=6.22;
+N64_clip_height=2.11;
+N64_clip_outset=(17.05-N64_width)/2;
+N64_top_size=21.90;
 
-wall_thick=2;
-wall_gap=4;
-socket_thick=2;
-socket_width=8;
-socket_depth=29;
+wall_thick=1.55+tolerance;
+wall_gap=1.66;
+socket_thick=1;
+socket_width=3.23;
+socket_depth=12.45+tolerance;
 
-ps=.156*64;
+ps=in(.156);
 //Total pin width
 tpw=ps*5+SNES_gap;
 //Center-to-handle adjust
@@ -59,7 +64,7 @@ module NES(solid=false) {
     for(x=[0:3]) { socket(x,0); }
 }
 module NES_top() {
-    square(size=[60,40],center=true);
+    square(size=NES_top_size,center=true);
 }
 
 module SNES(solid=false) {
@@ -86,7 +91,7 @@ module SNES(solid=false) {
     square(size=[wall_thick,socket_width + wall_gap*2],center=true);
 }
 module SNES_top() {
-    square(size=[108,38],center=true);
+    square(size=SNES_top_size,center=true);
 }
 
 module N64(solid=false) {
@@ -108,5 +113,5 @@ module N64(solid=false) {
 	for(x=[-1:1]) { socket(x,0); }
 }
 module N64_top() {
-    circle(r=N64_width/2+6.5,center=true);
+    circle(r=N64_top_size/2,center=true);
 }
