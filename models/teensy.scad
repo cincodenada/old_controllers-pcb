@@ -2,11 +2,13 @@ header_height=in(.340);
 header_thick=in(0.1);
 header_hole_size=in(.03);
 header_hole_depth=in(.236);
+header_ps=in(0.1);
 teensy_width=in(0.7);
 teensy_length=in(1.2);
 teensy_thick=in(.063);
 
 pin_plastic=in(0.1);
+teensy_height = header_height + pin_plastic;
 
 connector_overhang=0.55;
 connector_size=[7.75,9.08,3.9];
@@ -28,21 +30,27 @@ module teensy_connector() {
     translate([
         teensy_width/2,
         connector_size[1]/2 - connector_overhang,
-        header_height + connector_size[2]/2 + teensy_thick
+        teensy_height + connector_size[2]/2 + teensy_thick
     ])
     cube(connector_size,center=true);
 }
 
 module teensy() {
     color("green")
-    translate([0,0,header_height])
+    translate([0,0,teensy_height])
     cube(size=[teensy_width,teensy_length,teensy_thick]);
 
     teensy_headers();
     teensy_connector();
-    translate([eh_pin_spacing*1.5,teensy_length-eh_pin_spacing*0.5,header_height+teensy_thick])
+    translate([eh_pin_spacing*1.5,teensy_length-eh_pin_spacing*0.5,teensy_height+teensy_thick])
     mirror([0,1,0])
     teensy_extra_header();
+
+    for(offset=[0:11]) {
+        teensy_pin_plastic(offset);
+        translate([teensy_width-header_thick,0,0])
+        teensy_pin_plastic(offset);
+    }
 }
 
 module teensy_headers() {
@@ -92,7 +100,7 @@ module teensy_extra_header() {
 }
 
 module teensy_header_hole(offset=0) {
-    translate([0,offset*header_thick])
+    translate([0,offset*header_ps])
     translate([
         (header_thick-header_hole_size)/2,
         (header_thick-header_hole_size)/2,
@@ -103,4 +111,15 @@ module teensy_header_hole(offset=0) {
         header_hole_size,
         header_hole_depth
     ]);
+}
+
+module teensy_pin_plastic(offset=0) {
+    color("dimgray")
+    translate([header_thick/2,header_thick/2,pin_plastic/2])
+    translate([0,offset*header_ps,header_height])
+    intersection() {
+        cube(size=[header_thick,header_thick,pin_plastic],center=true);
+        rotate([0,0,45])
+        cube(size=header_thick,center=true);
+    }
 }

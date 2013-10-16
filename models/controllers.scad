@@ -1,8 +1,8 @@
 function in(in) = in*25.4;
 $fa=1;
-$fs=1;
+$fs=.5;
 fudge=.1;
-tolerance=.1;
+tolerance=.5;
 foot_thick=.2;
 foot_radius=5;
 
@@ -18,11 +18,8 @@ csx=ps*14/2;
 //N64 and NES-first
 ctoh_N64=in(1.2);
 ctoh_NES=in(1.1);
-ctoh_bot=in(0.2625)+ps-in(0.01);
-ctoh_top=in(0.3125)+ps-in(0.01);
-
-top_to_teensy=in(0.05);
-bottom_to_teensy=in(0.075);
+ctoh_bot=in(0.2625)+ps;
+ctoh_top=in(0.3125)+ps;
 
 board_length=in(3.65);
 board_width=in(1.325);
@@ -30,7 +27,7 @@ board_thick=in(.063);
 board_offset=5;
 ledge_width=2.5;
 
-multisocket_thick=1.5;
+socket_thick=1.5;
 box_thick=2.5;
 box_height=
     box_thick+
@@ -41,25 +38,32 @@ box_height=
     box_thick+
     socket_depth;
 
+top_to_teensy=in(0.05);
+bottom_to_teensy=in(0.075);
+teensy_margin=1;
+teensy_hole_height=socket_depth+socket_thick-box_thick;
+bottom_height=box_height-socket_depth-socket_thick;
+
 box_length=board_length+box_thick*2;
 box_width=board_width+box_thick*2;
 
 teensy_trans=(bottom_to_teensy-top_to_teensy)/2;
 
-cutout_offset=box_thick
+connector_bottom=box_thick
     +board_offset
     +board_thick
-    +header_height;
+    +teensy_height
+    +board_thick;
 
 cutout_size=[
-    connector_size[0]*2,
+    teensy_width+teensy_margin*2,
     bottom_to_teensy+box_thick,
-    box_height-box_thick-cutout_offset,
+    teensy_hole_height,
 ];
-cutout_pos=[-cutout_size[0]/2,-box_width/2,cutout_offset];
+cutout_pos=[-cutout_size[0]/2,-box_width/2,bottom_height];
 
-holder_offset=box_thick+board_offset+board_thick;
-holder_height=box_height-(socket_depth+multisocket_thick+holder_offset);
+holder_offset=box_thick+board_offset+board_thick+ledge_width/2;
+holder_height=box_height-(socket_depth+socket_thick+holder_offset);
 
 module lump(solid=true) {
     translate([-ps*3,0,0]) {
@@ -87,13 +91,12 @@ module connector_cap() {
     translate([
         box_thick,
         cutout_size[1] - connector_overhang,
-        connector_size[2]+
-        (cutout_size[2]-connector_size[2])/2
+        connector_bottom + connector_size[2] - cutout_pos[2]
     ])
     cube(size=[
         cutout_size[0]-box_thick*2,
         connector_overhang,
-        (cutout_size[2]-connector_size[2])/2
+        box_height-box_thick-(connector_bottom+connector_size[2])
     ]);
 }
 
@@ -113,12 +116,6 @@ module grab_bottom() {
         cube([ledge_width*.5,ledge_width*.5,holder_height]);
         translate([ledge_width/2,ledge_width/4,holder_height/2])
         sphere(r=ledge_width/4,$fs=30);
-
-        translate([0,0,0])
-        rotate(90,[0,1,0])
-        linear_extrude(height=ledge_width*.5) {
-            polygon(points=[[0,0],[ledge_width*.5,0],[0,ledge_width*.5]]);
-        }
     }     
 }
 
@@ -127,39 +124,45 @@ module box_top() {
     color("slateblue",0.5) {
         difference() {
             union() {
-                translate([0,0,box_height/2])
+                //Main frame of the box
+                translate([-box_length/2,-box_width/2,0])
                 difference() {
-                    translate([0,0,box_thick/2])
+                    translate([0,0,box_thick])
                     cube(size=[
                         box_length,
-                        box_width-box_thick*2,
+                        box_width,
                         box_height-box_thick
-                    ],center=true);
-                    translate([0,0,-fudge])
+                    ]);
+                    translate([box_thick,0,0])
                     cube(size=[
                         box_length-box_thick*2,
-                        box_width-box_thick*2+fudge*2,
-                        box_height-box_thick*2+fudge*2
+                        box_width,
+                        bottom_height
+                    ]);
+                    translate([
+                        box_length/2,
+                        box_width/2 - box_thick/2,
+                        box_height-teensy_hole_height/2-box_thick])
+                    cube(size=[
+                        teensy_width+teensy_margin*2,
+                        box_width-box_thick,
+                        teensy_hole_height
                     ],center=true);
+                    //cutout for Teensy connector
                 }
-                //Add chunks for the sockets to carve out of
-                translate([0,0,box_height-socket_depth])
-                minkowski() {
-                    linear_extrude(height=socket_depth-multisocket_thick)
-                    timesfour() lump();
-                    cube(size=[multisocket_thick*2,multisocket_thick*2,multisocket_thick*2],center=true);
-                }
-                translate(cutout_pos)
-                connector_cap();
             }
             translate([0,0,box_height-socket_depth])
             linear_extrude(height=socket_depth+fudge)
             timesfour() lump();
-            translate([0,0,box_height-socket_depth-box_thick-fudge])
+            translate([0,0,bottom_height-fudge])
             linear_extrude(height=box_thick+fudge*2)
             timesfour() pin_cutout();
         }
 
+        translate(cutout_pos)
+        connector_cap();
+
+        //Feet
         difference() {
             bothends() bothsides()
             translate([0,0,box_height-foot_thick])
@@ -180,20 +183,18 @@ module box_top() {
 module box_bottom() {
     color("darkblue") {
         //Base outline
-        translate([0,0,box_height/2])
+        translate([-box_length/2,-box_width/2,0])
         difference() {
-            translate([0,0,-fudge])
-            cube(size=[box_length-fudge,box_width,box_height-fudge*2],center=true);
-            translate([0,0,box_thick])
-            cube(size=[box_length+fudge,box_width-box_thick*2,box_height],center=true);
-            translate(cutout_pos-[0,0,box_height/2])
-            cube(size=cutout_size);
+            translate([0,0,0])
+            cube(size=[box_length,box_width,bottom_height]);
+            translate([0,box_thick,box_thick])
+            cube(size=[box_length,box_width-box_thick*2,box_height]);
         }
 
         translate(cutout_pos)
         difference() {
             union() {
-                cube(size=cutout_size);
+                cube(cutout_size);
                 translate([0,box_thick,0])
                 rotate([0,90,0])
                 linear_extrude(height=cutout_size[0])
@@ -204,7 +205,7 @@ module box_bottom() {
             translate([
                 (cutout_size[0]-connector_size[0])/2,
                 bottom_to_teensy+box_thick-connector_overhang,
-                (cutout_size[2]-connector_size[2])/2
+                connector_bottom-cutout_pos[2]
             ])
             cube(size=connector_size);
             connector_cap();
@@ -214,7 +215,7 @@ module box_bottom() {
         translate([0,0,box_thick+board_offset])
         bothsides() union() {
             rotate([0,90,0])
-            linear_extrude(height=box_length-box_thick*2-ledge_width*2,center=true) {
+            linear_extrude(height=box_length-box_thick*2,center=true) {
                 polygon(points=[[0,0],[ledge_width,0],[0,ledge_width]]);
                 translate([-(ledge_width/2+board_thick),0,0])
                 polygon(points=[[0,0],[ledge_width/2,0],[0,ledge_width/2]]);
@@ -249,8 +250,14 @@ module bothends() {
 
 module box() {
     //translate([0,0,50])
-    !union() { box_top(); }
-    *union() { box_bottom(); }
+    union() { box_top(); }
+    !union() { box_bottom(); 
+%translate([
+    -teensy_width/2,
+    teensy_trans-teensy_length/2,
+    board_offset+box_thick+board_thick
+])
+teensy(); }
 }
 
 //Socket mockups
