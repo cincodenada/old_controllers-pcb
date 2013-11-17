@@ -21,7 +21,7 @@ while(<FILE>) {
                 }
             }
             close INCLUDE;
-            $extralines += $includeline - 1;
+            $extralines += $includeline;
         }
     }
 }

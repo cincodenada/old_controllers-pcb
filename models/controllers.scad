@@ -55,11 +55,13 @@ connector_bottom=box_thick
     +teensy_height
     +board_thick;
 
+//Size of outer cutout box
 cutout_size=[
     teensy_width+teensy_margin*2,
     bottom_to_teensy+box_thick,
     teensy_hole_height,
 ];
+//Moves from lying on the +X/+Y/+Z corner)
 cutout_pos=[-cutout_size[0]/2,-box_width/2,bottom_height];
 
 holder_offset=box_thick+board_offset+board_thick+ledge_width/2;
@@ -148,7 +150,6 @@ module box_top() {
                         box_width-box_thick,
                         teensy_hole_height
                     ],center=true);
-                    //cutout for Teensy connector
                 }
             }
             translate([0,0,box_height-socket_depth])
@@ -191,6 +192,7 @@ module box_bottom() {
             cube(size=[box_length,box_width-box_thick*2,box_height]);
         }
 
+        //Teensy holder
         translate(cutout_pos)
         difference() {
             union() {
@@ -200,8 +202,8 @@ module box_bottom() {
                 linear_extrude(height=cutout_size[0])
                 polygon(points=[[0,0],[bottom_to_teensy,0],[0,bottom_to_teensy]]);
             }
-            translate([box_thick,-fudge,box_thick])
-            cube(size=cutout_size-[box_thick*2,connector_overhang,box_thick]);
+            translate([box_thick,-fudge,box_thick+fudge])
+            cube(size=cutout_size-[box_thick*2,connector_overhang-fudge,box_thick]);
             translate([
                 (cutout_size[0]-connector_size[0])/2,
                 bottom_to_teensy+box_thick-connector_overhang,
@@ -251,13 +253,37 @@ module bothends() {
 module box() {
     //translate([0,0,50])
     union() { box_top(); }
-    !union() { box_bottom(); 
-%translate([
-    -teensy_width/2,
-    teensy_trans-teensy_length/2,
-    board_offset+box_thick+board_thick
-])
-teensy(); }
+    union() { box_bottom(); }
+    %translate([
+        -teensy_width/2,
+        teensy_trans-teensy_length/2,
+        board_offset+box_thick+board_thick
+    ]) teensy();
+}
+
+module board() {
+    union() {
+        //Board
+        color("darkgreen")
+        translate([0,0,board_offset+box_thick+board_thick/2])
+        cube(size=[
+            board_length,
+            board_width,
+            board_thick
+        ], center=true);
+
+        //Pins
+        translate([0,0,box_thick+board_offset+board_thick]) 
+        timesfour() pin_set();
+
+        //Teensy
+        translate([
+            -teensy_width/2,
+            teensy_trans-teensy_length/2,
+            board_offset+box_thick+board_thick
+        ])
+        teensy_headers();
+    }
 }
 
 //Socket mockups
@@ -266,32 +292,20 @@ translate([0,0,box_height])
 linear_extrude(height=socket_depth)
 timesfour() lump_top();
 
-union() {
-//Board
-color("darkgreen")
-translate([0,0,board_offset+box_thick+board_thick/2])
-cube(size=[
-    board_length,
-    board_width,
-    board_thick
-], center=true);
-
-//Pins
-translate([0,0,box_thick+board_offset+board_thick]) 
-timesfour() pin_set();
-
-//Teensy
-translate([
-    -teensy_width/2,
-    teensy_trans-teensy_length/2,
-    board_offset+box_thick+board_thick
-])
-teensy_headers();
+fps=100;
+!intersection() {
+    box_top();
+    translate([box_length*$t-box_length/2,0,box_height/2])
+    //translate([0,0,box_height*$t])
+    cube([box_length/$ns,box_width,box_height],center=true);
+    //cube([box_length,box_width,box_height/fps],center=true);
 }
 
-box();
 *difference() {
     box();
     translate([-box_length/2,0,0])
     cube([box_length,box_width,box_height]);
 }
+
+*translate([0,10,box_height-(5.8+1.5)])
+cylinder(r=6,h=5.8+1.5);

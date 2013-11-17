@@ -42,7 +42,7 @@ module teensy() {
 
     teensy_headers();
     teensy_connector();
-    translate([eh_pin_spacing*1.5,teensy_length-eh_pin_spacing*0.5,teensy_height+teensy_thick])
+    translate([eh_pin_spacing*1.5,teensy_length-eh_pin_spacing*0.5,teensy_height-eh_plastic])
     mirror([0,1,0])
     teensy_extra_header();
 
@@ -79,6 +79,7 @@ module teensy_extra_header() {
     color("silver")
     for(offset=[0:(eh_numpins-1)]) {
         translate([offset*eh_pin_spacing,0,0])
+        mirror([0,0,1])
         union() {
             translate([0,0,(eh_plastic+eh_to_bend)/2])
             cube([eh_pin_d,eh_pin_d,eh_plastic+eh_to_bend],center=true);
