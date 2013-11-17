@@ -1,7 +1,7 @@
 function in(in) = in*25.4;
 $fa=1;
 $fs=.5;
-fudge=.1;
+fudge=0;
 tolerance=.5;
 foot_thick=.2;
 foot_radius=5;
