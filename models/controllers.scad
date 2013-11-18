@@ -61,6 +61,8 @@ cutout_size=[
     bottom_to_teensy+box_thick,
     teensy_hole_height,
 ];
+//Thickness of wall between teensy and connector
+cutout_thick = 1;
 //Moves from lying on the +X/+Y/+Z corner)
 cutout_pos=[-cutout_size[0]/2,-box_width/2,bottom_height];
 
@@ -92,12 +94,12 @@ module timesfour() {
 module connector_cap() {
     translate([
         box_thick,
-        cutout_size[1] - connector_overhang,
+        cutout_size[1] - cutout_thick,
         connector_bottom + connector_size[2] - cutout_pos[2]
     ])
     cube(size=[
         cutout_size[0]-box_thick*2,
-        connector_overhang,
+        cutout_thick,
         box_height-box_thick-(connector_bottom+connector_size[2])
     ]);
 }
@@ -203,10 +205,10 @@ module box_bottom() {
                 polygon(points=[[0,0],[bottom_to_teensy,0],[0,bottom_to_teensy]]);
             }
             translate([box_thick,-fudge,box_thick+fudge])
-            cube(size=cutout_size-[box_thick*2,connector_overhang-fudge,box_thick]);
+            cube(size=cutout_size-[box_thick*2,cutout_thick-fudge,box_thick]);
             translate([
                 (cutout_size[0]-connector_size[0])/2,
-                bottom_to_teensy+box_thick-connector_overhang,
+                bottom_to_teensy+box_thick-cutout_thick,
                 connector_bottom-cutout_pos[2]
             ])
             cube(size=connector_size);
@@ -230,6 +232,11 @@ module box_bottom() {
                 grab_bottom();
             }
         }
+
+        //Feet
+        bothends() bothsides()
+        translate([-wall_thick,-wall_thick,0])
+        cylinder(r=foot_radius,h=foot_thick);
     }
 
 }
@@ -254,11 +261,6 @@ module box() {
     //translate([0,0,50])
     union() { box_top(); }
     union() { box_bottom(); }
-    %translate([
-        -teensy_width/2,
-        teensy_trans-teensy_length/2,
-        board_offset+box_thick+board_thick
-    ]) teensy();
 }
 
 module board() {
@@ -292,13 +294,22 @@ translate([0,0,box_height])
 linear_extrude(height=socket_depth)
 timesfour() lump_top();
 
-fps=100;
-!intersection() {
-    box_top();
-    translate([box_length*$t-box_length/2,0,box_height/2])
-    //translate([0,0,box_height*$t])
-    cube([box_length/$ns,box_width,box_height],center=true);
-    //cube([box_length,box_width,box_height/fps],center=true);
+board();
+
+!box_top();
+%translate([
+    -teensy_width/2,
+    teensy_trans-teensy_length/2,
+    board_offset+box_thick+board_thick
+]) teensy();
+*intersection() {
+    union() {
+        box();
+    }
+    //translate([box_length*$t-box_length/2,0,box_height/2])
+    translate([0,0,box_height*$t])
+    //cube([box_length/$ns,box_width,box_height],center=true);
+    cube([box_length,box_width,box_height/$ns],center=true);
 }
 
 *difference() {
