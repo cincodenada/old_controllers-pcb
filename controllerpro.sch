@@ -4263,7 +4263,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <junction x="-25.4" y="116.84"/>
 </segment>
 </net>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="MULTI2" gate="G$1" pin="7"/>
 <wire x1="114.3" y1="48.26" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
