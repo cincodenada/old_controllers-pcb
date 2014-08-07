@@ -192,6 +192,10 @@ module box_bottom() {
             cube(size=[box_length,box_width,bottom_height]);
             translate([0,box_thick,box_thick])
             cube(size=[box_length,box_width-box_thick*2,box_height]);
+            translate([0,0,box_thick])
+            cube([box_thick,box_width,box_height]);
+            translate([box_length-box_thick,0,box_thick])
+            cube([box_thick,box_width,box_height]);
         }
 
         //Teensy holder
