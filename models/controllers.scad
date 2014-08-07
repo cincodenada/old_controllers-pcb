@@ -59,7 +59,7 @@ connector_bottom=box_thick
 //Size of outer cutout box
 cutout_size=[
     teensy_width+teensy_margin*2,
-    bottom_to_teensy+box_thick,
+    bottom_to_teensy+box_thick+board_clearance/2,
     teensy_hole_height,
 ];
 //Thickness of wall between teensy and connector
@@ -94,6 +94,7 @@ module timesfour() {
 }
 
 module connector_cap() {
+    translate([0,-fudge,0])
     translate([
         box_thick,
         cutout_size[1] - cutout_thick,
@@ -103,7 +104,7 @@ module connector_cap() {
         cutout_size[0]-box_thick*2,
         cutout_thick,
         box_height-box_thick-(connector_bottom+connector_size[2])
-    ]);
+    ] + [0,fudge*2,fudge]);
 }
 
 module grab_top() {
@@ -159,7 +160,7 @@ module box_top() {
             translate([0,0,box_height-socket_depth])
             linear_extrude(height=socket_depth+fudge)
             timesfour() lump();
-            translate([0,0,bottom_height-fudge])
+            translate([0,0,bottom_height] + [0,0,-fudge])
             linear_extrude(height=box_thick+fudge*2)
             timesfour() pin_cutout();
         }
@@ -194,10 +195,12 @@ module box_bottom() {
             cube(size=[box_length,box_width,bottom_height]);
             translate([0,box_thick,box_thick])
             cube(size=[box_length,box_width-box_thick*2,box_height]);
+            translate([-fudge,-fudge,0])
             translate([0,0,box_thick])
-            cube([box_thick,box_width,box_height]);
+            cube([box_thick,box_width,box_height] + [fudge,fudge*2,0]);
+            translate([0,-fudge,0])
             translate([box_length-box_thick,0,box_thick])
-            cube([box_thick,box_width,box_height]);
+            cube([box_thick,box_width,box_height] + [fudge,fudge*2,0]);
         }
 
         //Teensy holder
@@ -208,16 +211,16 @@ module box_bottom() {
                 translate([0,box_thick,0])
                 rotate([0,90,0])
                 linear_extrude(height=cutout_size[0])
-                polygon(points=[[0,0],[bottom_to_teensy,0],[0,bottom_to_teensy]]);
+                polygon(points=[[0,0],[cutout_size[1]-box_thick,0],[0,cutout_size[1]-box_thick]]);
             }
-            translate([box_thick,-fudge,box_thick+fudge])
-            cube(size=cutout_size-[box_thick*2,cutout_thick-fudge,box_thick]);
+            translate([box_thick,0,box_thick] + [0,-fudge,fudge])
+            cube(size=cutout_size-([box_thick*2,cutout_thick,box_thick] + [0,-fudge,0]));
             translate([
                 (cutout_size[0]-connector_size[0])/2,
                 bottom_to_teensy+box_thick-cutout_thick,
                 connector_bottom-cutout_pos[2]
             ])
-            cube(size=connector_size);
+            cube(size=connector_size + [0,0,fudge]);
             connector_cap();
         }
 
