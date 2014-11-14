@@ -2902,7 +2902,7 @@
 <text x="1.905" y="7.62" size="3.81" layer="25" ratio="15">1</text>
 <text x="1.905" y="20.955" size="3.81" layer="25" ratio="15">2</text>
 <text x="88.265" y="20.955" size="3.81" layer="25" ratio="15">4</text>
-<text x="88.265" y="7.62" size="3.81" layer="27" ratio="15">3</text>
+<text x="88.265" y="7.62" size="3.81" layer="25" ratio="15">3</text>
 <rectangle x1="12.5095" y1="23.3045" x2="16.0655" y2="23.4315" layer="25" rot="R180"/>
 <rectangle x1="11.4935" y1="23.3045" x2="12.0015" y2="23.4315" layer="25" rot="R180"/>
 <rectangle x1="9.9695" y1="23.3045" x2="10.4775" y2="23.4315" layer="25" rot="R180"/>
