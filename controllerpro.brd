@@ -74,8 +74,8 @@
 <dimension x1="15.875" y1="8.89" x2="45.72" y2="16.8275" x3="25.4" y3="12.85875" textsize="1.778" layer="48" dtype="vertical" unit="inch" precision="4"/>
 <dimension x1="46.99" y1="16.8275" x2="76.835" y2="23.495" x3="64.77" y3="20.16125" textsize="1.778" layer="48" dtype="vertical" unit="inch" precision="4"/>
 <text x="69.85" y="17.145" size="1.4224" layer="25" font="vector">ControllerPro v0.5</text>
-<text x="69.85" y="15.24" size="0.8128" layer="25">By Joel Bradshaw</text>
-<text x="83.185" y="15.24" size="0.8128" layer="25">2014-11-13</text>
+<text x="69.85" y="15.621" size="0.8128" layer="25">By Joel Bradshaw</text>
+<text x="83.185" y="15.621" size="0.8128" layer="25">2014-11-14</text>
 <rectangle x1="50.6095" y1="3.6195" x2="51.2445" y2="3.7465" layer="25"/>
 <rectangle x1="50.4825" y1="3.7465" x2="51.3715" y2="3.8735" layer="25"/>
 <rectangle x1="50.3555" y1="3.8735" x2="51.4985" y2="4.0005" layer="25"/>
