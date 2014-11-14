@@ -2899,6 +2899,10 @@
 <rectangle x1="68.0085" y1="31.0515" x2="74.2315" y2="31.1785" layer="26"/>
 <rectangle x1="68.6435" y1="31.1785" x2="73.4695" y2="31.3055" layer="26"/>
 <rectangle x1="69.6595" y1="31.3055" x2="72.3265" y2="31.4325" layer="26"/>
+<text x="1.905" y="7.62" size="3.81" layer="25" ratio="15">1</text>
+<text x="1.905" y="20.955" size="3.81" layer="25" ratio="15">2</text>
+<text x="88.265" y="20.955" size="3.81" layer="25" ratio="15">4</text>
+<text x="88.265" y="7.62" size="3.81" layer="25" ratio="15">3</text>
 </plain>
 <libraries>
 <library name="custom">
@@ -4323,38 +4327,53 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="MULTI1" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="74.295" y="8.89" smashed="yes">
-<attribute name="NAME" x="60.4266" y="11.2268" size="1.27" layer="21" ratio="10"/>
+<element name="PORT3" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="74.295" y="8.89" smashed="yes">
+<attribute name="NAME" x="78.8416" y="7.4168" size="1.27" layer="21" ratio="10"/>
 <attribute name="VALUE" x="60.4266" y="0.9652" size="1.27" layer="27"/>
 </element>
-<element name="MULTI2" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="76.835" y="23.495" rot="R180"/>
-<element name="MULTI3" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="15.875" y="8.89"/>
-<element name="MULTI4" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="18.415" y="23.495" rot="R180"/>
+<element name="PORT4" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="76.835" y="23.495" smashed="yes" rot="R180">
+<attribute name="NAME" x="81.1784" y="21.1582" size="1.27" layer="21" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="90.7034" y="31.4198" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="PORT1" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="15.875" y="8.89" smashed="yes">
+<attribute name="NAME" x="12.8016" y="11.2268" size="1.27" layer="21" ratio="10"/>
+<attribute name="VALUE" x="2.0066" y="0.9652" size="1.27" layer="27"/>
+</element>
+<element name="PORT2" library="custom" package="NINTENDO-MULTI" value="NINTENDO-MULTI" x="18.415" y="23.495" smashed="yes" rot="R180">
+<attribute name="NAME" x="13.8684" y="24.9682" size="1.27" layer="21" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="32.2834" y="31.4198" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="VREG" library="linear" package="SOT23" value="MCP1703CB" x="58.42" y="28.2575" smashed="yes" rot="MR270">
-<attribute name="NAME" x="57.404" y="27.6225" size="1.27" layer="26" rot="MR270"/>
+<attribute name="NAME" x="51.1175" y="29.464" size="1.27" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="61.595" y="30.1625" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="TEENSY2.0" library="custom" package="TEENSY_MC_PINS" value="TEENSY_MC_PINS" x="46.355" y="17.145" smashed="yes" rot="R90">
 <attribute name="VALUE" x="44.45" y="20.32" size="1.27" layer="27" ratio="10" rot="R90"/>
-<attribute name="NAME" x="48.8188" y="17.7165" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="50.2285" y="4.3688" size="1.27" layer="25" ratio="10" rot="R180"/>
 </element>
-<element name="R4" library="rcl" package="R0603" value="10k" x="10.16" y="30.48" rot="MR0"/>
-<element name="R2" library="rcl" package="R0603" value="10k" x="69.215" y="24.13" rot="R180"/>
+<element name="R4" library="rcl" package="R0603" value="10k" x="10.16" y="30.48" smashed="yes" rot="MR0">
+<attribute name="NAME" x="13.97" y="31.115" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="10.795" y="28.575" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="R2" library="rcl" package="R0603" value="10k" x="69.215" y="24.13" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.945" y="24.765" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="71.12" y="22.86" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="R1" library="rcl" package="R0603" value="10k" x="82.55" y="1.905" smashed="yes" rot="MR0">
 <attribute name="NAME" x="86.4362" y="1.2827" size="1.27" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="83.185" y="0" size="1.27" layer="28" rot="MR0"/>
 </element>
 <element name="R3" library="rcl" package="R0603" value="10k" x="22.86" y="8.255" smashed="yes" rot="R180">
-<attribute name="NAME" x="24.0538" y="10.3632" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="27.2288" y="8.4582" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="23.495" y="10.16" size="1.27" layer="27" rot="R180"/>
 </element>
 </elements>
 <signals>
 <signal name="CLOCK">
-<contactref element="MULTI1" pad="2"/>
-<contactref element="MULTI2" pad="2"/>
-<contactref element="MULTI4" pad="2"/>
-<contactref element="MULTI3" pad="2"/>
+<contactref element="PORT3" pad="2"/>
+<contactref element="PORT4" pad="2"/>
+<contactref element="PORT2" pad="2"/>
+<contactref element="PORT1" pad="2"/>
 <contactref element="TEENSY2.0" pad="D7"/>
 <wire x1="26.3398" y1="27.4574" x2="26.5176" y2="27.4574" width="0.4064" layer="16"/>
 <wire x1="66.3702" y1="4.9276" x2="66.1924" y2="4.9276" width="0.4064" layer="16"/>
@@ -4371,8 +4390,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="5.08" y1="10.16" x2="8.255" y2="13.335" width="0.4064" layer="16"/>
 <wire x1="8.255" y1="13.335" x2="12.065" y2="13.335" width="0.4064" layer="16"/>
 <wire x1="12.065" y1="13.335" x2="13.335" y2="14.605" width="0.4064" layer="16"/>
-<via x="17.78" y="20.32" extent="1-16" drill="0.7"/>
-<wire x1="17.78" y1="20.32" x2="27.305" y2="20.32" width="0.4064" layer="1"/>
+<via x="17.145" y="20.32" extent="1-16" drill="0.7"/>
+<wire x1="17.145" y1="20.32" x2="27.305" y2="20.32" width="0.4064" layer="1"/>
 <wire x1="27.305" y1="20.32" x2="29.21" y2="22.225" width="0.4064" layer="1"/>
 <wire x1="29.21" y1="22.225" x2="29.21" y2="24.5872" width="0.4064" layer="1"/>
 <wire x1="29.21" y1="24.5872" x2="26.3398" y2="27.4574" width="0.4064" layer="1"/>
@@ -4385,15 +4404,15 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="29.0449" y1="30.1625" x2="37.1475" y2="30.1625" width="0.4064" layer="16"/>
 <wire x1="37.1475" y1="30.1625" x2="38.735" y2="28.575" width="0.4064" layer="16"/>
 <wire x1="41.5925" y1="31.4325" x2="38.735" y2="28.575" width="0.4064" layer="16"/>
-<wire x1="17.78" y1="20.32" x2="15.24" y2="20.32" width="0.4064" layer="16"/>
+<wire x1="17.145" y1="20.32" x2="15.24" y2="20.32" width="0.4064" layer="16"/>
 <wire x1="15.24" y1="20.32" x2="13.335" y2="18.415" width="0.4064" layer="16"/>
 <wire x1="13.335" y1="18.415" x2="13.335" y2="14.605" width="0.4064" layer="16"/>
 </signal>
 <signal name="LATCH">
-<contactref element="MULTI1" pad="3"/>
-<contactref element="MULTI2" pad="3"/>
-<contactref element="MULTI4" pad="3"/>
-<contactref element="MULTI3" pad="3"/>
+<contactref element="PORT3" pad="3"/>
+<contactref element="PORT4" pad="3"/>
+<contactref element="PORT2" pad="3"/>
+<contactref element="PORT1" pad="3"/>
 <contactref element="TEENSY2.0" pad="D6"/>
 <wire x1="11.9126" y1="4.9276" x2="11.9126" y2="4.5974" width="0.4064" layer="1"/>
 <wire x1="11.9126" y1="4.5974" x2="15.24" y2="1.27" width="0.4064" layer="1"/>
@@ -4419,10 +4438,10 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="39.6875" y1="32.0675" x2="38.735" y2="31.115" width="0.4064" layer="16"/>
 </signal>
 <signal name="VCC" class="1">
-<contactref element="MULTI1" pad="10"/>
-<contactref element="MULTI4" pad="10"/>
-<contactref element="MULTI3" pad="10"/>
-<contactref element="MULTI2" pad="10"/>
+<contactref element="PORT3" pad="10"/>
+<contactref element="PORT2" pad="10"/>
+<contactref element="PORT1" pad="10"/>
+<contactref element="PORT4" pad="10"/>
 <contactref element="VREG" pad="3"/>
 <contactref element="TEENSY2.0" pad="+5V"/>
 <polygon width="0.6096" layer="16" isolate="0.4064" rank="2">
@@ -4440,11 +4459,11 @@ Please make sure your boards conform to these design rules.</description>
 <via x="58.42" y="7.62" extent="1-16" drill="0.6"/>
 </signal>
 <signal name="GND" class="1">
-<contactref element="MULTI2" pad="7"/>
-<contactref element="MULTI4" pad="7"/>
-<contactref element="MULTI1" pad="7"/>
+<contactref element="PORT4" pad="7"/>
+<contactref element="PORT2" pad="7"/>
+<contactref element="PORT3" pad="7"/>
 <contactref element="VREG" pad="1"/>
-<contactref element="MULTI3" pad="7"/>
+<contactref element="PORT1" pad="7"/>
 <polygon width="0.6096" layer="1" isolate="0.4064">
 <vertex x="91.44" y="3.175"/>
 <vertex x="89.535" y="1.27"/>
@@ -4478,10 +4497,10 @@ Please make sure your boards conform to these design rules.</description>
 </polygon>
 </signal>
 <signal name="V33">
-<contactref element="MULTI2" pad="5"/>
-<contactref element="MULTI1" pad="5"/>
-<contactref element="MULTI3" pad="5"/>
-<contactref element="MULTI4" pad="5"/>
+<contactref element="PORT4" pad="5"/>
+<contactref element="PORT3" pad="5"/>
+<contactref element="PORT1" pad="5"/>
+<contactref element="PORT2" pad="5"/>
 <contactref element="VREG" pad="2"/>
 <wire x1="77.47" y1="1.27" x2="26.0096" y2="1.27" width="0.6096" layer="16"/>
 <wire x1="12.065" y1="27.5844" x2="16.2306" y2="31.75" width="0.6096" layer="16"/>
@@ -4531,7 +4550,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="5VDATA0">
 <contactref element="TEENSY2.0" pad="B2"/>
 <wire x1="57.15" y1="13.97" x2="74.93" y2="13.97" width="0.4064" layer="1"/>
-<contactref element="MULTI1" pad="4"/>
+<contactref element="PORT3" pad="4"/>
 <wire x1="57.15" y1="13.97" x2="53.975" y2="10.795" width="0.4064" layer="1"/>
 <wire x1="77.47" y1="11.43" x2="77.47" y2="8.1026" width="0.4064" layer="1"/>
 <wire x1="77.47" y1="8.1026" x2="74.295" y2="4.9276" width="0.4064" layer="1"/>
@@ -4540,7 +4559,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="5VDATA1">
 <contactref element="TEENSY2.0" pad="B3"/>
 <wire x1="53.975" y1="13.335" x2="55.88" y2="15.24" width="0.4064" layer="1"/>
-<contactref element="MULTI2" pad="4"/>
+<contactref element="PORT4" pad="4"/>
 <wire x1="55.88" y1="15.24" x2="55.88" y2="23.495" width="0.4064" layer="1"/>
 <wire x1="71.9226" y1="22.545" x2="76.835" y2="27.4574" width="0.4064" layer="1"/>
 <wire x1="71.9226" y1="22.545" x2="62.545" y2="22.545" width="0.4064" layer="1"/>
@@ -4551,7 +4570,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="5VDATA2">
 <contactref element="TEENSY2.0" pad="B0"/>
 <wire x1="53.975" y1="5.715" x2="51.1175" y2="8.5725" width="0.4064" layer="1"/>
-<contactref element="MULTI3" pad="4"/>
+<contactref element="PORT1" pad="4"/>
 <wire x1="51.1175" y1="8.5725" x2="32.7025" y2="8.5725" width="0.4064" layer="1"/>
 <wire x1="32.7025" y1="8.5725" x2="31.75" y2="9.525" width="0.4064" layer="1"/>
 <wire x1="31.75" y1="9.525" x2="20.4724" y2="9.525" width="0.4064" layer="1"/>
@@ -4559,21 +4578,21 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="5VDATA3">
 <contactref element="TEENSY2.0" pad="B1"/>
-<contactref element="MULTI4" pad="4"/>
+<contactref element="PORT2" pad="4"/>
 <wire x1="29.21" y1="10.16" x2="26.035" y2="13.335" width="0.4064" layer="1"/>
 <wire x1="26.035" y1="13.335" x2="11.43" y2="13.335" width="0.4064" layer="1"/>
 <wire x1="11.43" y1="13.335" x2="10.16" y2="14.605" width="0.4064" layer="1"/>
-<wire x1="10.16" y1="14.605" x2="10.16" y2="15.875" width="0.4064" layer="1"/>
-<via x="10.16" y="15.875" extent="1-16" drill="0.6"/>
+<wire x1="10.16" y1="14.605" x2="10.16" y2="16.51" width="0.4064" layer="1"/>
+<via x="10.16" y="16.51" extent="1-16" drill="0.6"/>
 <wire x1="53.975" y1="8.255" x2="53.0225" y2="9.2075" width="0.4064" layer="1"/>
 <wire x1="53.0225" y1="9.2075" x2="33.3375" y2="9.2075" width="0.4064" layer="1"/>
 <wire x1="33.3375" y1="9.2075" x2="32.385" y2="10.16" width="0.4064" layer="1"/>
 <wire x1="32.385" y1="10.16" x2="29.21" y2="10.16" width="0.4064" layer="1"/>
-<wire x1="10.16" y1="15.875" x2="10.16" y2="19.2024" width="0.4064" layer="16"/>
+<wire x1="10.16" y1="16.51" x2="10.16" y2="19.2024" width="0.4064" layer="16"/>
 <wire x1="10.16" y1="19.2024" x2="18.415" y2="27.4574" width="0.4064" layer="16"/>
 </signal>
 <signal name="S_OR_NES0">
-<contactref element="MULTI1" pad="1"/>
+<contactref element="PORT3" pad="1"/>
 <contactref element="TEENSY2.0" pad="F6"/>
 <wire x1="62.23" y1="11.43" x2="62.23" y2="5.1054" width="0.4064" layer="16"/>
 <wire x1="62.23" y1="5.1054" x2="62.4078" y2="4.9276" width="0.4064" layer="16"/>
@@ -4582,20 +4601,20 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="57.4675" y1="16.1925" x2="62.23" y2="11.43" width="0.4064" layer="16"/>
 </signal>
 <signal name="S_OR_NES1">
-<contactref element="MULTI2" pad="1"/>
+<contactref element="PORT4" pad="1"/>
 <contactref element="TEENSY2.0" pad="F7"/>
 <wire x1="88.9" y1="22.86" x2="88.9" y2="27.2796" width="0.4064" layer="1"/>
 <wire x1="88.9" y1="27.2796" x2="88.7222" y2="27.4574" width="0.4064" layer="1"/>
-<wire x1="86.995" y1="20.955" x2="88.9" y2="22.86" width="0.4064" layer="1"/>
+<wire x1="86.36" y1="20.32" x2="88.9" y2="22.86" width="0.4064" layer="1"/>
 <wire x1="38.735" y1="18.415" x2="40.3225" y2="16.8275" width="0.4064" layer="16"/>
 <wire x1="40.3225" y1="16.8275" x2="56.1975" y2="16.8275" width="0.4064" layer="16"/>
-<wire x1="56.1975" y1="16.8275" x2="60.325" y2="20.955" width="0.4064" layer="16"/>
-<wire x1="60.325" y1="20.955" x2="73.66" y2="20.955" width="0.4064" layer="16"/>
-<via x="73.66" y="20.955" extent="1-16" drill="0.6"/>
-<wire x1="73.66" y1="20.955" x2="86.995" y2="20.955" width="0.4064" layer="1"/>
+<wire x1="56.1975" y1="16.8275" x2="59.69" y2="20.32" width="0.4064" layer="16"/>
+<wire x1="59.69" y1="20.32" x2="71.4375" y2="20.32" width="0.4064" layer="16"/>
+<via x="71.4375" y="20.32" extent="1-16" drill="0.6"/>
+<wire x1="71.4375" y1="20.32" x2="86.36" y2="20.32" width="0.4064" layer="1"/>
 </signal>
 <signal name="S_OR_NES2">
-<contactref element="MULTI3" pad="1"/>
+<contactref element="PORT1" pad="1"/>
 <contactref element="TEENSY2.0" pad="F4"/>
 <wire x1="8.255" y1="14.605" x2="3.81" y2="10.16" width="0.4064" layer="16"/>
 <wire x1="3.81" y1="10.16" x2="3.81" y2="5.1054" width="0.4064" layer="16"/>
@@ -4608,15 +4627,15 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="29.845" y1="10.795" x2="38.735" y2="10.795" width="0.4064" layer="1"/>
 </signal>
 <signal name="S_OR_NES3">
-<contactref element="MULTI4" pad="1"/>
+<contactref element="PORT2" pad="1"/>
 <contactref element="TEENSY2.0" pad="F5"/>
 <wire x1="30.3022" y1="27.4574" x2="30.1625" y2="27.3177" width="0.4064" layer="1"/>
 <wire x1="30.1625" y1="27.3177" x2="30.1625" y2="22.225" width="0.4064" layer="1"/>
 <wire x1="30.1625" y1="22.225" x2="32.7025" y2="19.685" width="0.4064" layer="1"/>
-<wire x1="32.7025" y1="19.685" x2="35.8775" y2="19.685" width="0.4064" layer="1"/>
-<via x="35.8775" y="19.685" extent="1-16" drill="0.6"/>
-<wire x1="35.8775" y1="19.685" x2="35.8775" y2="16.1925" width="0.4064" layer="16"/>
-<wire x1="35.8775" y1="16.1925" x2="38.735" y2="13.335" width="0.4064" layer="16"/>
+<wire x1="32.7025" y1="19.685" x2="35.2425" y2="19.685" width="0.4064" layer="1"/>
+<via x="35.2425" y="19.685" extent="1-16" drill="0.6"/>
+<wire x1="35.2425" y1="19.685" x2="35.2425" y2="16.8275" width="0.4064" layer="16"/>
+<wire x1="35.2425" y1="16.8275" x2="38.735" y2="13.335" width="0.4064" layer="16"/>
 </signal>
 <signal name="3VDATA0">
 <contactref element="TEENSY2.0" pad="D2"/>
@@ -4627,7 +4646,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="57.15" y1="16.51" x2="57.15" y2="20.32" width="0.4064" layer="1"/>
 <via x="57.15" y="20.32" extent="1-16" drill="0.6"/>
 <wire x1="57.15" y1="20.32" x2="53.975" y2="23.495" width="0.4064" layer="16"/>
-<contactref element="MULTI1" pad="6"/>
+<contactref element="PORT3" pad="6"/>
 <contactref element="R1" pad="1"/>
 <wire x1="79.69" y1="10.825" x2="79.69" y2="9.845" width="0.4064" layer="1"/>
 <wire x1="79.69" y1="9.845" x2="84.6074" y2="4.9276" width="0.4064" layer="1"/>
@@ -4638,7 +4657,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="3VDATA1">
 <contactref element="TEENSY2.0" pad="D3"/>
 <contactref element="R2" pad="2"/>
-<contactref element="MULTI2" pad="6"/>
+<contactref element="PORT4" pad="6"/>
 <wire x1="66.5226" y1="27.4574" x2="66.5226" y2="25.9724" width="0.4064" layer="1"/>
 <wire x1="66.5226" y1="25.9724" x2="68.365" y2="24.13" width="0.4064" layer="1"/>
 <wire x1="53.975" y1="26.035" x2="60.325" y2="26.035" width="0.4064" layer="1"/>
@@ -4649,7 +4668,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="3VDATA2">
 <contactref element="TEENSY2.0" pad="D0"/>
 <contactref element="R3" pad="1"/>
-<contactref element="MULTI3" pad="6"/>
+<contactref element="PORT1" pad="6"/>
 <wire x1="23.71" y1="8.255" x2="23.71" y2="7.405" width="0.4064" layer="1"/>
 <wire x1="23.71" y1="7.405" x2="26.1874" y2="4.9276" width="0.4064" layer="1"/>
 <wire x1="26.1874" y1="4.9276" x2="26.1874" y2="5.8674" width="0.4064" layer="16"/>
@@ -4662,7 +4681,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="3VDATA3">
 <contactref element="TEENSY2.0" pad="D1"/>
 <contactref element="R4" pad="2"/>
-<contactref element="MULTI4" pad="6"/>
+<contactref element="PORT2" pad="6"/>
 <wire x1="8.255" y1="27.305" x2="8.255" y2="26.67" width="0.4064" layer="1"/>
 <wire x1="8.255" y1="26.67" x2="16.51" y2="18.415" width="0.4064" layer="1"/>
 <wire x1="8.1026" y1="27.4574" x2="8.1026" y2="29.2726" width="0.4064" layer="16"/>
