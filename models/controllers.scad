@@ -39,6 +39,12 @@ box_height=
     box_thick+
     socket_depth;
 
+//helper
+board_top =
+    box_thick +
+    board_offset +
+    board_thick;
+
 top_to_teensy=in(0.05);
 bottom_to_teensy=in(0.075);
 teensy_margin=1;
@@ -50,11 +56,9 @@ box_width=board_width+box_thick*2+board_clearance*2;
 
 teensy_trans=(bottom_to_teensy-top_to_teensy)/2;
 
-connector_bottom=box_thick
-    +board_offset
-    +board_thick
-    +teensy_height
-    +board_thick;
+connector_bottom=board_top +
+    teensy_height +
+    board_thick;
 
 //Size of outer cutout box
 cutout_size=[
@@ -67,7 +71,7 @@ cutout_thick = 1;
 //Moves from lying on the +X/+Y/+Z corner)
 cutout_pos=[-cutout_size[0]/2,-box_width/2,bottom_height];
 
-holder_offset=box_thick+board_offset+board_thick+ledge_width/2;
+holder_offset=board_top+ledge_width/2;
 holder_height=box_height-(socket_depth+socket_thick+holder_offset);
 holder_clearance=0.5;
 
@@ -274,7 +278,7 @@ module board() {
     union() {
         //Board
         color("darkgreen")
-        translate([0,0,board_offset+box_thick+board_thick/2])
+        translate([0,0,board_top - board_thick/2])
         cube(size=[
             board_length,
             board_width,
@@ -282,14 +286,14 @@ module board() {
         ], center=true);
 
         //Pins
-        translate([0,0,box_thick+board_offset+board_thick]) 
+        translate([0,0,board_top])
         timesfour() pin_set();
 
         //Teensy
         translate([
             -teensy_width/2,
             teensy_trans-teensy_length/2,
-            board_offset+box_thick+board_thick
+            board_top
         ])
         teensy_headers();
     }
@@ -307,7 +311,7 @@ board();
 %translate([
     -teensy_width/2,
     teensy_trans-teensy_length/2,
-    board_offset+box_thick+board_thick
+    board_top
 ]) teensy();
 *intersection() {
     union() {
