@@ -108,22 +108,20 @@ module connector_cap() {
 }
 
 module grab_top() {
-    translate([0,0,holder_offset]) {
-        difference() {
-            cube([ledge_width*1.25+holder_clearance,ledge_width+holder_clearance,holder_height]);
-            cube([ledge_width/2+holder_clearance,ledge_width/2+holder_clearance,holder_height]);
-            translate([ledge_width/2+holder_clearance,ledge_width/4,holder_height/2])
-            sphere(r=ledge_width/4,$fs=30);
-        }
-    }
+    grab_r = ledge_width/2;
+    translate([
+        0,
+        ledge_width,
+        box_thick-grab_r+
+        board_offset-ledge_width
+    ])
+    rotate([90,0,0])
+    cylinder(h=ledge_width, r=grab_r);
 }
 
 module grab_bottom() {
-    translate([0,0,holder_offset]) {
-        cube([ledge_width*.5,ledge_width*.5,holder_height]);
-        translate([ledge_width/2,ledge_width/4,holder_height/2])
-        sphere(r=ledge_width/4+holder_clearance/4,$fs=30);
-    }     
+    translate([0,0,box_thick+board_offset-ledge_width])
+    cube(ledge_width);
 }
 
 module box_top() {
