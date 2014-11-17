@@ -36,7 +36,7 @@ box_height=
     board_thick+
     pin_base_height+
     pin_gap+
-    box_thick+
+    socket_thick+
     socket_depth;
 
 //helper
@@ -48,7 +48,10 @@ board_top =
 top_to_teensy=in(0.05);
 bottom_to_teensy=in(0.075);
 teensy_margin=1;
-teensy_hole_height=socket_depth+socket_thick-box_thick;
+teensy_hole_height = max(
+    teensy_total_height,
+    box_height - board_top - box_thick
+);
 bottom_height=box_height-socket_depth-socket_thick;
 
 box_length=board_length+box_thick*2+board_clearance*2;
@@ -64,7 +67,7 @@ connector_bottom=board_top +
 cutout_size=[
     teensy_width+teensy_margin*2,
     bottom_to_teensy+box_thick+board_clearance/2,
-    teensy_hole_height,
+    teensy_hole_height - (bottom_height - board_top),
 ];
 //Thickness of wall between teensy and connector
 cutout_thick = 1;
@@ -100,14 +103,14 @@ module timesfour() {
 module connector_cap() {
     translate([0,-fudge,0])
     translate([
-        box_thick,
+        (cutout_size[0]-connector_size[0])/2,
         cutout_size[1] - cutout_thick,
-        connector_bottom + connector_size[2] - cutout_pos[2]
+        connector_bottom + connector_size[2] - bottom_height,
     ])
     cube(size=[
-        cutout_size[0]-box_thick*2,
+        connector_size[0],
         cutout_thick,
-        box_height-box_thick-(connector_bottom+connector_size[2])
+        box_height-connector_bottom-connector_size[2]
     ] + [0,fudge*2,fudge]);
 }
 
@@ -151,7 +154,7 @@ module box_top() {
                     translate([
                         box_length/2,
                         box_width/2 - box_thick/2,
-                        box_height-teensy_hole_height/2-box_thick])
+                        board_top+teensy_hole_height/2])
                     cube(size=[
                         teensy_width+teensy_margin*2,
                         box_width-box_thick,
@@ -167,6 +170,7 @@ module box_top() {
             timesfour() pin_cutout();
         }
 
+        //Connector cap thingy
         translate(cutout_pos)
         connector_cap();
 
@@ -222,8 +226,8 @@ module box_bottom() {
                 bottom_to_teensy+box_thick-cutout_thick,
                 connector_bottom-cutout_pos[2]
             ])
-            cube(size=connector_size + [0,0,fudge]);
-            connector_cap();
+            cube(size=connector_size + [0,0,box_height] + [0,0,fudge]);
+            //Just cut out everything to the top, the cap will take care of it
         }
 
         //Board holders

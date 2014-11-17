@@ -13,6 +13,11 @@ teensy_height = header_height + pin_plastic;
 connector_overhang=0.55;
 connector_size=[7.75,9.08,3.9];
 
+teensy_total_height =
+    teensy_height +
+    connector_size[2] +
+    teensy_thick;
+
 eh_plastic=in(0.1);
 eh_plastic_width=in(0.2);
 eh_to_bend=in(0.02);
