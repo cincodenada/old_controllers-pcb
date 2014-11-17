@@ -34,7 +34,7 @@ box_height=
     box_thick+
     board_offset+
     board_thick+
-    pin_base+
+    pin_base_height+
     pin_gap+
     box_thick+
     socket_depth;

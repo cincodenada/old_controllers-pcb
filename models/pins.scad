@@ -1,5 +1,5 @@
-pin_base=in(.125);
-pin_gap=pin_base*0.5;
+pin_base_height=in(.125);
+pin_gap=pin_base_height*0.5;
 pin_length=in(.4);
 pin_below=in(.125);
 pin_d=in(.045);
@@ -9,15 +9,15 @@ module pin(x,y) {
 	translate([ps*x,ps*y,0]) {
         color("silver") {
             translate([0,0,-pin_below + pin_taper/2])
-            cylinder(h=pin_length+pin_base+pin_below-pin_taper, r=pin_d/2);
+            cylinder(h=pin_length+pin_base_height+pin_below-pin_taper, r=pin_d/2);
             translate([0,0,-pin_below])
             cylinder(h=pin_taper/2,r2=pin_d/2,r1=pin_taper/2);
-            translate([0,0,pin_length+pin_base-pin_taper/2])
+            translate([0,0,pin_length+pin_base_height-pin_taper/2])
             cylinder(h=pin_taper/2,r1=pin_d/2,r2=pin_taper/2);
         }
 
         color("white")
-        linear_extrude(height=pin_base)
+        linear_extrude(height=pin_base_height)
         square(size=ps,center=true);
     }
 }
