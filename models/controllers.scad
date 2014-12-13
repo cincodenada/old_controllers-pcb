@@ -135,22 +135,25 @@ module box_top() {
     //Box top
     color("slateblue",0.5) {
         difference() {
+            //Main frame of the box
             union() {
-                //Main frame of the box
                 translate([-box_length/2,-box_width/2,0])
                 difference() {
-                    translate([0,0,box_thick])
+                    // Outer frame
+                    translate([0,0,box_thick] + [0,fudge,0])
                     cube(size=[
                         box_length,
                         box_width,
                         box_height-box_thick
-                    ]);
+                    ] - [0,fudge*2,0]);
+                    // Take out the bottom chunk
                     translate([box_thick,0,0])
                     cube(size=[
                         box_length-box_thick*2,
                         box_width,
                         bottom_height
                     ]);
+                    // Take out the teensy space
                     translate([
                         box_length/2,
                         box_width/2 - box_thick/2,
@@ -162,15 +165,24 @@ module box_top() {
                     ],center=true);
                 }
             }
+            // Socket holes
             translate([0,0,box_height-socket_depth])
             linear_extrude(height=socket_depth+fudge)
             timesfour() lump();
+            // Pin cutouts
             translate([0,0,bottom_height] + [0,0,-fudge])
             linear_extrude(height=box_thick+fudge*2)
             timesfour() pin_cutout();
+            // Cutout continuation
+            translate([
+                0,
+                -box_width/2+cutout_size[1]/2-cutout_thick/2,
+                box_height-cutout_size[2]/2
+            ] + [0,0,fudge])
+            cube(size=cutout_size-[box_thick*2,cutout_thick,0],center=true);
         }
 
-        //Connector cap thingy
+        //Add in connector cap thingy
         translate(cutout_pos)
         connector_cap();
 
@@ -184,6 +196,7 @@ module box_top() {
             timesfour() lump();
         }
 
+        // Grabbers
         bothends() {
             bothsides() union() {
                 grab_top();
@@ -193,27 +206,33 @@ module box_top() {
 }
 
 module box_bottom() {
-    color("darkblue") {
-        //Base outline
+    color("yellow") {
+        //Base block (formed off-center then centered)
         translate([-box_length/2,-box_width/2,0])
         difference() {
+            // Bottom chunk
             translate([0,0,0])
             cube(size=[box_length,box_width,bottom_height]);
+            // Minus the inside
             translate([0,box_thick,box_thick])
             cube(size=[box_length,box_width-box_thick*2,box_height]);
-            translate([-fudge,-fudge,0])
-            translate([0,0,box_thick])
-            cube([box_thick,box_width,box_height] + [fudge,fudge*2,0]);
-            translate([0,-fudge,0])
-            translate([box_length-box_thick,0,box_thick])
-            cube([box_thick,box_width,box_height] + [fudge,fudge*2,0]);
+            // Minus the side slots
+            bothends(true) {
+                translate([-fudge,-fudge,0])
+                translate([0,0,box_thick])
+                cube([box_thick,box_width,box_height] + [fudge,fudge*2,0]);
+            }
         }
 
         //Teensy holder
         translate(cutout_pos)
         difference() {
+            // Base
             union() {
+                // Box
                 cube(cutout_size);
+
+                // Mounting triangle
                 translate([0,box_thick,0])
                 rotate([0,90,0])
                 linear_extrude(height=cutout_size[0])
@@ -256,18 +275,28 @@ module box_bottom() {
 
 }
 
-module bothsides() {
-    translate([0,-(box_width/2-box_thick),0])
+module bothsides(fromorigin) {
+    front = fromorigin
+        ? box_length - box_thick
+        : box_width/2 - box_thick;
+    back = fromorigin ? 0 : -front;
+
+    translate([0,back,0])
     child(0); 
-    translate([0,box_width/2-box_thick,0])
+    translate([0,front,0])
     mirror([0,1,0])
     child(0); 
 }
 
-module bothends() {
-    translate([-(box_length/2-box_thick),0,0])
+module bothends(fromorigin) {
+    right = fromorigin
+        ? box_length
+        : box_length/2 - box_thick;
+    left = fromorigin ? 0 : -right;
+
+    translate([left,0,0])
     child(0);
-    translate([box_length/2-box_thick,0,0])
+    translate([right,0,0])
     mirror([1,0,0])
     child(0);
 }

@@ -1,5 +1,5 @@
 pin_base_height=in(.125);
-pin_gap=pin_base_height*0.5;
+pin_gap=pin_base_height*.25;
 pin_length=in(.4);
 pin_below=in(.125);
 pin_d=in(.045);
