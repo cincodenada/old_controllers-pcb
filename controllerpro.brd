@@ -5034,6 +5034,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="58.42" y1="7.62" x2="65.1002" y2="7.62" width="0.8128" layer="1"/>
 <wire x1="65.1002" y1="7.62" x2="66.3702" y2="8.89" width="0.8128" layer="1"/>
 <via x="58.42" y="7.62" extent="1-16" drill="0.6"/>
+<contactref element="U$1" pad="VCC"/>
 </signal>
 <signal name="GND" class="1">
 <contactref element="PORT4" pad="7"/>
@@ -5077,6 +5078,7 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="68.8975" y="16.1925"/>
 <vertex x="66.3575" y="16.1925"/>
 </polygon>
+<contactref element="U$1" pad="GND"/>
 </signal>
 <signal name="V33">
 <contactref element="PORT4" pad="5"/>
@@ -5313,6 +5315,14 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="50.165" y1="13.0175" x2="51.7525" y2="14.2875" width="0.4064" layer="1"/>
 <wire x1="51.7525" y1="23.8125" x2="53.975" y2="26.035" width="0.4064" layer="1"/>
 <wire x1="51.7525" y1="23.8125" x2="51.7525" y2="14.2875" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$6">
+<contactref element="U$1" pad="CTS-I"/>
+<contactref element="U$1" pad="RTS-0"/>
+<wire x1="50.165" y1="20.6375" x2="50.165" y2="20.32" width="0.4064" layer="16"/>
+<wire x1="50.165" y1="20.32" x2="48.5775" y2="18.7325" width="0.4064" layer="16"/>
+<wire x1="48.5775" y1="18.7325" x2="48.5775" y2="9.525" width="0.4064" layer="16"/>
+<wire x1="48.5775" y1="9.525" x2="50.165" y2="7.9375" width="0.4064" layer="16"/>
 </signal>
 </signals>
 <errors>
