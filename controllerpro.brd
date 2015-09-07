@@ -44,8 +44,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -3404,6 +3404,7 @@
 <rectangle x1="12.5095" y1="12.7635" x2="16.0655" y2="12.8905" layer="25" rot="R180"/>
 <rectangle x1="10.4775" y1="12.7635" x2="12.0015" y2="12.8905" layer="25" rot="R180"/>
 <rectangle x1="5.3975" y1="12.7635" x2="8.9535" y2="12.8905" layer="25" rot="R180"/>
+<text x="90.17" y="20.955" size="1.778" layer="26" rot="MR270">BlueSMiRF</text>
 </plain>
 <libraries>
 <library name="custom">
@@ -3550,27 +3551,18 @@
 <pad name="B5" x="6.35" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 <pad name="B4" x="8.89" y="7.62" drill="1.016" diameter="1.8796" rot="R90"/>
 </package>
-</packages>
-</library>
-<library name="SparkFun-Boards">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-In this library you'll find boards and modules: Arduino footprints, breadboards, non-RF modules, etc.&lt;br&gt;&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
-&lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
 <package name="RN42">
 <wire x1="-40.64" y1="-8.001" x2="1.27" y2="-8.001" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="-8.001" x2="1.27" y2="8.001" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="8.001" x2="-40.64" y2="8.001" width="0.2032" layer="21"/>
 <wire x1="-40.64" y1="8.001" x2="-40.64" y2="-8.001" width="0.2032" layer="21"/>
-<text x="-1.651" y="3.175" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">VCC</text>
-<text x="-1.651" y="0.762" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">GND</text>
-<text x="-1.651" y="-1.778" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">TX-O</text>
-<text x="-5.842" y="-3.302" size="1.778" layer="22" font="vector" ratio="15" rot="MR0">BlueSMiRF</text>
-<text x="-1.651" y="-6.858" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">RTS-O</text>
-<text x="-1.651" y="5.842" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">CTS-I</text>
-<text x="-1.651" y="-4.318" size="1.016" layer="22" font="vector" ratio="15" rot="MR0">RX-I</text>
+<text x="-1.651" y="3.175" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">VCC</text>
+<text x="-1.651" y="0.762" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">GND</text>
+<text x="-1.651" y="-1.778" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">TX-O</text>
+<text x="-5.842" y="-3.302" size="1.778" layer="51" font="vector" ratio="15" align="bottom-right">BlueSMiRF</text>
+<text x="-1.651" y="-6.858" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">RTS-O</text>
+<text x="-1.651" y="5.842" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">CTS-I</text>
+<text x="-1.651" y="-4.318" size="1.016" layer="21" font="vector" ratio="15" align="bottom-right">RX-I</text>
 <wire x1="-0.635" y1="5.08" x2="-1.27" y2="5.715" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="5.715" x2="-1.27" y2="6.985" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="6.985" x2="-0.635" y2="7.62" width="0.2032" layer="21"/>
@@ -3834,7 +3826,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="44.45" y="20.32" size="1.27" layer="27" ratio="10" rot="R90"/>
 <attribute name="NAME" x="50.2285" y="4.3688" size="1.27" layer="25" ratio="10" rot="R180"/>
 </element>
-<element name="U$1" library="SparkFun-Boards" package="RN42" value="RN42" x="50.165" y="14.2875" rot="MR0"/>
+<element name="U$1" library="custom" package="RN42" value="RN42" x="50.165" y="14.2875" rot="MR0"/>
 </elements>
 <signals>
 <signal name="CLOCK">
