@@ -3542,38 +3542,6 @@
 </package>
 </packages>
 </library>
-<library name="linear">
-<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
-Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SOT23">
-<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
-reflow soldering</description>
-<wire x1="-1.973" y1="1.983" x2="1.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="-1.983" x2="-1.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-1.973" y1="-1.983" x2="-1.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="1.983" x2="1.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="1.422" y1="0.66" x2="1.422" y2="-0.66" width="0.1524" layer="51"/>
-<wire x1="1.422" y1="-0.66" x2="-1.422" y2="-0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="-0.66" x2="-1.422" y2="0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="0.66" x2="1.422" y2="0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="-0.152" x2="-1.422" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="-1.422" y1="0.66" x2="-0.864" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="0.864" y1="0.66" x2="1.422" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="1.422" y1="0.66" x2="1.422" y2="-0.152" width="0.1524" layer="21"/>
-<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-<rectangle x1="-0.5001" y1="-0.3" x2="0.5001" y2="0.3" layer="35"/>
-</package>
-</packages>
-</library>
 <library name="rcl">
 <description>&lt;b&gt;Resistors, Capacitors, Inductors&lt;/b&gt;&lt;p&gt;
 Based on the previous libraries:
@@ -4919,10 +4887,6 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="13.8684" y="24.9682" size="1.27" layer="21" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="32.2834" y="31.4198" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="VREG" library="linear" package="SOT23" value="MCP1703CB" x="58.42" y="28.2575" smashed="yes" rot="MR270">
-<attribute name="NAME" x="51.1175" y="29.464" size="1.27" layer="26" rot="MR180"/>
-<attribute name="VALUE" x="61.595" y="30.1625" size="1.27" layer="28" rot="MR270"/>
-</element>
 <element name="TEENSY2.0" library="custom" package="TEENSY_MC_BT_PINS" value="TEENSY_MC_BT_PINS" x="46.355" y="17.145" smashed="yes" rot="R90">
 <attribute name="VALUE" x="44.45" y="20.32" size="1.27" layer="27" ratio="10" rot="R90"/>
 <attribute name="NAME" x="50.2285" y="4.3688" size="1.27" layer="25" ratio="10" rot="R180"/>
@@ -5019,7 +4983,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="PORT2" pad="10"/>
 <contactref element="PORT1" pad="10"/>
 <contactref element="PORT4" pad="10"/>
-<contactref element="VREG" pad="3"/>
 <contactref element="TEENSY2.0" pad="+5V"/>
 <polygon width="0.6096" layer="16" isolate="0.4064" rank="2">
 <vertex x="91.44" y="3.175"/>
@@ -5035,12 +4998,23 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="65.1002" y1="7.62" x2="66.3702" y2="8.89" width="0.8128" layer="1"/>
 <via x="58.42" y="7.62" extent="1-16" drill="0.6"/>
 <contactref element="U$1" pad="VCC"/>
+<contactref element="R2" pad="1"/>
+<contactref element="PORT3" pad="5"/>
+<contactref element="R1" pad="2"/>
+<contactref element="PORT4" pad="5"/>
+<contactref element="R3" pad="2"/>
+<contactref element="PORT1" pad="5"/>
+<contactref element="R4" pad="1"/>
+<contactref element="PORT2" pad="5"/>
+<wire x1="22.225" y1="4.9276" x2="22.225" y2="8.04" width="0.6096" layer="1"/>
+<wire x1="22.225" y1="8.04" x2="22.01" y2="8.255" width="0.6096" layer="1"/>
+<wire x1="70.065" y1="24.13" x2="70.065" y2="27.0374" width="0.6096" layer="1"/>
+<wire x1="70.065" y1="27.0374" x2="70.485" y2="27.4574" width="0.6096" layer="1"/>
 </signal>
 <signal name="GND" class="1">
 <contactref element="PORT4" pad="7"/>
 <contactref element="PORT2" pad="7"/>
 <contactref element="PORT3" pad="7"/>
-<contactref element="VREG" pad="1"/>
 <contactref element="PORT1" pad="7"/>
 <polygon width="0.6096" layer="1" isolate="0.4064">
 <vertex x="91.44" y="3.175"/>
@@ -5058,10 +5032,7 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="91.44" y="5.08"/>
 </polygon>
 <contactref element="TEENSY2.0" pad="GND"/>
-<wire x1="60.6425" y1="29.21" x2="62.3951" y2="27.4574" width="0.6096" layer="16"/>
 <wire x1="62.3951" y1="27.4574" x2="62.5602" y2="27.4574" width="0.6096" layer="16"/>
-<wire x1="59.52" y1="29.2075" x2="59.5225" y2="29.21" width="0.6096" layer="16"/>
-<wire x1="59.5225" y1="29.21" x2="60.6425" y2="29.21" width="0.6096" layer="16"/>
 <via x="67.6275" y="15.875" extent="1-16" drill="0.6"/>
 <via x="66.3575" y="15.875" extent="1-16" drill="0.6"/>
 <via x="68.8975" y="15.875" extent="1-16" drill="0.6"/>
@@ -5079,55 +5050,6 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="66.3575" y="16.1925"/>
 </polygon>
 <contactref element="U$1" pad="GND"/>
-</signal>
-<signal name="V33">
-<contactref element="PORT4" pad="5"/>
-<contactref element="PORT3" pad="5"/>
-<contactref element="PORT1" pad="5"/>
-<contactref element="PORT2" pad="5"/>
-<contactref element="VREG" pad="2"/>
-<wire x1="77.47" y1="1.27" x2="26.0096" y2="1.27" width="0.6096" layer="16"/>
-<wire x1="77.47" y1="1.27" x2="80.645" y2="4.445" width="0.6096" layer="16"/>
-<wire x1="80.645" y1="4.445" x2="80.645" y2="4.9276" width="0.6096" layer="16"/>
-<wire x1="68.58" y1="24.765" x2="70.485" y2="26.67" width="0.6096" layer="16"/>
-<wire x1="70.485" y1="26.67" x2="70.485" y2="27.4574" width="0.6096" layer="16"/>
-<wire x1="22.225" y1="4.9276" x2="20.1676" y2="4.9276" width="0.6096" layer="16"/>
-<wire x1="20.1676" y1="4.9276" x2="17.145" y2="1.905" width="0.6096" layer="16"/>
-<wire x1="17.145" y1="1.905" x2="3.81" y2="1.905" width="0.6096" layer="16"/>
-<wire x1="3.81" y1="1.905" x2="1.905" y2="3.81" width="0.6096" layer="16"/>
-<wire x1="1.905" y1="3.81" x2="1.905" y2="16.51" width="0.6096" layer="16"/>
-<wire x1="1.905" y1="16.51" x2="12.065" y2="26.67" width="0.6096" layer="16"/>
-<wire x1="12.065" y1="26.67" x2="12.065" y2="27.4574" width="0.6096" layer="16"/>
-<wire x1="22.225" y1="4.9276" x2="22.352" y2="4.9276" width="0.6096" layer="16"/>
-<wire x1="22.352" y1="4.9276" x2="26.0096" y2="1.27" width="0.6096" layer="16"/>
-<contactref element="R1" pad="2"/>
-<contactref element="R2" pad="1"/>
-<contactref element="R4" pad="1"/>
-<contactref element="R3" pad="2"/>
-<wire x1="22.01" y1="8.255" x2="22.225" y2="8.04" width="0.6096" layer="1"/>
-<wire x1="22.225" y1="8.04" x2="22.225" y2="4.9276" width="0.6096" layer="1"/>
-<wire x1="81.7" y1="1.905" x2="80.645" y2="2.96" width="0.6096" layer="16"/>
-<wire x1="80.645" y1="2.96" x2="80.645" y2="4.9276" width="0.6096" layer="16"/>
-<wire x1="70.065" y1="24.13" x2="70.485" y2="24.55" width="0.6096" layer="1"/>
-<wire x1="70.485" y1="24.55" x2="70.485" y2="27.4574" width="0.6096" layer="1"/>
-<wire x1="68.58" y1="24.765" x2="60.96" y2="24.765" width="0.6096" layer="16"/>
-<wire x1="59.52" y1="27.3075" x2="59.69" y2="27.1375" width="0.6096" layer="16"/>
-<wire x1="59.69" y1="27.1375" x2="59.69" y2="26.035" width="0.6096" layer="16"/>
-<wire x1="59.69" y1="26.035" x2="60.96" y2="24.765" width="0.6096" layer="16"/>
-<wire x1="12.065" y1="27.4574" x2="12.065" y2="29.21" width="0.6096" layer="16"/>
-<wire x1="12.065" y1="29.21" x2="11.01" y2="30.265" width="0.6096" layer="16"/>
-<wire x1="11.01" y1="30.265" x2="11.01" y2="30.48" width="0.6096" layer="16"/>
-<wire x1="80.645" y1="4.9276" x2="80.645" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="80.645" y1="5.08" x2="78.4225" y2="7.3025" width="0.6096" layer="16"/>
-<wire x1="78.4225" y1="7.3025" x2="78.4225" y2="11.1125" width="0.6096" layer="16"/>
-<wire x1="78.4225" y1="11.1125" x2="90.805" y2="23.495" width="0.6096" layer="16"/>
-<via x="90.805" y="23.495" extent="1-16" drill="0.6"/>
-<wire x1="90.805" y1="23.495" x2="91.44" y2="23.495" width="0.6096" layer="1"/>
-<wire x1="91.44" y1="23.495" x2="91.44" y2="30.48" width="0.6096" layer="1"/>
-<wire x1="91.44" y1="30.48" x2="90.17" y2="31.75" width="0.6096" layer="1"/>
-<wire x1="90.17" y1="31.75" x2="73.025" y2="31.75" width="0.6096" layer="1"/>
-<wire x1="73.025" y1="31.75" x2="70.485" y2="29.21" width="0.6096" layer="1"/>
-<wire x1="70.485" y1="29.21" x2="70.485" y2="27.4574" width="0.6096" layer="1"/>
 </signal>
 <signal name="5VDATA0">
 <contactref element="TEENSY2.0" pad="B2"/>
