@@ -1,0 +1,484 @@
+EESchema Schematic File Version 4
+LIBS:controllerpro-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 2900 5300 0    20   BiDi ~ 0
+5VDATA[0..3]
+Text GLabel 3000 4000 0    20   BiDi ~ 0
+S_OR_NES[0..3]
+Text GLabel 4300 5200 0    20   BiDi ~ 0
+3VDATA[0..3]
+Text GLabel 4200 4800 0    20   BiDi ~ 0
+CLOCK
+Text GLabel 4200 4900 0    20   BiDi ~ 0
+LATCH
+Text GLabel 3000 5700 0    20   BiDi ~ 0
+VCC
+Text GLabel 7000 2800 0    20   BiDi ~ 0
+VCC
+Text GLabel 4200 5800 0    20   BiDi ~ 0
+GND
+Text GLabel 6400 2300 0    20   BiDi ~ 0
+5VDATA0
+Text GLabel 2900 5200 0    20   BiDi ~ 0
+5VDATA0
+Text GLabel 5500 2300 0    20   BiDi ~ 0
+5VDATA1
+Text GLabel 2900 5300 0    20   BiDi ~ 0
+5VDATA1
+Text GLabel 2900 5000 0    20   BiDi ~ 0
+5VDATA2
+Text GLabel 2900 5100 0    20   BiDi ~ 0
+5VDATA3
+Text GLabel 6800 2300 0    20   BiDi ~ 0
+S_OR_NES0
+Text GLabel 3000 3800 0    20   BiDi ~ 0
+S_OR_NES0
+Text GLabel 3000 3700 0    20   BiDi ~ 0
+S_OR_NES1
+Text GLabel 3000 4000 0    20   BiDi ~ 0
+S_OR_NES2
+Text GLabel 3000 3900 0    20   BiDi ~ 0
+S_OR_NES3
+Text GLabel 5400 5400 0    20   BiDi ~ 0
+3VDATA0
+Text GLabel 4300 5300 0    20   BiDi ~ 0
+3VDATA0
+Text GLabel 5500 5400 0    20   BiDi ~ 0
+3VDATA1
+Text GLabel 4300 5200 0    20   BiDi ~ 0
+3VDATA1
+Text GLabel 4300 5500 0    20   BiDi ~ 0
+3VDATA2
+Text GLabel 4300 5400 0    20   BiDi ~ 0
+3VDATA3
+Text GLabel 4200 4600 0    20   BiDi ~ 0
+N$2
+Text GLabel 4200 4500 0    20   BiDi ~ 0
+N$5
+Text GLabel 4700 4500 0    20   BiDi ~ 0
+N$6
+Entry Wire Line
+	5400 2100 5500 2200
+Entry Wire Line
+	6700 2200 6800 2300
+Entry Wire Line
+	4300 5300 4400 5400
+Entry Wire Line
+	4300 5200 4400 5300
+Entry Wire Line
+	5300 5500 5400 5400
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI PORT4
+U 1 0 25CB9020E0F32BC5
+P 6700 4300
+F 0 "PORT4" V 6175 4150 59  0000 L BNN
+F 1 "NINTENDO-MULTI" V 7200 4150 59  0000 L BNN
+F 2 "NINTENDO-MULTI" H 6700 4300 50  0001 C CNN
+F 3 "" H 6700 4300 50  0001 C CNN
+	1    6700 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI PORT1
+U 1 0 E1CA354018224F2D
+P 8300 3900
+F 0 "PORT1" V 7775 3750 59  0000 L BNN
+F 1 "NINTENDO-MULTI" V 8800 3750 59  0000 L BNN
+F 2 "NINTENDO-MULTI" H 8300 3900 50  0001 C CNN
+F 3 "" H 8300 3900 50  0001 C CNN
+	1    8300 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI PORT2
+U 1 0 C38EF66B382CA099
+P 8400 5100
+F 0 "PORT2" V 7875 4950 59  0000 L BNN
+F 1 "NINTENDO-MULTI" V 8900 4950 59  0000 L BNN
+F 2 "NINTENDO-MULTI" H 8400 5100 50  0001 C CNN
+F 3 "" H 8400 5100 50  0001 C CNN
+	1    8400 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:GND #SUPPLY01
+U 1 0 57B2A199E46721A6
+P 7000 5900
+F 0 "#SUPPLY01" H 7000 5900 50  0001 C CNN
+F 1 "GND" H 6925 5775 59  0000 L BNN
+F 2 "" H 7000 5900 50  0001 C CNN
+F 3 "" H 7000 5900 50  0001 C CNN
+	1    7000 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L controllerpro-eagle-import:VCC #SUPPLY02
+U 1 0 484E0C833EFDB7C
+P 2900 5700
+F 0 "#SUPPLY02" H 2900 5700 50  0001 C CNN
+F 1 "VCC" H 2825 5825 59  0000 L BNN
+F 2 "" H 2900 5700 50  0001 C CNN
+F 3 "" H 2900 5700 50  0001 C CNN
+	1    2900 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:VCC #SUPPLY03
+U 1 0 C23B2A6DD5692080
+P 8600 2400
+F 0 "#SUPPLY03" H 8600 2400 50  0001 C CNN
+F 1 "VCC" H 8525 2525 59  0000 L BNN
+F 2 "" H 8600 2400 50  0001 C CNN
+F 3 "" H 8600 2400 50  0001 C CNN
+	1    8600 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L controllerpro-eagle-import:GND #SUPPLY06
+U 1 0 5AE663DFC21E2EB3
+P 4200 5900
+F 0 "#SUPPLY06" H 4200 5900 50  0001 C CNN
+F 1 "GND" H 4125 5775 59  0000 L BNN
+F 2 "" H 4200 5900 50  0001 C CNN
+F 3 "" H 4200 5900 50  0001 C CNN
+	1    4200 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L controllerpro-eagle-import:RN42 U$1
+U 1 0 850A8AB0BABD3B23
+P 4900 4300
+F 0 "U$1" H 4700 4630 59  0000 L BNN
+F 1 "RN42" H 4700 3800 59  0000 L BNN
+F 2 "RN42" H 4900 4300 50  0001 C CNN
+F 3 "" H 4900 4300 50  0001 C CNN
+	1    4900 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L controllerpro-eagle-import:GND #SUPPLY04
+U 1 0 5EA88E956DF68C43
+P 4600 4300
+F 0 "#SUPPLY04" H 4600 4300 50  0001 C CNN
+F 1 "GND" H 4525 4175 59  0000 L BNN
+F 2 "" H 4600 4300 50  0001 C CNN
+F 3 "" H 4600 4300 50  0001 C CNN
+	1    4600 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:VCC #SUPPLY05
+U 1 0 FDA4F4BDFD320F9F
+P 4600 4400
+F 0 "#SUPPLY05" H 4600 4400 50  0001 C CNN
+F 1 "VCC" H 4525 4525 59  0000 L BNN
+F 2 "" H 4600 4400 50  0001 C CNN
+F 3 "" H 4600 4400 50  0001 C CNN
+	1    4600 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI PORT3
+U 1 0 DE7FE6B892AE2CB7
+P 6900 3100
+F 0 "PORT3" V 6375 2950 59  0000 L BNN
+F 1 "NINTENDO-MULTI" V 7400 2950 59  0000 L BNN
+F 2 "NINTENDO-MULTI" H 6900 3100 50  0001 C CNN
+F 3 "" H 6900 3100 50  0001 C CNN
+	1    6900 3100
+	0    1    1    0   
+$EndComp
+Text GLabel 6600 2300 0    20   BiDi ~ 0
+S_OR_NES1
+$Comp
+L controllerpro-eagle-import:TEENSY_MC_BT_PINS TEENSY2.0
+U 1 0 FB063CEE8295EFB
+P 3700 4400
+F 0 "TEENSY2.0" H 3500 5900 70  0000 L BNN
+F 1 "TEENSY_MC_BT_PINS" V 3500 4400 70  0000 R TNN
+F 2 "TEENSY_MC_BT_PINS" H 3700 4400 50  0001 C CNN
+F 3 "" H 3700 4400 50  0001 C CNN
+	1    3700 4400
+	-1   0    0    1   
+$EndComp
+Text GLabel 6600 4600 0    20   BiDi ~ 0
+GND
+Entry Wire Line
+	2900 3900 3000 4000
+Entry Wire Line
+	2900 3800 3000 3900
+Entry Wire Line
+	2900 3700 3000 3800
+Entry Wire Line
+	2900 3600 3000 3700
+Entry Wire Line
+	2800 4900 2900 5000
+Entry Wire Line
+	2800 5000 2900 5100
+Entry Wire Line
+	2800 5100 2900 5200
+Entry Wire Line
+	2800 5200 2900 5300
+Entry Wire Line
+	4300 5500 4400 5400
+Entry Wire Line
+	4300 5400 4400 5500
+Text GLabel 8300 5300 0    20   BiDi ~ 0
+3VDATA3
+Entry Wire Line
+	8400 2200 8500 2300
+Text GLabel 8500 2300 0    20   BiDi ~ 0
+S_OR_NES3
+Entry Wire Line
+	8100 2200 8200 2300
+Entry Wire Line
+	8000 2200 8100 2300
+Text GLabel 8200 2300 0    20   BiDi ~ 0
+S_OR_NES2
+Text GLabel 8100 2300 0    20   BiDi ~ 0
+5VDATA3
+Entry Wire Line
+	7800 2200 7900 2300
+Text GLabel 7900 2300 0    20   BiDi ~ 0
+5VDATA2
+Entry Wire Line
+	5400 5500 5500 5400
+Entry Wire Line
+	7300 5500 7400 5400
+Entry Wire Line
+	7100 5500 7200 5400
+Text GLabel 7200 5400 0    20   BiDi ~ 0
+3VDATA2
+Entry Wire Line
+	8000 2100 8100 2200
+Entry Wire Line
+	7800 2100 7900 2200
+Entry Wire Line
+	6300 2100 6400 2200
+Entry Wire Line
+	6500 2200 6600 2300
+Entry Wire Line
+	6300 2200 6400 2300
+Entry Wire Line
+	5400 2200 5500 2300
+Connection ~ 5200 4800
+Connection ~ 5200 4000
+Connection ~ 5200 3600
+Wire Wire Line
+	4200 4800 5200 4800
+Wire Wire Line
+	5200 4800 5200 4000
+Wire Wire Line
+	5200 4000 5200 3600
+Wire Wire Line
+	5200 3600 5200 2800
+Wire Wire Line
+	6600 4000 5200 4000
+Wire Wire Line
+	8300 4800 5200 4800
+Wire Wire Line
+	8200 3600 5200 3600
+Connection ~ 5300 4900
+Connection ~ 5300 4100
+Connection ~ 5300 3700
+Wire Wire Line
+	4200 4900 5300 4900
+Wire Wire Line
+	5300 2900 5300 3700
+Wire Wire Line
+	5300 3700 5300 4100
+Wire Wire Line
+	5300 4100 5300 4900
+Wire Wire Line
+	5300 2900 6800 2900
+Wire Wire Line
+	6600 4100 5300 4100
+Wire Wire Line
+	8300 4900 5300 4900
+Wire Wire Line
+	5300 3700 8200 3700
+Wire Wire Line
+	3000 5700 3200 5700
+Connection ~ 8600 4400
+Connection ~ 8600 3600
+Connection ~ 8600 2800
+Connection ~ 6900 4400
+Connection ~ 8600 4800
+Connection ~ 8600 4000
+Wire Wire Line
+	8600 2800 8600 2500
+Wire Wire Line
+	8500 4800 8600 4800
+Wire Wire Line
+	8600 4800 8600 4400
+Wire Wire Line
+	8600 4400 8600 4000
+Wire Wire Line
+	8600 4000 8600 3600
+Wire Wire Line
+	8600 3600 8600 2800
+Wire Wire Line
+	8400 3600 8600 3600
+Wire Wire Line
+	6800 4000 6900 4000
+Wire Wire Line
+	6900 4000 6900 4400
+Wire Wire Line
+	6900 4400 8600 4400
+Wire Wire Line
+	6900 4400 6600 4400
+Wire Wire Line
+	7100 2800 7100 3200
+Wire Wire Line
+	8300 5200 8600 5200
+Wire Wire Line
+	8600 4800 8600 5200
+Wire Wire Line
+	8600 4000 8200 4000
+Connection ~ 7000 5700
+Connection ~ 7000 4600
+Wire Wire Line
+	6600 4600 6600 5700
+Wire Wire Line
+	6600 5700 7000 5700
+Wire Wire Line
+	7000 5700 8300 5700
+Wire Wire Line
+	8300 5700 8300 5400
+Wire Wire Line
+	7000 5800 7000 5700
+Wire Wire Line
+	7000 3500 7000 4600
+Wire Wire Line
+	7000 4600 7000 5700
+Wire Wire Line
+	8200 4200 8200 4600
+Wire Wire Line
+	8200 4600 7000 4600
+Wire Wire Line
+	4200 5800 4200 5700
+Wire Wire Line
+	3200 5200 2900 5200
+Wire Wire Line
+	5500 2300 5500 4200
+Wire Wire Line
+	5500 4200 6600 4200
+Wire Wire Line
+	3200 5300 2900 5300
+Wire Wire Line
+	7900 3800 7900 2300
+Wire Wire Line
+	7900 3800 8200 3800
+Wire Wire Line
+	3200 5000 2900 5000
+Wire Wire Line
+	8100 5000 8100 2300
+Wire Wire Line
+	8100 5000 8300 5000
+Wire Wire Line
+	3200 5100 2900 5100
+Wire Wire Line
+	6800 2700 6800 2300
+Wire Wire Line
+	3200 3800 3000 3800
+Wire Wire Line
+	6600 3900 6600 2300
+Wire Wire Line
+	3200 3700 3000 3700
+Wire Wire Line
+	8200 3500 8200 2300
+Wire Wire Line
+	3200 4000 3000 4000
+Wire Wire Line
+	8500 2300 8500 4700
+Wire Wire Line
+	8500 4700 8300 4700
+Wire Wire Line
+	3200 3900 3000 3900
+Wire Wire Line
+	5400 5400 5400 3300
+Wire Wire Line
+	4200 5300 4300 5300
+Wire Wire Line
+	5500 5400 5500 4500
+Wire Wire Line
+	6600 4500 5500 4500
+Wire Wire Line
+	4200 5200 4300 5200
+Wire Wire Line
+	7200 4100 7200 5400
+Wire Wire Line
+	8200 4100 7200 4100
+Wire Wire Line
+	4200 5500 4300 5500
+Wire Wire Line
+	8300 5300 7400 5300
+Wire Wire Line
+	7400 5300 7400 5400
+Wire Wire Line
+	4200 5400 4300 5400
+Wire Wire Line
+	4200 4600 4400 4600
+Wire Wire Line
+	4400 4600 4400 4200
+Wire Wire Line
+	4400 4200 4700 4200
+Wire Wire Line
+	4200 4500 4300 4500
+Wire Wire Line
+	4700 4100 4300 4100
+Wire Wire Line
+	4300 4100 4300 4500
+Wire Wire Line
+	4700 4500 4500 4500
+Wire Wire Line
+	4500 4500 4500 4000
+Wire Wire Line
+	4500 4000 4700 4000
+Wire Wire Line
+	6800 3300 5400 3300
+Wire Wire Line
+	6400 3000 6800 3000
+Wire Wire Line
+	6400 2300 6400 3000
+Wire Wire Line
+	6700 3500 6700 3400
+Wire Wire Line
+	7000 3500 6700 3500
+Wire Wire Line
+	6700 3400 6800 3400
+Wire Wire Line
+	7100 2800 8600 2800
+Connection ~ 7100 2800
+Wire Wire Line
+	6800 3200 7100 3200
+Wire Wire Line
+	7000 2800 7100 2800
+Wire Wire Line
+	6800 2800 5200 2800
+Wire Bus Line
+	4400 5200 4400 5500
+Wire Bus Line
+	2800 2100 8100 2100
+Wire Bus Line
+	4400 5500 7400 5500
+Wire Bus Line
+	2900 2200 2900 4000
+Wire Bus Line
+	2800 2100 2800 5300
+Wire Bus Line
+	2900 2200 8500 2200
+$EndSCHEMATC
