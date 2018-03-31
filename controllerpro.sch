@@ -880,6 +880,99 @@ Wire Wire Line
 Connection ~ 6250 4750
 Connection ~ 8800 4750
 Connection ~ 8800 5750
+Wire Wire Line
+	6350 2700 6800 2700
+Connection ~ 6350 2700
+Connection ~ 6800 2700
+Wire Wire Line
+	6800 2800 6350 2800
+Connection ~ 6800 2800
+Connection ~ 6350 2800
+Wire Wire Line
+	6350 2900 6800 2900
+Connection ~ 6350 2900
+Connection ~ 6800 2900
+Wire Wire Line
+	6800 3000 6350 3000
+Connection ~ 6800 3000
+Connection ~ 6350 3000
+Wire Wire Line
+	6350 3100 6800 3100
+Connection ~ 6350 3100
+Connection ~ 6800 3100
+Wire Wire Line
+	6800 3300 6350 3300
+Connection ~ 6800 3300
+Connection ~ 6350 3300
+Wire Wire Line
+	6350 3400 6800 3400
+Connection ~ 6350 3400
+Connection ~ 6800 3400
+Wire Wire Line
+	6800 2800 7100 2800
+Wire Wire Line
+	8900 2700 9350 2700
+Connection ~ 8900 2700
+Connection ~ 9350 2700
+Wire Wire Line
+	8900 2800 9350 2800
+Connection ~ 8900 2800
+Connection ~ 9350 2800
+Wire Wire Line
+	9350 2900 8900 2900
+Connection ~ 9350 2900
+Connection ~ 8900 2900
+Wire Wire Line
+	8900 3000 9350 3000
+Connection ~ 8900 3000
+Connection ~ 9350 3000
+Wire Wire Line
+	9350 3100 8900 3100
+Connection ~ 9350 3100
+Connection ~ 8900 3100
+Wire Wire Line
+	8900 3300 9350 3300
+Connection ~ 8900 3300
+Connection ~ 9350 3300
+Wire Wire Line
+	9350 3400 8900 3400
+Connection ~ 9350 3400
+Connection ~ 8900 3400
+Wire Wire Line
+	9350 2800 9650 2800
+Wire Wire Line
+	8900 4050 9350 4050
+Connection ~ 8900 4050
+Connection ~ 9350 4050
+Wire Wire Line
+	9350 4150 8900 4150
+Wire Wire Line
+	9350 4250 8900 4250
+Wire Wire Line
+	9350 4350 8900 4350
+Wire Wire Line
+	9350 4450 8900 4450
+Wire Wire Line
+	9350 4650 8900 4650
+Wire Wire Line
+	9350 4750 8900 4750
+Wire Wire Line
+	9350 4150 9650 4150
+Connection ~ 9350 4150
+Wire Wire Line
+	6800 4050 6350 4050
+Wire Wire Line
+	6350 4150 7100 4150
+Wire Wire Line
+	6800 4250 6350 4250
+Wire Wire Line
+	6800 4350 6350 4350
+Wire Wire Line
+	6800 4450 6350 4450
+Wire Wire Line
+	6800 4650 6350 4650
+Wire Wire Line
+	6800 4750 6350 4750
 Wire Bus Line
 	4550 5350 4550 5650
 Wire Bus Line
