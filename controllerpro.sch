@@ -289,17 +289,6 @@ Wire Wire Line
 Wire Wire Line
 	7150 3300 7150 3250
 $Comp
-L device:R R1
-U 1 1 5ACD46C7
-P 6950 2800
-F 0 "R1" H 7020 2846 50  0000 L CNN
-F 1 "R" H 7020 2755 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6880 2800 50  0001 C CNN
-F 3 "" H 6950 2800 50  0001 C CNN
-	1    6950 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
 L device:R R2
 U 1 1 5ACEB127
 P 7100 2650
@@ -399,17 +388,6 @@ Wire Wire Line
 Wire Wire Line
 	7150 4650 7150 4600
 $Comp
-L device:R R4
-U 1 1 5AE0476E
-P 6950 4150
-F 0 "R4" H 7020 4196 50  0000 L CNN
-F 1 "R" H 7020 4105 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6880 4150 50  0001 C CNN
-F 3 "" H 6950 4150 50  0001 C CNN
-	1    6950 4150
-	0    -1   -1   0   
-$EndComp
-$Comp
 L device:R R5
 U 1 1 5AE04775
 P 7100 4000
@@ -479,17 +457,6 @@ Wire Wire Line
 	9350 3850 9650 3850
 Wire Wire Line
 	9700 4650 9700 4600
-$Comp
-L device:R R10
-U 1 1 5AE06D6F
-P 9500 4150
-F 0 "R10" H 9570 4196 50  0000 L CNN
-F 1 "R" H 9570 4105 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9430 4150 50  0001 C CNN
-F 3 "" H 9500 4150 50  0001 C CNN
-	1    9500 4150
-	0    -1   -1   0   
-$EndComp
 $Comp
 L device:R R11
 U 1 1 5AE06D76
@@ -562,17 +529,6 @@ Wire Wire Line
 	9350 2500 9650 2500
 Wire Wire Line
 	9700 3300 9700 3250
-$Comp
-L device:R R7
-U 1 1 5AE09FA2
-P 9500 2800
-F 0 "R7" H 9570 2846 50  0000 L CNN
-F 1 "R" H 9570 2755 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9430 2800 50  0001 C CNN
-F 3 "" H 9500 2800 50  0001 C CNN
-	1    9500 2800
-	0    -1   -1   0   
-$EndComp
 $Comp
 L device:R R8
 U 1 1 5AE09FA9
@@ -874,6 +830,18 @@ Connection ~ 8800 4750
 Connection ~ 8800 5750
 Wire Wire Line
 	6350 2700 6350 2450
+Wire Wire Line
+	6800 2700 6800 2500
+Wire Wire Line
+	6800 4150 7100 4150
+Wire Wire Line
+	6800 2800 7100 2800
+Wire Wire Line
+	9350 2800 9650 2800
+Wire Wire Line
+	9350 4150 9650 4150
+Wire Bus Line
+	4550 5350 4550 5650
 Wire Bus Line
 	2850 2200 2850 3850
 Wire Bus Line
@@ -884,8 +852,4 @@ Wire Bus Line
 	2850 2200 8750 2200
 Wire Bus Line
 	4550 5650 8300 5650
-Wire Bus Line
-	4550 5350 4550 5650
-Wire Wire Line
-	6800 2700 6800 2500
 $EndSCHEMATC
