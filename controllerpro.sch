@@ -900,4 +900,20 @@ Wire Bus Line
 	2550 2050 2550 5150
 Wire Bus Line
 	2850 2200 2850 3850
+Text GLabel 7550 2900 2    50   Input ~ 0
+VCCA
+Text GLabel 10100 2900 2    50   Input ~ 0
+VCCA
+Text GLabel 7550 4250 2    50   Input ~ 0
+VCCB
+Text GLabel 10100 4250 2    50   Input ~ 0
+VCCB
+Text GLabel 7000 4850 3    50   Input ~ 0
+GNDB
+Text GLabel 9550 4850 3    50   Input ~ 0
+GNDB
+Text GLabel 9550 3500 3    50   Input ~ 0
+GNDA
+Text GLabel 7000 3500 3    50   Input ~ 0
+GNDA
 $EndSCHEMATC
