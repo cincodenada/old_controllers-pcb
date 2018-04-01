@@ -251,23 +251,23 @@ Wire Wire Line
 Wire Wire Line
 	6250 3400 6350 3400
 $Comp
-L conn:Conn_01x08_Female J?
+L conn:Conn_01x08_Female S0
 U 1 1 5AC6801A
 P 6550 3000
-F 0 "J?" H 6577 2976 50  0000 L CNN
+F 0 "S0" H 6577 2976 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 6577 2885 50  0000 L CNN
-F 2 "" H 6550 3000 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 3000 50  0001 C CNN
 F 3 "~" H 6550 3000 50  0001 C CNN
 	1    6550 3000
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x08_Male J?
+L conn:Conn_01x08_Male P0
 U 1 1 5AC68261
 P 6600 3000
-F 0 "J?" H 6706 3478 50  0000 C CNN
+F 0 "P0" H 6706 3478 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 6706 3387 50  0000 C CNN
-F 2 "" H 6600 3000 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 3000 50  0001 C CNN
 F 3 "~" H 6600 3000 50  0001 C CNN
 	1    6600 3000
 	1    0    0    -1  
@@ -293,23 +293,23 @@ Wire Wire Line
 Wire Wire Line
 	7150 3300 7150 3250
 $Comp
-L device:R R?
+L device:R R1
 U 1 1 5ACD46C7
 P 6950 2800
-F 0 "R?" H 7020 2846 50  0000 L CNN
+F 0 "R1" H 7020 2846 50  0000 L CNN
 F 1 "R" H 7020 2755 50  0000 L CNN
-F 2 "" V 6880 2800 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6880 2800 50  0001 C CNN
 F 3 "" H 6950 2800 50  0001 C CNN
 	1    6950 2800
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R?
+L device:R R2
 U 1 1 5ACEB127
 P 7100 2650
-F 0 "R?" H 7170 2696 50  0000 L CNN
+F 0 "R2" H 7170 2696 50  0000 L CNN
 F 1 "R" H 7170 2605 50  0000 L CNN
-F 2 "" V 7030 2650 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 2650 50  0001 C CNN
 F 3 "" H 7100 2650 50  0001 C CNN
 	1    7100 2650
 	1    0    0    -1  
@@ -322,12 +322,12 @@ Connection ~ 7100 2500
 Wire Wire Line
 	6800 3300 6900 3300
 $Comp
-L device:R R?
+L device:R R3
 U 1 1 5ACEB0DE
 P 7000 3350
-F 0 "R?" H 7070 3396 50  0000 L CNN
+F 0 "R3" H 7070 3396 50  0000 L CNN
 F 1 "R" H 7070 3305 50  0000 L CNN
-F 2 "" V 6930 3350 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 3350 50  0001 C CNN
 F 3 "" H 7000 3350 50  0001 C CNN
 	1    7000 3350
 	-1   0    0    1   
@@ -371,12 +371,12 @@ Wire Wire Line
 Wire Wire Line
 	5300 3000 6350 3000
 $Comp
-L conn:Conn_01x08_Female J?
+L conn:Conn_01x08_Female S1
 U 1 1 5ADE50AA
 P 6550 4350
-F 0 "J?" H 6577 4326 50  0000 L CNN
+F 0 "S1" H 6577 4326 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 6577 4235 50  0000 L CNN
-F 2 "" H 6550 4350 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
 F 3 "~" H 6550 4350 50  0001 C CNN
 	1    6550 4350
 	1    0    0    -1  
@@ -390,12 +390,12 @@ Wire Wire Line
 Text GLabel 6800 3850 0    20   BiDi ~ 0
 VCC
 $Comp
-L conn:Conn_01x08_Male J?
+L conn:Conn_01x08_Male P1
 U 1 1 5AE04764
 P 6600 4350
-F 0 "J?" H 6706 4828 50  0000 C CNN
+F 0 "P1" H 6706 4828 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 6706 4737 50  0000 C CNN
-F 2 "" H 6600 4350 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 4350 50  0001 C CNN
 F 3 "~" H 6600 4350 50  0001 C CNN
 	1    6600 4350
 	1    0    0    -1  
@@ -407,23 +407,23 @@ Wire Wire Line
 Wire Wire Line
 	7150 4650 7150 4600
 $Comp
-L device:R R?
+L device:R R4
 U 1 1 5AE0476E
 P 6950 4150
-F 0 "R?" H 7020 4196 50  0000 L CNN
+F 0 "R4" H 7020 4196 50  0000 L CNN
 F 1 "R" H 7020 4105 50  0000 L CNN
-F 2 "" V 6880 4150 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6880 4150 50  0001 C CNN
 F 3 "" H 6950 4150 50  0001 C CNN
 	1    6950 4150
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R?
+L device:R R5
 U 1 1 5AE04775
 P 7100 4000
-F 0 "R?" H 7170 4046 50  0000 L CNN
+F 0 "R5" H 7170 4046 50  0000 L CNN
 F 1 "R" H 7170 3955 50  0000 L CNN
-F 2 "" V 7030 4000 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 4000 50  0001 C CNN
 F 3 "" H 7100 4000 50  0001 C CNN
 	1    7100 4000
 	1    0    0    -1  
@@ -434,12 +434,12 @@ Connection ~ 7100 3850
 Wire Wire Line
 	6800 4650 6900 4650
 $Comp
-L device:R R?
+L device:R R6
 U 1 1 5AE0477F
 P 7000 4700
-F 0 "R?" H 7070 4746 50  0000 L CNN
+F 0 "R6" H 7070 4746 50  0000 L CNN
 F 1 "R" H 7070 4655 50  0000 L CNN
-F 2 "" V 6930 4700 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 4700 50  0001 C CNN
 F 3 "" H 7000 4700 50  0001 C CNN
 	1    7000 4700
 	-1   0    0    1   
@@ -471,12 +471,12 @@ Wire Wire Line
 Wire Wire Line
 	7150 4650 7250 4650
 $Comp
-L conn:Conn_01x08_Male J?
+L conn:Conn_01x08_Male P3
 U 1 1 5AE06D65
 P 9150 4350
-F 0 "J?" H 9256 4828 50  0000 C CNN
+F 0 "P3" H 9256 4828 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 9256 4737 50  0000 C CNN
-F 2 "" H 9150 4350 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 9150 4350 50  0001 C CNN
 F 3 "~" H 9150 4350 50  0001 C CNN
 	1    9150 4350
 	1    0    0    -1  
@@ -488,23 +488,23 @@ Wire Wire Line
 Wire Wire Line
 	9700 4650 9700 4600
 $Comp
-L device:R R?
+L device:R R10
 U 1 1 5AE06D6F
 P 9500 4150
-F 0 "R?" H 9570 4196 50  0000 L CNN
+F 0 "R10" H 9570 4196 50  0000 L CNN
 F 1 "R" H 9570 4105 50  0000 L CNN
-F 2 "" V 9430 4150 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9430 4150 50  0001 C CNN
 F 3 "" H 9500 4150 50  0001 C CNN
 	1    9500 4150
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R?
+L device:R R11
 U 1 1 5AE06D76
 P 9650 4000
-F 0 "R?" H 9720 4046 50  0000 L CNN
+F 0 "R11" H 9720 4046 50  0000 L CNN
 F 1 "R" H 9720 3955 50  0000 L CNN
-F 2 "" V 9580 4000 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 4000 50  0001 C CNN
 F 3 "" H 9650 4000 50  0001 C CNN
 	1    9650 4000
 	1    0    0    -1  
@@ -515,12 +515,12 @@ Connection ~ 9650 3850
 Wire Wire Line
 	9350 4650 9450 4650
 $Comp
-L device:R R?
+L device:R R12
 U 1 1 5AE06D80
 P 9550 4700
-F 0 "R?" H 9620 4746 50  0000 L CNN
+F 0 "R12" H 9620 4746 50  0000 L CNN
 F 1 "R" H 9620 4655 50  0000 L CNN
-F 2 "" V 9480 4700 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 4700 50  0001 C CNN
 F 3 "" H 9550 4700 50  0001 C CNN
 	1    9550 4700
 	-1   0    0    1   
@@ -554,12 +554,12 @@ Wire Wire Line
 Wire Wire Line
 	9700 4650 9800 4650
 $Comp
-L conn:Conn_01x08_Male J?
+L conn:Conn_01x08_Male P2
 U 1 1 5AE09F98
 P 9150 3000
-F 0 "J?" H 9256 3478 50  0000 C CNN
+F 0 "P2" H 9256 3478 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 9256 3387 50  0000 C CNN
-F 2 "" H 9150 3000 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 9150 3000 50  0001 C CNN
 F 3 "~" H 9150 3000 50  0001 C CNN
 	1    9150 3000
 	1    0    0    -1  
@@ -571,23 +571,23 @@ Wire Wire Line
 Wire Wire Line
 	9700 3300 9700 3250
 $Comp
-L device:R R?
+L device:R R7
 U 1 1 5AE09FA2
 P 9500 2800
-F 0 "R?" H 9570 2846 50  0000 L CNN
+F 0 "R7" H 9570 2846 50  0000 L CNN
 F 1 "R" H 9570 2755 50  0000 L CNN
-F 2 "" V 9430 2800 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9430 2800 50  0001 C CNN
 F 3 "" H 9500 2800 50  0001 C CNN
 	1    9500 2800
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R?
+L device:R R8
 U 1 1 5AE09FA9
 P 9650 2650
-F 0 "R?" H 9720 2696 50  0000 L CNN
+F 0 "R8" H 9720 2696 50  0000 L CNN
 F 1 "R" H 9720 2605 50  0000 L CNN
-F 2 "" V 9580 2650 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 2650 50  0001 C CNN
 F 3 "" H 9650 2650 50  0001 C CNN
 	1    9650 2650
 	1    0    0    -1  
@@ -598,12 +598,12 @@ Connection ~ 9650 2500
 Wire Wire Line
 	9350 3300 9450 3300
 $Comp
-L device:R R?
+L device:R R9
 U 1 1 5AE09FB3
 P 9550 3350
-F 0 "R?" H 9620 3396 50  0000 L CNN
+F 0 "R9" H 9620 3396 50  0000 L CNN
 F 1 "R" H 9620 3305 50  0000 L CNN
-F 2 "" V 9480 3350 50  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 3350 50  0001 C CNN
 F 3 "" H 9550 3350 50  0001 C CNN
 	1    9550 3350
 	-1   0    0    1   
@@ -667,23 +667,23 @@ Wire Wire Line
 Wire Wire Line
 	5200 4250 6350 4250
 $Comp
-L conn:Conn_01x08_Female J?
+L conn:Conn_01x08_Female S2
 U 1 1 5AE4B0ED
 P 9100 3000
-F 0 "J?" H 9127 2976 50  0000 L CNN
+F 0 "S2" H 9127 2976 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 9127 2885 50  0000 L CNN
-F 2 "" H 9100 3000 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 3000 50  0001 C CNN
 F 3 "~" H 9100 3000 50  0001 C CNN
 	1    9100 3000
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x08_Female J?
+L conn:Conn_01x08_Female S3
 U 1 1 5AE4B18B
 P 9100 4350
-F 0 "J?" H 9127 4326 50  0000 L CNN
+F 0 "S3" H 9127 4326 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 9127 4235 50  0000 L CNN
-F 2 "" H 9100 4350 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 4350 50  0001 C CNN
 F 3 "~" H 9100 4350 50  0001 C CNN
 	1    9100 4350
 	1    0    0    -1  
