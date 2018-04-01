@@ -32,8 +32,6 @@ Text GLabel 3000 5700 0    20   BiDi ~ 0
 VCC
 Wire Wire Line
 	3000 5700 3200 5700
-Text GLabel 6800 2500 0    20   BiDi ~ 0
-VCC
 Wire Wire Line
 	7550 2900 7550 3250
 Text GLabel 4200 5800 0    20   BiDi ~ 0
@@ -287,8 +285,6 @@ F 3 "" H 7350 3200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6800 2700 6800 2500
-Wire Wire Line
 	6800 2500 7100 2500
 Wire Wire Line
 	7150 3300 7150 3250
@@ -361,8 +357,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 2800 6350 2800
 Wire Wire Line
-	6350 2700 6350 2450
-Wire Wire Line
 	7150 3250 7550 3250
 Wire Wire Line
 	7150 3300 7250 3300
@@ -387,8 +381,6 @@ Wire Wire Line
 	6350 4650 5850 4650
 Wire Wire Line
 	10200 2450 10200 3800
-Text GLabel 6800 3850 0    20   BiDi ~ 0
-VCC
 $Comp
 L conn:Conn_01x08_Male P1
 U 1 1 5AE04764
@@ -880,16 +872,20 @@ Wire Wire Line
 Connection ~ 6250 4750
 Connection ~ 8800 4750
 Connection ~ 8800 5750
+Wire Wire Line
+	6350 2700 6350 2450
 Wire Bus Line
-	4550 5350 4550 5650
-Wire Bus Line
-	4550 5650 8300 5650
-Wire Bus Line
-	2850 2200 8750 2200
-Wire Bus Line
-	2550 2050 8500 2050
+	2850 2200 2850 3850
 Wire Bus Line
 	2550 2050 2550 5150
 Wire Bus Line
-	2850 2200 2850 3850
+	2550 2050 8500 2050
+Wire Bus Line
+	2850 2200 8750 2200
+Wire Bus Line
+	4550 5650 8300 5650
+Wire Bus Line
+	4550 5350 4550 5650
+Wire Wire Line
+	6800 2700 6800 2500
 $EndSCHEMATC
