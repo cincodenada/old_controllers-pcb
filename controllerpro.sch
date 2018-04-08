@@ -857,17 +857,6 @@ Text GLabel 9550 3500 3    50   Input ~ 0
 GNDA
 Text GLabel 7000 3500 3    50   Input ~ 0
 GNDA
-$Comp
-L Teensy:Teensy2.0 U1
-U 1 1 5ACBB333
-P 3500 5050
-F 0 "U1" H 3500 6193 60  0000 C CNN
-F 1 "Teensy2.0" H 3500 6087 60  0000 C CNN
-F 2 "teensy:Teensy2.0" H 3500 5981 60  0000 C CNN
-F 3 "" H 3600 4000 60  0000 C CNN
-	1    3500 5050
-	1    0    0    -1  
-$EndComp
 $Bitmap
 Pos 3700 6800
 Scale 1.000000
@@ -13800,4 +13789,15 @@ Wire Bus Line
 	4550 5650 8300 5650
 Wire Bus Line
 	4550 2200 4550 5050
+$Comp
+L controllerpro-eagle-import:Teensy2.0 U?
+U 1 1 5AFACC0E
+P 3500 5050
+F 0 "U?" H 3500 6087 60  0000 C CNN
+F 1 "Teensy2.0" H 3500 5981 60  0000 C CNN
+F 2 "" H 3600 4000 60  0000 C CNN
+F 3 "" H 3600 4000 60  0000 C CNN
+	1    3500 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
