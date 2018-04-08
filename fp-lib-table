@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name controllerpro)(type KiCad)(uri "$(KIPRJMOD)/controllerpro.pretty")(options "")(descr ""))
+  (lib (name t32_ref)(type Eagle)(uri "$(KIPRJMOD)/t32_ref.lbr")(options "")(descr ""))
 )
