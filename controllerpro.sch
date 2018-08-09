@@ -109,36 +109,14 @@ Entry Wire Line
 Entry Wire Line
 	5550 5650 5650 5550
 $Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT1
-U 1 0 25CB9020E0F32BC5
-P 7350 4550
-F 0 "PORT1" V 6825 4400 59  0000 L BNN
-F 1 "NINTENDO-MULTI" V 7850 4400 59  0000 L BNN
-F 2 "NINTENDO-MULTI" H 7350 4550 50  0001 C CNN
-F 3 "" H 7350 4550 50  0001 C CNN
-	1    7350 4550
-	0    1    1    0   
-$EndComp
-$Comp
 L controllerpro-eagle-import:NINTENDO-MULTI PORT2
 U 1 0 E1CA354018224F2D
 P 9900 3200
 F 0 "PORT2" V 9375 3050 59  0000 L BNN
 F 1 "NINTENDO-MULTI" V 10400 3050 59  0000 L BNN
-F 2 "NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
+F 2 "controllerpro:NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
 F 3 "" H 9900 3200 50  0001 C CNN
 	1    9900 3200
-	0    1    1    0   
-$EndComp
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT3
-U 1 0 C38EF66B382CA099
-P 9900 4550
-F 0 "PORT3" V 9375 4400 59  0000 L BNN
-F 1 "NINTENDO-MULTI" V 10400 4400 59  0000 L BNN
-F 2 "NINTENDO-MULTI" H 9900 4550 50  0001 C CNN
-F 3 "" H 9900 4550 50  0001 C CNN
-	1    9900 4550
 	0    1    1    0   
 $EndComp
 $Comp
@@ -257,7 +235,7 @@ U 1 0 DE7FE6B892AE2CB7
 P 7350 3200
 F 0 "PORT0" V 6825 3050 59  0000 L BNN
 F 1 "NINTENDO-MULTI" V 7850 3050 59  0000 L BNN
-F 2 "NINTENDO-MULTI" H 7350 3200 50  0001 C CNN
+F 2 "controllerpro:NINTENDO-MULTI" H 7350 3200 50  0001 C CNN
 F 3 "" H 7350 3200 50  0001 C CNN
 	1    7350 3200
 	0    1    1    0   
@@ -337,128 +315,6 @@ Wire Wire Line
 Wire Wire Line
 	10200 2450 10200 3800
 $Comp
-L Connector:Conn_01x08_Male P1
-U 1 1 5AE04764
-P 6600 4350
-F 0 "P1" H 6706 4828 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 4737 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 4350 50  0001 C CNN
-F 3 "~" H 6600 4350 50  0001 C CNN
-	1    6600 4350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 4050 6800 3850
-Wire Wire Line
-	7150 4650 7150 4600
-$Comp
-L Device:R R5
-U 1 1 5AE04775
-P 7100 4000
-F 0 "R5" H 7170 4046 50  0000 L CNN
-F 1 "R" H 7170 3955 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 4000 50  0001 C CNN
-F 3 "" H 7100 4000 50  0001 C CNN
-	1    7100 4000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 4650 6900 4650
-$Comp
-L Device:R R6
-U 1 1 5AE0477F
-P 7000 4700
-F 0 "R6" H 7070 4746 50  0000 L CNN
-F 1 "R" H 7070 4655 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 4700 50  0001 C CNN
-F 3 "" H 7000 4700 50  0001 C CNN
-	1    7000 4700
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6800 4350 7250 4350
-Wire Wire Line
-	6800 4450 7250 4450
-Connection ~ 7100 4150
-Wire Wire Line
-	7100 4150 7250 4150
-Wire Wire Line
-	7100 4150 7100 4550
-Wire Wire Line
-	7100 4550 7000 4550
-Wire Wire Line
-	6800 4750 6800 4850
-Wire Wire Line
-	6900 4650 6900 4750
-Wire Wire Line
-	6900 4750 7250 4750
-Wire Wire Line
-	7150 4600 7550 4600
-Wire Wire Line
-	7150 4650 7250 4650
-$Comp
-L Connector:Conn_01x08_Male P3
-U 1 1 5AE06D65
-P 9150 4350
-F 0 "P3" H 9256 4828 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 9256 4737 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 9150 4350 50  0001 C CNN
-F 3 "~" H 9150 4350 50  0001 C CNN
-	1    9150 4350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9350 4050 9350 3850
-Wire Wire Line
-	9700 4650 9700 4600
-$Comp
-L Device:R R11
-U 1 1 5AE06D76
-P 9650 4000
-F 0 "R11" H 9720 4046 50  0000 L CNN
-F 1 "R" H 9720 3955 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 4000 50  0001 C CNN
-F 3 "" H 9650 4000 50  0001 C CNN
-	1    9650 4000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9350 4650 9450 4650
-$Comp
-L Device:R R12
-U 1 1 5AE06D80
-P 9550 4700
-F 0 "R12" H 9620 4746 50  0000 L CNN
-F 1 "R" H 9620 4655 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 4700 50  0001 C CNN
-F 3 "" H 9550 4700 50  0001 C CNN
-	1    9550 4700
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	9350 4350 9800 4350
-Wire Wire Line
-	9350 4250 9800 4250
-Wire Wire Line
-	9350 4450 9800 4450
-Connection ~ 9650 4150
-Wire Wire Line
-	9650 4150 9800 4150
-Wire Wire Line
-	9650 4150 9650 4550
-Wire Wire Line
-	9650 4550 9550 4550
-Wire Wire Line
-	9350 4750 9350 4850
-Wire Wire Line
-	9450 4650 9450 4750
-Wire Wire Line
-	9450 4750 9800 4750
-Wire Wire Line
-	9700 4600 10100 4600
-Wire Wire Line
-	9700 4650 9800 4650
-$Comp
 L Connector:Conn_01x08_Male P2
 U 1 1 5AE09F98
 P 9150 3000
@@ -528,20 +384,6 @@ Wire Wire Line
 Wire Wire Line
 	10100 3250 10100 2900
 Connection ~ 10100 2900
-Wire Wire Line
-	10100 3850 10100 4250
-Wire Wire Line
-	10100 4250 10000 4250
-Connection ~ 10100 4250
-Wire Wire Line
-	10100 4250 10100 4600
-Wire Wire Line
-	7550 4600 7550 4250
-Wire Wire Line
-	7450 4250 7550 4250
-Connection ~ 7550 4250
-Wire Wire Line
-	7550 4250 7550 3850
 Connection ~ 5300 4350
 Wire Wire Line
 	5300 4350 5300 5700
@@ -605,8 +447,6 @@ Wire Wire Line
 Connection ~ 8900 3800
 Wire Wire Line
 	5500 2150 5500 4450
-Wire Wire Line
-	7250 4250 6800 4250
 Text GLabel 5750 2300 0    20   BiDi ~ 0
 S_OR_NES1
 Entry Wire Line
@@ -744,28 +584,6 @@ Wire Wire Line
 Wire Wire Line
 	6800 2700 6800 2500
 $Comp
-L Device:R R4
-U 1 1 5AE0476E
-P 6950 4150
-F 0 "R4" H 7020 4196 50  0000 L CNN
-F 1 "R" H 7020 4105 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" V 6880 4150 50  0001 C CNN
-F 3 "" H 6950 4150 50  0001 C CNN
-	1    6950 4150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R10
-U 1 1 5AE06D6F
-P 9500 4150
-F 0 "R10" H 9570 4196 50  0000 L CNN
-F 1 "R" H 9570 4105 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" V 9430 4150 50  0001 C CNN
-F 3 "" H 9500 4150 50  0001 C CNN
-	1    9500 4150
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:R R7
 U 1 1 5AE09FA2
 P 9500 2800
@@ -790,10 +608,6 @@ $EndComp
 Wire Wire Line
 	6800 2800 7100 2800
 Wire Wire Line
-	6800 4150 7100 4150
-Wire Wire Line
-	9350 4150 9650 4150
-Wire Wire Line
 	9350 2800 9650 2800
 Wire Wire Line
 	6800 3000 7250 3000
@@ -801,14 +615,6 @@ Text GLabel 7550 2900 2    50   Input ~ 0
 VCCA
 Text GLabel 10100 2900 2    50   Input ~ 0
 VCCA
-Text GLabel 7550 4250 2    50   Input ~ 0
-VCCB
-Text GLabel 10100 4250 2    50   Input ~ 0
-VCCB
-Text GLabel 7000 4850 3    50   Input ~ 0
-GNDB
-Text GLabel 9550 4850 3    50   Input ~ 0
-GNDB
 Text GLabel 9550 3500 3    50   Input ~ 0
 GNDA
 Text GLabel 7000 3500 3    50   Input ~ 0
@@ -13745,19 +13551,11 @@ F 3 "" H 3600 4000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6800 2500 7550 2500
+	6800 2500 7100 2500
 Wire Wire Line
 	6800 3500 7250 3500
 Wire Wire Line
-	6800 3850 7550 3850
-Wire Wire Line
-	6800 4850 7250 4850
-Wire Wire Line
-	9350 3850 10100 3850
-Wire Wire Line
-	9350 4850 9800 4850
-Wire Wire Line
-	9350 2500 10100 2500
+	9350 2500 9650 2500
 Wire Wire Line
 	9350 3500 9800 3500
 Wire Bus Line
@@ -13772,4 +13570,10 @@ Wire Bus Line
 	4550 5650 8300 5650
 Wire Bus Line
 	4550 2200 4550 5050
+Connection ~ 9650 2500
+Wire Wire Line
+	9650 2500 10100 2500
+Connection ~ 7100 2500
+Wire Wire Line
+	7100 2500 7550 2500
 $EndSCHEMATC
