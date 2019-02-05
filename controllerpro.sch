@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:controllerpro-cache
+LIBS:port-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -256,35 +257,33 @@ $EndComp
 Wire Wire Line
 	7550 2500 7550 2900
 Wire Wire Line
-	6800 3300 6900 3300
+	6800 3300 7000 3300
 $Comp
 L Device:R R3
 U 1 1 5ACEB0DE
-P 7000 3350
-F 0 "R3" H 7070 3396 50  0000 L CNN
-F 1 "R" H 7070 3305 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 3350 50  0001 C CNN
-F 3 "" H 7000 3350 50  0001 C CNN
-	1    7000 3350
+P 7100 3300
+F 0 "R3" H 7170 3346 50  0000 L CNN
+F 1 "R" H 7170 3255 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 3300 50  0001 C CNN
+F 3 "" H 7100 3300 50  0001 C CNN
+	1    7100 3300
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	6800 2900 7250 2900
 Wire Wire Line
-	6800 3100 7250 3100
+	6800 3100 6850 3100
 Connection ~ 7100 2800
 Wire Wire Line
 	7100 2800 7250 2800
 Wire Wire Line
-	7100 2800 7100 3200
-Wire Wire Line
-	7100 3200 7000 3200
+	7100 2800 7100 3150
 Wire Wire Line
 	6800 3400 6800 3500
 Wire Wire Line
-	6900 3300 6900 3400
+	7000 3300 7000 3400
 Wire Wire Line
-	6900 3400 7250 3400
+	7000 3400 7250 3400
 Wire Wire Line
 	6300 2300 6300 2800
 Wire Wire Line
@@ -341,16 +340,16 @@ F 3 "" H 9650 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9350 3300 9450 3300
+	9350 3300 9550 3300
 $Comp
 L Device:R R9
 U 1 1 5AE09FB3
-P 9550 3350
-F 0 "R9" H 9620 3396 50  0000 L CNN
-F 1 "R" H 9620 3305 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 3350 50  0001 C CNN
-F 3 "" H 9550 3350 50  0001 C CNN
-	1    9550 3350
+P 9650 3300
+F 0 "R9" H 9720 3346 50  0000 L CNN
+F 1 "R" H 9720 3255 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 3300 50  0001 C CNN
+F 3 "" H 9650 3300 50  0001 C CNN
+	1    9650 3300
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
@@ -358,20 +357,18 @@ Wire Wire Line
 Wire Wire Line
 	9350 2900 9800 2900
 Wire Wire Line
-	9350 3100 9800 3100
+	9350 3100 9400 3100
 Connection ~ 9650 2800
 Wire Wire Line
 	9650 2800 9800 2800
 Wire Wire Line
-	9650 2800 9650 3200
-Wire Wire Line
-	9650 3200 9550 3200
+	9650 2800 9650 3150
 Wire Wire Line
 	9350 3400 9350 3500
 Wire Wire Line
-	9450 3300 9450 3400
+	9550 3300 9550 3400
 Wire Wire Line
-	9450 3400 9800 3400
+	9550 3400 9800 3400
 Wire Wire Line
 	9700 3250 10100 3250
 Wire Wire Line
@@ -615,9 +612,9 @@ Text GLabel 7550 2900 2    50   Input ~ 0
 VCCA
 Text GLabel 10100 2900 2    50   Input ~ 0
 VCCA
-Text GLabel 9550 3500 3    50   Input ~ 0
+Text GLabel 9550 3550 3    50   Input ~ 0
 GNDA
-Text GLabel 7000 3500 3    50   Input ~ 0
+Text GLabel 7000 3550 3    50   Input ~ 0
 GNDA
 $Bitmap
 Pos 3700 6800
@@ -13553,11 +13550,63 @@ $EndComp
 Wire Wire Line
 	6800 2500 7100 2500
 Wire Wire Line
-	6800 3500 7250 3500
-Wire Wire Line
 	9350 2500 9650 2500
 Wire Wire Line
 	9350 3500 9800 3500
+Connection ~ 9650 2500
+Wire Wire Line
+	9650 2500 10100 2500
+Connection ~ 7100 2500
+Wire Wire Line
+	7100 2500 7550 2500
+$Comp
+L Device:R R?
+U 1 1 5C5BB4CE
+P 6850 3250
+F 0 "R?" H 6920 3296 50  0000 L CNN
+F 1 "R" H 6920 3205 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6780 3250 50  0001 C CNN
+F 3 "" H 6850 3250 50  0001 C CNN
+	1    6850 3250
+	1    0    0    -1  
+$EndComp
+Connection ~ 6850 3100
+Wire Wire Line
+	6850 3100 7250 3100
+Wire Wire Line
+	6800 3500 7250 3500
+Wire Wire Line
+	7000 3550 7000 3450
+Wire Wire Line
+	7000 3450 6850 3450
+Connection ~ 7000 3450
+Wire Wire Line
+	6850 3450 6850 3400
+$Comp
+L Device:R R?
+U 1 1 5C5D526F
+P 9400 3250
+F 0 "R?" H 9470 3296 50  0000 L CNN
+F 1 "R" H 9470 3205 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9330 3250 50  0001 C CNN
+F 3 "" H 9400 3250 50  0001 C CNN
+	1    9400 3250
+	1    0    0    -1  
+$EndComp
+Connection ~ 9400 3100
+Wire Wire Line
+	9400 3100 9800 3100
+Wire Wire Line
+	9550 3550 9550 3450
+Wire Wire Line
+	9550 3450 9400 3450
+Wire Wire Line
+	9400 3450 9400 3400
+Wire Wire Line
+	9650 3450 9550 3450
+Connection ~ 9550 3450
+Wire Wire Line
+	7100 3450 7000 3450
 Wire Bus Line
 	4550 5150 4550 5650
 Wire Bus Line
@@ -13570,10 +13619,4 @@ Wire Bus Line
 	4550 5650 8300 5650
 Wire Bus Line
 	4550 2200 4550 5050
-Connection ~ 9650 2500
-Wire Wire Line
-	9650 2500 10100 2500
-Connection ~ 7100 2500
-Wire Wire Line
-	7100 2500 7550 2500
 $EndSCHEMATC
