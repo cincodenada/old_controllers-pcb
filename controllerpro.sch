@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 4300 5200 2    20   BiDi ~ 0
+Text GLabel 4500 5200 0    20   BiDi ~ 0
 5VDATA[0..3]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
 S_OR_NES[0..3]
@@ -28,17 +28,17 @@ Wire Wire Line
 	7550 2900 7550 3250
 Text GLabel 6050 2150 0    20   BiDi ~ 0
 5VDATA0
-Text GLabel 4400 5550 0    20   BiDi ~ 0
+Text GLabel 4400 5450 0    20   BiDi ~ 0
 5VDATA0
 Text GLabel 5500 2150 0    20   BiDi ~ 0
 5VDATA1
 Wire Wire Line
 	5500 4450 6350 4450
-Text GLabel 4400 5650 0    20   BiDi ~ 0
-5VDATA1
 Text GLabel 4400 5350 0    20   BiDi ~ 0
+5VDATA1
+Text GLabel 4400 5650 0    20   BiDi ~ 0
 5VDATA2
-Text GLabel 4400 5450 0    20   BiDi ~ 0
+Text GLabel 4400 5550 0    20   BiDi ~ 0
 5VDATA3
 Text GLabel 6300 2300 0    20   BiDi ~ 0
 S_OR_NES0
@@ -60,7 +60,7 @@ Text GLabel 5850 5400 0    20   BiDi ~ 0
 3VDATA1
 Wire Wire Line
 	5850 5550 5850 4650
-Text GLabel 4800 4850 0    20   BiDi ~ 0
+Text GLabel 4750 4900 3    20   BiDi ~ 0
 3VDATA1
 Text GLabel 4750 3850 0    20   BiDi ~ 0
 3VDATA2
@@ -107,13 +107,13 @@ $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY02
 U 1 0 484E0C833EFDB7C
-P 750 3500
-F 0 "#SUPPLY02" H 750 3500 50  0001 C CNN
-F 1 "VCC" H 675 3625 59  0000 L BNN
-F 2 "" H 750 3500 50  0001 C CNN
-F 3 "" H 750 3500 50  0001 C CNN
-	1    750  3500
-	0    -1   -1   0   
+P 750 3400
+F 0 "#SUPPLY02" H 750 3400 50  0001 C CNN
+F 1 "VCC" H 675 3525 59  0000 L BNN
+F 2 "" H 750 3400 50  0001 C CNN
+F 3 "" H 750 3400 50  0001 C CNN
+	1    750  3400
+	1    0    0    -1  
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY03
@@ -32241,6 +32241,24 @@ Wire Wire Line
 	2850 4900 3050 4900
 Wire Wire Line
 	3050 4900 3050 4700
+$Comp
+L Jumper:SolderJumper_2_Open JP?
+U 1 1 5C5D5D6A
+P 750 3650
+F 0 "JP?" V 650 3450 50  0000 L CNN
+F 1 "SolderJumper_2_Open" H 750 3550 50  0000 L CNN
+F 2 "" H 750 3650 50  0001 C CNN
+F 3 "~" H 750 3650 50  0001 C CNN
+	1    750  3650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	850  3500 750  3500
+Connection ~ 750  3500
+Wire Wire Line
+	750  3800 850  3800
+Wire Wire Line
+	850  3800 850  3700
 Wire Bus Line
 	4500 2050 8500 2050
 Wire Bus Line
