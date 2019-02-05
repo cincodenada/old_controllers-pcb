@@ -216,32 +216,10 @@ F 3 "" H 7350 3200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7150 3300 7150 3250
-$Comp
-L Device:R R2
-U 1 1 5ACEB127
-P 7100 2650
-F 0 "R2" H 7170 2696 50  0000 L CNN
-F 1 "R" H 7170 2605 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 2650 50  0001 C CNN
-F 3 "" H 7100 2650 50  0001 C CNN
-	1    7100 2650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7550 2500 7550 2900
 Wire Wire Line
 	6800 3300 7000 3300
-$Comp
-L Device:R R3
-U 1 1 5ACEB0DE
-P 7100 3300
-F 0 "R3" H 7170 3346 50  0000 L CNN
-F 1 "R" H 7170 3255 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 7030 3300 50  0001 C CNN
-F 3 "" H 7100 3300 50  0001 C CNN
-	1    7100 3300
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	6800 2900 7250 2900
 Wire Wire Line
@@ -301,30 +279,8 @@ Wire Wire Line
 	9350 2700 9350 2500
 Wire Wire Line
 	9700 3300 9700 3250
-$Comp
-L Device:R R8
-U 1 1 5AE09FA9
-P 9650 2650
-F 0 "R8" H 9720 2696 50  0000 L CNN
-F 1 "R" H 9720 2605 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 2650 50  0001 C CNN
-F 3 "" H 9650 2650 50  0001 C CNN
-	1    9650 2650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9350 3300 9550 3300
-$Comp
-L Device:R R9
-U 1 1 5AE09FB3
-P 9650 3300
-F 0 "R9" H 9720 3346 50  0000 L CNN
-F 1 "R" H 9720 3255 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9580 3300 50  0001 C CNN
-F 3 "" H 9650 3300 50  0001 C CNN
-	1    9650 3300
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	9350 3000 9800 3000
 Wire Wire Line
@@ -547,32 +503,6 @@ Wire Wire Line
 	6350 2700 6350 2450
 Wire Wire Line
 	6800 2700 6800 2500
-$Comp
-L Device:R R7
-U 1 1 5AE09FA2
-P 9500 2800
-F 0 "R7" H 9570 2846 50  0000 L CNN
-F 1 "R" H 9570 2755 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" V 9430 2800 50  0001 C CNN
-F 3 "" H 9500 2800 50  0001 C CNN
-	1    9500 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5ACD46C7
-P 6950 2800
-F 0 "R1" H 7020 2846 50  0000 L CNN
-F 1 "R" H 7020 2755 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" V 6880 2800 50  0001 C CNN
-F 3 "" H 6950 2800 50  0001 C CNN
-	1    6950 2800
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6800 2800 7100 2800
-Wire Wire Line
-	9350 2800 9650 2800
 Wire Wire Line
 	6800 3000 7250 3000
 Text GLabel 7550 2900 2    50   Input ~ 0
@@ -13484,17 +13414,12 @@ Wire Wire Line
 Wire Wire Line
 	4750 3650 4700 3700
 Wire Wire Line
-	6800 2500 7100 2500
-Wire Wire Line
 	9350 2500 9650 2500
 Wire Wire Line
 	9350 3500 9800 3500
 Connection ~ 9650 2500
 Wire Wire Line
 	9650 2500 10100 2500
-Connection ~ 7100 2500
-Wire Wire Line
-	7100 2500 7550 2500
 $Comp
 L Device:R R4
 U 1 1 5C5BB4CE
@@ -32242,12 +32167,12 @@ Wire Wire Line
 Wire Wire Line
 	3050 4900 3050 4700
 $Comp
-L Jumper:SolderJumper_2_Open JP?
+L Jumper:SolderJumper_2_Open JP1
 U 1 1 5C5D5D6A
 P 750 3650
-F 0 "JP?" V 650 3450 50  0000 L CNN
+F 0 "JP1" V 650 3450 50  0000 L CNN
 F 1 "SolderJumper_2_Open" H 750 3550 50  0000 L CNN
-F 2 "" H 750 3650 50  0001 C CNN
+F 2 "t32_ref:SOLDERJUMPER" H 750 3650 50  0001 C CNN
 F 3 "~" H 750 3650 50  0001 C CNN
 	1    750  3650
 	0    1    1    0   
@@ -32259,16 +32184,93 @@ Wire Wire Line
 	750  3800 850  3800
 Wire Wire Line
 	850  3800 850  3700
+Wire Wire Line
+	7100 2500 7550 2500
+Wire Wire Line
+	6800 2500 7100 2500
+Connection ~ 7100 2500
+$Comp
+L Jumper:SolderJumper_2_Open JP3
+U 1 1 5C5F06B9
+P 7100 2650
+F 0 "JP3" V 7054 2718 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 7145 2718 50  0000 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 7100 2650 50  0001 C CNN
+F 3 "~" H 7100 2650 50  0001 C CNN
+	1    7100 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP2
+U 1 1 5C5F08A2
+P 6950 2800
+F 0 "JP2" H 6950 3005 50  0000 C CNN
+F 1 "SolderJumper_2_Bridged" H 6950 2914 50  0000 C CNN
+F 2 "t32_ref:SOLDERJUMPER" H 6950 2800 50  0001 C CNN
+F 3 "~" H 6950 2800 50  0001 C CNN
+	1    6950 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP4
+U 1 1 5C5F0F77
+P 7100 3300
+F 0 "JP4" V 7054 3368 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 7145 3368 50  0000 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 7100 3300 50  0001 C CNN
+F 3 "~" H 7100 3300 50  0001 C CNN
+	1    7100 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP7
+U 1 1 5C5F13FB
+P 9650 3300
+F 0 "JP7" V 9604 3368 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 9695 3368 50  0000 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 9650 3300 50  0001 C CNN
+F 3 "~" H 9650 3300 50  0001 C CNN
+	1    9650 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP6
+U 1 1 5C5F14F0
+P 9650 2650
+F 0 "JP6" V 9604 2718 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 9695 2718 50  0000 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 9650 2650 50  0001 C CNN
+F 3 "~" H 9650 2650 50  0001 C CNN
+	1    9650 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP5
+U 1 1 5C5F15B9
+P 9500 2800
+F 0 "JP5" H 9500 3005 50  0000 C CNN
+F 1 "SolderJumper_2_Bridged" H 9500 2914 50  0000 C CNN
+F 2 "t32_ref:SOLDERJUMPER" H 9500 2800 50  0001 C CNN
+F 3 "~" H 9500 2800 50  0001 C CNN
+	1    9500 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2800 6800 2800
+Connection ~ 6800 2800
+Wire Wire Line
+	9350 2800 9650 2800
 Wire Bus Line
-	4500 2050 8500 2050
-Wire Bus Line
-	4850 5650 8300 5650
-Wire Bus Line
-	4850 2200 8750 2200
-Wire Bus Line
-	4850 2200 4850 3450
+	4500 2050 4500 5550
 Wire Bus Line
 	4850 3550 4850 5650
 Wire Bus Line
-	4500 2050 4500 5550
+	4850 2200 4850 3450
+Wire Bus Line
+	4850 2200 8750 2200
+Wire Bus Line
+	4850 5650 8300 5650
+Wire Bus Line
+	4500 2050 8500 2050
+Connection ~ 9350 2800
 $EndSCHEMATC
