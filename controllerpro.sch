@@ -22,8 +22,6 @@ Text GLabel 4850 3800 2    20   BiDi ~ 0
 3VDATA[0..3]
 Text GLabel 3650 4250 1    20   BiDi ~ 0
 CLOCK
-Text GLabel 3650 4350 3    20   BiDi ~ 0
-LATCH
 Wire Wire Line
 	7550 2900 7550 3250
 Text GLabel 6050 2150 0    20   BiDi ~ 0
@@ -67,11 +65,11 @@ Text GLabel 4750 3850 0    20   BiDi ~ 0
 Text GLabel 4750 3750 0    20   BiDi ~ 0
 3VDATA3
 Wire Wire Line
-	3650 5100 3450 5100
+	3750 5050 3550 5050
 Wire Wire Line
-	3450 5100 3450 4600
+	3550 5050 3550 4550
 Wire Wire Line
-	3450 4600 3650 4600
+	3550 4550 3750 4550
 Entry Wire Line
 	5400 2050 5500 2150
 Entry Wire Line
@@ -82,17 +80,6 @@ Entry Wire Line
 	4750 4900 4850 4800
 Entry Wire Line
 	5550 5650 5650 5550
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT2
-U 1 0 E1CA354018224F2D
-P 9900 3200
-F 0 "PORT2" V 9375 3050 59  0000 L BNN
-F 1 "NINTENDO-MULTI" V 10400 3050 59  0000 L BNN
-F 2 "controllerpro:NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
-F 3 "" H 9900 3200 50  0001 C CNN
-	1    9900 3200
-	0    1    1    0   
-$EndComp
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY01
 U 1 0 57B2A199E46721A6
@@ -140,34 +127,34 @@ $EndComp
 $Comp
 L controllerpro-eagle-import:RN42 U$1
 U 1 0 850A8AB0BABD3B23
-P 3850 4900
-F 0 "U$1" H 3650 5230 59  0000 L BNN
-F 1 "RN42" H 3650 4400 59  0000 L BNN
-F 2 "RN42" H 3850 4900 50  0001 C CNN
-F 3 "" H 3850 4900 50  0001 C CNN
-	1    3850 4900
+P 3950 4850
+F 0 "U$1" H 3750 5180 59  0000 L BNN
+F 1 "RN42" H 3750 4350 59  0000 L BNN
+F 2 "RN42" H 3950 4850 50  0001 C CNN
+F 3 "" H 3950 4850 50  0001 C CNN
+	1    3950 4850
 	-1   0    0    1   
 $EndComp
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY04
 U 1 0 5EA88E956DF68C43
-P 3550 4900
-F 0 "#SUPPLY04" H 3550 4900 50  0001 C CNN
-F 1 "GND" H 3475 4775 59  0000 L BNN
-F 2 "" H 3550 4900 50  0001 C CNN
-F 3 "" H 3550 4900 50  0001 C CNN
-	1    3550 4900
+P 3650 4850
+F 0 "#SUPPLY04" H 3650 4850 50  0001 C CNN
+F 1 "GND" H 3575 4725 59  0000 L BNN
+F 2 "" H 3650 4850 50  0001 C CNN
+F 3 "" H 3650 4850 50  0001 C CNN
+	1    3650 4850
 	0    1    1    0   
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY05
 U 1 0 FDA4F4BDFD320F9F
-P 3550 5000
-F 0 "#SUPPLY05" H 3550 5000 50  0001 C CNN
-F 1 "VCC" H 3475 5125 59  0000 L BNN
-F 2 "" H 3550 5000 50  0001 C CNN
-F 3 "" H 3550 5000 50  0001 C CNN
-	1    3550 5000
+P 3650 4950
+F 0 "#SUPPLY05" H 3650 4950 50  0001 C CNN
+F 1 "VCC" H 3575 5075 59  0000 L BNN
+F 2 "" H 3650 4950 50  0001 C CNN
+F 3 "" H 3650 4950 50  0001 C CNN
+	1    3650 4950
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -219,7 +206,7 @@ Wire Wire Line
 Wire Wire Line
 	7550 2500 7550 2900
 Wire Wire Line
-	6800 3300 7000 3300
+	6800 3300 6950 3300
 Wire Wire Line
 	6800 2900 7250 2900
 Wire Wire Line
@@ -232,9 +219,9 @@ Wire Wire Line
 Wire Wire Line
 	6800 3400 6800 3500
 Wire Wire Line
-	7000 3300 7000 3400
+	6950 3300 6950 3400
 Wire Wire Line
-	7000 3400 7250 3400
+	6950 3400 7250 3400
 Wire Wire Line
 	6300 2300 6300 2800
 Wire Wire Line
@@ -245,8 +232,6 @@ Wire Wire Line
 	7150 3300 7250 3300
 Wire Wire Line
 	5200 2900 6350 2900
-Wire Wire Line
-	5300 3000 6350 3000
 $Comp
 L Connector:Conn_01x08_Female S1
 U 1 1 5ADE50AA
@@ -259,11 +244,9 @@ F 3 "~" H 6550 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 4350 5300 4350
-Wire Wire Line
 	6350 4650 5850 4650
 Wire Wire Line
-	10200 2450 10200 3800
+	10200 2450 10200 3900
 $Comp
 L Connector:Conn_01x08_Male P2
 U 1 1 5AE09F98
@@ -280,9 +263,7 @@ Wire Wire Line
 Wire Wire Line
 	9700 3300 9700 3250
 Wire Wire Line
-	9350 3300 9550 3300
-Wire Wire Line
-	9350 3000 9800 3000
+	9350 3300 9500 3300
 Wire Wire Line
 	9350 2900 9800 2900
 Wire Wire Line
@@ -295,9 +276,9 @@ Wire Wire Line
 Wire Wire Line
 	9350 3400 9350 3500
 Wire Wire Line
-	9550 3300 9550 3400
+	9500 3300 9500 3400
 Wire Wire Line
-	9550 3400 9800 3400
+	9500 3400 9800 3400
 Wire Wire Line
 	9700 3250 10100 3250
 Wire Wire Line
@@ -310,7 +291,6 @@ Wire Wire Line
 Wire Wire Line
 	10100 3250 10100 2900
 Connection ~ 10100 2900
-Connection ~ 5300 4350
 Connection ~ 5200 4250
 Wire Wire Line
 	5200 4250 6350 4250
@@ -343,8 +323,6 @@ Wire Wire Line
 Wire Wire Line
 	7850 3700 5200 3700
 Wire Wire Line
-	5300 3750 7950 3750
-Wire Wire Line
 	7950 3750 7950 3000
 Wire Wire Line
 	7950 3000 8900 3000
@@ -356,17 +334,14 @@ Connection ~ 7850 3700
 Wire Wire Line
 	8900 4350 7950 4350
 Wire Wire Line
-	7950 4350 7950 3750
-Connection ~ 7950 3750
+	6350 4050 6350 3900
 Wire Wire Line
-	6350 4050 6350 3800
+	6350 3900 8900 3900
 Wire Wire Line
-	6350 3800 8900 3800
+	8900 3900 8900 4050
 Wire Wire Line
-	8900 3800 8900 4050
-Wire Wire Line
-	8900 3800 10200 3800
-Connection ~ 8900 3800
+	8900 3900 10200 3900
+Connection ~ 8900 3900
 Wire Wire Line
 	5500 2150 5500 4450
 Text GLabel 5750 2300 0    20   BiDi ~ 0
@@ -395,8 +370,6 @@ Wire Wire Line
 	8050 4450 8900 4450
 Entry Wire Line
 	5750 5650 5850 5550
-Wire Wire Line
-	5300 3000 5300 3750
 Wire Wire Line
 	5200 2900 5200 3700
 Wire Wire Line
@@ -427,9 +400,6 @@ Wire Wire Line
 Connection ~ 5200 3700
 Wire Wire Line
 	5200 3700 5200 4250
-Connection ~ 5300 3750
-Wire Wire Line
-	5300 3750 5300 4350
 Text GLabel 8200 5400 0    20   BiDi ~ 0
 3VDATA2
 Wire Wire Line
@@ -504,7 +474,7 @@ Wire Wire Line
 Wire Wire Line
 	6800 2700 6800 2500
 Wire Wire Line
-	6800 3000 7250 3000
+	6800 3000 7000 3000
 Text GLabel 7550 2900 2    50   Input ~ 0
 VCCA
 Text GLabel 10100 2900 2    50   Input ~ 0
@@ -32119,11 +32089,9 @@ Wire Wire Line
 Wire Wire Line
 	4350 5600 2850 5600
 Wire Wire Line
-	3650 4700 3050 4700
+	3750 4650 3150 4650
 Wire Wire Line
 	2850 4500 3000 4500
-Wire Wire Line
-	2850 4600 3100 4600
 Wire Wire Line
 	2850 3900 4700 3900
 Wire Wire Line
@@ -32139,11 +32107,9 @@ Wire Wire Line
 Wire Wire Line
 	2850 3300 4700 3300
 Wire Wire Line
-	4750 4900 4150 4900
+	4350 4900 4350 5300
 Wire Wire Line
-	4150 4900 4150 5300
-Wire Wire Line
-	4150 5300 2850 5300
+	4350 5300 2850 5300
 Wire Wire Line
 	2850 5500 4350 5500
 Wire Wire Line
@@ -32153,19 +32119,7 @@ Wire Wire Line
 Wire Wire Line
 	3000 4250 3000 4500
 Wire Wire Line
-	3100 4600 3100 4350
-Wire Wire Line
-	3100 4350 5300 4350
-Wire Wire Line
-	2850 5000 3150 5000
-Wire Wire Line
-	3150 5000 3150 4800
-Wire Wire Line
-	3150 4800 3650 4800
-Wire Wire Line
-	2850 4900 3050 4900
-Wire Wire Line
-	3050 4900 3050 4700
+	3250 4750 3750 4750
 $Comp
 L Jumper:SolderJumper_2_Open JP1
 U 1 1 5C5D5D6A
@@ -32257,22 +32211,9 @@ F 3 "~" H 9500 2800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7100 2800 6800 2800
-Connection ~ 6800 2800
 Wire Wire Line
 	9350 2800 9650 2800
 Connection ~ 9350 2800
-Wire Bus Line
-	4500 2050 4500 5550
-Wire Bus Line
-	4850 3550 4850 5650
-Wire Bus Line
-	4850 2200 4850 3450
-Wire Bus Line
-	4850 2200 8750 2200
-Wire Bus Line
-	4850 5650 8300 5650
-Wire Bus Line
-	4500 2050 8500 2050
 Connection ~ 7000 3500
 Wire Wire Line
 	7000 3500 7250 3500
@@ -32283,10 +32224,154 @@ Wire Wire Line
 	9550 3500 9800 3500
 Wire Wire Line
 	9550 3500 9550 3450
-Text GLabel 3300 4700 1    50   Input ~ 0
-BT_RX
-Text GLabel 3250 4800 3    50   Input ~ 0
+Text GLabel 3250 4800 2    39   Input ~ 0
 BT_TX
-Text GLabel 3500 4600 1    50   Input ~ 0
+Text GLabel 3550 4600 0    39   Input ~ 0
 BT_TS
+Entry Wire Line
+	5300 3100 5400 3000
+Wire Wire Line
+	6350 3000 5400 3000
+Entry Wire Line
+	5300 3850 5400 3750
+Wire Wire Line
+	5400 3750 7950 3750
+Entry Wire Line
+	5300 3900 5400 3800
+Wire Wire Line
+	5400 3800 7950 3800
+Wire Wire Line
+	7950 4350 7950 3800
+Entry Wire Line
+	5300 4450 5400 4350
+Wire Wire Line
+	5400 4350 6350 4350
+Text GLabel 5300 4350 0    20   BiDi ~ 0
+LATCH[0..3]
+Wire Wire Line
+	4750 4900 4350 4900
+Wire Wire Line
+	2850 5100 3150 5100
+Wire Wire Line
+	2850 4700 3050 4700
+Wire Wire Line
+	2850 4800 3100 4800
+Wire Wire Line
+	2850 5000 3250 5000
+Wire Wire Line
+	2850 4900 3150 4900
+Text GLabel 3150 4700 2    39   Input ~ 0
+BT_RX
+Wire Wire Line
+	3150 4650 3150 4900
+Wire Wire Line
+	3250 4750 3250 5000
+Wire Bus Line
+	5300 4300 4300 4300
+Connection ~ 5300 4300
+Wire Bus Line
+	5300 4300 5300 4450
+Wire Bus Line
+	4300 4300 4300 5250
+Wire Wire Line
+	3050 4400 3050 4700
+Wire Wire Line
+	3100 4800 3100 4400
+Entry Wire Line
+	3050 4400 3150 4300
+Entry Wire Line
+	3100 4400 3200 4300
+Connection ~ 4300 4300
+Entry Wire Line
+	3100 5150 3200 5250
+Wire Wire Line
+	3150 5100 3150 5150
+Entry Wire Line
+	3150 5150 3250 5250
+Text GLabel 3000 5150 0    20   BiDi ~ 0
+LATCH3
+Text GLabel 3150 5100 2    20   BiDi ~ 0
+LATCH2
+Text GLabel 3050 4650 0    20   BiDi ~ 0
+LATCH0
+Text GLabel 3100 4750 0    20   BiDi ~ 0
+LATCH1
+Text GLabel 5400 3000 3    20   BiDi ~ 0
+LATCH0
+Text GLabel 5400 4350 3    20   BiDi ~ 0
+LATCH1
+Text GLabel 5400 3800 3    20   BiDi ~ 0
+LATCH3
+Text GLabel 5400 3750 1    20   BiDi ~ 0
+LATCH2
+Wire Wire Line
+	3000 5150 3000 5200
+Wire Wire Line
+	3000 5200 2850 5200
+Wire Wire Line
+	3000 5150 3100 5150
+Connection ~ 6800 2800
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI PORT2
+U 1 1 5C81F385
+P 9900 3200
+F 0 "PORT2" V 9214 3200 59  0000 C CNN
+F 1 "NINTENDO-MULTI" V 9319 3200 59  0000 C CNN
+F 2 "controllerpro:NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
+F 3 "" H 9900 3200 50  0001 C CNN
+	1    9900 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9800 3000 9550 3000
+$Comp
+L Device:R R?
+U 1 1 5C8374C5
+P 7000 3150
+F 0 "R?" H 7070 3196 50  0000 L CNN
+F 1 "R" H 7070 3105 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 3150 50  0001 C CNN
+F 3 "" H 7000 3150 50  0001 C CNN
+	1    7000 3150
+	1    0    0    -1  
+$EndComp
+Connection ~ 7000 3000
+Wire Wire Line
+	7000 3000 7250 3000
+$Comp
+L Device:R R?
+U 1 1 5C837509
+P 9550 3150
+F 0 "R?" H 9620 3196 50  0000 L CNN
+F 1 "R" H 9620 3105 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 3150 50  0001 C CNN
+F 3 "" H 9550 3150 50  0001 C CNN
+	1    9550 3150
+	1    0    0    -1  
+$EndComp
+Connection ~ 9550 3000
+Wire Wire Line
+	9550 3000 9350 3000
+Wire Wire Line
+	9550 3450 9550 3300
+Wire Wire Line
+	7000 3450 7000 3300
+Wire Bus Line
+	3200 5250 4300 5250
+Wire Bus Line
+	3150 4300 4300 4300
+Wire Bus Line
+	5300 3100 5300 4300
+Wire Bus Line
+	4500 2050 8500 2050
+Wire Bus Line
+	4850 5650 8300 5650
+Wire Bus Line
+	4850 2200 8750 2200
+Wire Bus Line
+	4850 2200 4850 3450
+Wire Bus Line
+	4850 3550 4850 5650
+Wire Bus Line
+	4500 2050 4500 5550
 $EndSCHEMATC
