@@ -13416,7 +13416,7 @@ Wire Wire Line
 Wire Wire Line
 	9350 2500 9650 2500
 Wire Wire Line
-	9350 3500 9800 3500
+	9350 3500 9550 3500
 Connection ~ 9650 2500
 Wire Wire Line
 	9650 2500 10100 2500
@@ -13437,9 +13437,9 @@ Wire Wire Line
 Wire Wire Line
 	4350 5600 4400 5550
 Wire Wire Line
-	6800 3500 7250 3500
+	6800 3500 7000 3500
 Wire Wire Line
-	7000 3550 7000 3450
+	7000 3550 7000 3500
 Wire Wire Line
 	7000 3450 6850 3450
 Connection ~ 7000 3450
@@ -13460,7 +13460,7 @@ Wire Wire Line
 	9400 3100 9800 3100
 Connection ~ 9400 3100
 Wire Wire Line
-	9550 3550 9550 3450
+	9550 3550 9550 3500
 Wire Wire Line
 	9550 3450 9400 3450
 Wire Wire Line
@@ -32273,4 +32273,20 @@ Wire Bus Line
 	4850 5650 8300 5650
 Wire Bus Line
 	4500 2050 8500 2050
+Connection ~ 7000 3500
+Wire Wire Line
+	7000 3500 7250 3500
+Wire Wire Line
+	7000 3500 7000 3450
+Connection ~ 9550 3500
+Wire Wire Line
+	9550 3500 9800 3500
+Wire Wire Line
+	9550 3500 9550 3450
+Text GLabel 3300 4700 1    50   Input ~ 0
+BT_RX
+Text GLabel 3250 4800 3    50   Input ~ 0
+BT_TX
+Text GLabel 3500 4600 1    50   Input ~ 0
+BT_TS
 $EndSCHEMATC
