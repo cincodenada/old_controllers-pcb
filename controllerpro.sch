@@ -15,55 +15,55 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text GLabel 4500 5200 0    20   BiDi ~ 0
-5VDATA[0..3]
+5VDATA[1..4]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
-S_OR_NES[0..3]
+S_OR_NES[1..4]
 Text GLabel 4850 3800 2    20   BiDi ~ 0
-3VDATA[0..3]
+3VDATA[1..4]
 Text GLabel 3650 4250 1    20   BiDi ~ 0
 CLOCK
 Wire Wire Line
 	7550 2900 7550 3250
 Text GLabel 6050 2150 0    20   BiDi ~ 0
-5VDATA0
+5VDATA3
 Text GLabel 4400 5450 0    20   BiDi ~ 0
-5VDATA0
+5VDATA3
 Text GLabel 5500 2150 0    20   BiDi ~ 0
-5VDATA1
+5VDATA4
 Wire Wire Line
 	5500 4450 6350 4450
 Text GLabel 4400 5350 0    20   BiDi ~ 0
-5VDATA1
+5VDATA4
 Text GLabel 4400 5650 0    20   BiDi ~ 0
-5VDATA2
+5VDATA1
 Text GLabel 4400 5550 0    20   BiDi ~ 0
-5VDATA3
+5VDATA2
 Text GLabel 6300 2300 0    20   BiDi ~ 0
-S_OR_NES0
-Text GLabel 4750 3450 0    20   BiDi ~ 0
-S_OR_NES0
-Text GLabel 4750 3550 0    20   BiDi ~ 0
-S_OR_NES1
-Text GLabel 4750 3250 0    20   BiDi ~ 0
-S_OR_NES2
-Text GLabel 4750 3350 0    20   BiDi ~ 0
 S_OR_NES3
+Text GLabel 4750 3450 0    20   BiDi ~ 0
+S_OR_NES3
+Text GLabel 4750 3550 0    20   BiDi ~ 0
+S_OR_NES4
+Text GLabel 4750 3250 0    20   BiDi ~ 0
+S_OR_NES1
+Text GLabel 4750 3350 0    20   BiDi ~ 0
+S_OR_NES2
 Text GLabel 5650 5400 0    20   BiDi ~ 0
-3VDATA0
+3VDATA3
 Wire Wire Line
 	5650 5550 5650 3300
 Text GLabel 4750 3650 0    20   BiDi ~ 0
-3VDATA0
+3VDATA3
 Text GLabel 5850 5400 0    20   BiDi ~ 0
-3VDATA1
+3VDATA4
 Wire Wire Line
 	5850 5550 5850 4650
 Text GLabel 4750 4900 3    20   BiDi ~ 0
-3VDATA1
+3VDATA4
 Text GLabel 4750 3850 0    20   BiDi ~ 0
-3VDATA2
+3VDATA1
 Text GLabel 4750 3750 0    20   BiDi ~ 0
-3VDATA3
+3VDATA2
 Wire Wire Line
 	3750 5050 3550 5050
 Wire Wire Line
@@ -166,10 +166,10 @@ Wire Wire Line
 Wire Wire Line
 	6250 3400 6350 3400
 $Comp
-L Connector:Conn_01x08_Female S0
+L Connector:Conn_01x08_Female S3
 U 1 1 5AC6801A
 P 6550 3000
-F 0 "S0" H 6577 2976 50  0000 L CNN
+F 0 "S3" H 6577 2976 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 6577 2885 50  0000 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 3000 50  0001 C CNN
 F 3 "~" H 6550 3000 50  0001 C CNN
@@ -177,10 +177,10 @@ F 3 "~" H 6550 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x08_Male P0
+L Connector:Conn_01x08_Male P3
 U 1 1 5AC68261
 P 6600 3000
-F 0 "P0" H 6706 3478 50  0000 C CNN
+F 0 "P3" H 6706 3478 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 6706 3387 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 3000 50  0001 C CNN
 F 3 "~" H 6600 3000 50  0001 C CNN
@@ -191,10 +191,10 @@ Wire Wire Line
 	7550 2900 7450 2900
 Connection ~ 7550 2900
 $Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT0
+L controllerpro-eagle-import:NINTENDO-MULTI PORT3
 U 1 0 DE7FE6B892AE2CB7
 P 7350 3200
-F 0 "PORT0" V 6825 3050 59  0000 L BNN
+F 0 "PORT3" V 6825 3050 59  0000 L BNN
 F 1 "NINTENDO-MULTI" V 7850 3050 59  0000 L BNN
 F 2 "controllerpro:NINTENDO-MULTI" H 7350 3200 50  0001 C CNN
 F 3 "" H 7350 3200 50  0001 C CNN
@@ -233,10 +233,10 @@ Wire Wire Line
 Wire Wire Line
 	5200 2900 6350 2900
 $Comp
-L Connector:Conn_01x08_Female S1
+L Connector:Conn_01x08_Female S4
 U 1 1 5ADE50AA
 P 6550 4350
-F 0 "S1" H 6577 4326 50  0000 L CNN
+F 0 "S4" H 6577 4326 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 6577 4235 50  0000 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
 F 3 "~" H 6550 4350 50  0001 C CNN
@@ -248,10 +248,10 @@ Wire Wire Line
 Wire Wire Line
 	10200 2450 10200 3900
 $Comp
-L Connector:Conn_01x08_Male P2
+L Connector:Conn_01x08_Male P1
 U 1 1 5AE09F98
 P 9150 3000
-F 0 "P2" H 9256 3478 50  0000 C CNN
+F 0 "P1" H 9256 3478 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 9256 3387 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 9150 3000 50  0001 C CNN
 F 3 "~" H 9150 3000 50  0001 C CNN
@@ -295,10 +295,10 @@ Connection ~ 5200 4250
 Wire Wire Line
 	5200 4250 6350 4250
 $Comp
-L Connector:Conn_01x08_Female S2
+L Connector:Conn_01x08_Female S1
 U 1 1 5AE4B0ED
 P 9100 3000
-F 0 "S2" H 9127 2976 50  0000 L CNN
+F 0 "S1" H 9127 2976 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 9127 2885 50  0000 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 3000 50  0001 C CNN
 F 3 "~" H 9100 3000 50  0001 C CNN
@@ -306,10 +306,10 @@ F 3 "~" H 9100 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x08_Female S3
+L Connector:Conn_01x08_Female S2
 U 1 1 5AE4B18B
 P 9100 4350
-F 0 "S3" H 9127 4326 50  0000 L CNN
+F 0 "S2" H 9127 4326 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 9127 4235 50  0000 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 4350 50  0001 C CNN
 F 3 "~" H 9100 4350 50  0001 C CNN
@@ -345,7 +345,7 @@ Connection ~ 8900 3900
 Wire Wire Line
 	5500 2150 5500 4450
 Text GLabel 5750 2300 0    20   BiDi ~ 0
-S_OR_NES1
+S_OR_NES4
 Entry Wire Line
 	5650 2200 5750 2300
 Wire Wire Line
@@ -355,9 +355,9 @@ Wire Wire Line
 Entry Wire Line
 	5950 2050 6050 2150
 Text GLabel 8600 2150 0    20   BiDi ~ 0
-5VDATA2
+5VDATA1
 Text GLabel 8050 2150 0    20   BiDi ~ 0
-5VDATA3
+5VDATA2
 Entry Wire Line
 	7950 2050 8050 2150
 Wire Wire Line
@@ -375,13 +375,13 @@ Wire Wire Line
 Wire Wire Line
 	8600 2150 8600 3100
 Text GLabel 8850 2300 0    20   BiDi ~ 0
-S_OR_NES2
+S_OR_NES1
 Entry Wire Line
 	8750 2200 8850 2300
 Wire Wire Line
 	8850 2300 8850 2800
 Text GLabel 8300 2300 0    20   BiDi ~ 0
-S_OR_NES3
+S_OR_NES2
 Entry Wire Line
 	8200 2200 8300 2300
 Wire Wire Line
@@ -401,11 +401,11 @@ Connection ~ 5200 3700
 Wire Wire Line
 	5200 3700 5200 4250
 Text GLabel 8200 5400 0    20   BiDi ~ 0
-3VDATA2
+3VDATA1
 Wire Wire Line
 	8200 5550 8200 3300
 Text GLabel 8400 5400 0    20   BiDi ~ 0
-3VDATA3
+3VDATA2
 Wire Wire Line
 	8400 5550 8400 4650
 Entry Wire Line
@@ -32247,7 +32247,7 @@ Entry Wire Line
 Wire Wire Line
 	5400 4350 6350 4350
 Text GLabel 5300 4350 0    20   BiDi ~ 0
-LATCH[0..3]
+LATCH[1..4]
 Wire Wire Line
 	4750 4900 4350 4900
 Wire Wire Line
@@ -32289,21 +32289,21 @@ Wire Wire Line
 Entry Wire Line
 	3150 5150 3250 5250
 Text GLabel 3000 5150 0    20   BiDi ~ 0
-LATCH3
+LATCH2
 Text GLabel 3150 5100 2    20   BiDi ~ 0
-LATCH2
+LATCH1
 Text GLabel 3050 4650 0    20   BiDi ~ 0
-LATCH0
-Text GLabel 3100 4750 0    20   BiDi ~ 0
-LATCH1
-Text GLabel 5400 3000 3    20   BiDi ~ 0
-LATCH0
-Text GLabel 5400 4350 3    20   BiDi ~ 0
-LATCH1
-Text GLabel 5400 3800 3    20   BiDi ~ 0
 LATCH3
-Text GLabel 5400 3750 1    20   BiDi ~ 0
+Text GLabel 3100 4750 0    20   BiDi ~ 0
+LATCH4
+Text GLabel 5400 3000 3    20   BiDi ~ 0
+LATCH3
+Text GLabel 5400 4350 3    20   BiDi ~ 0
+LATCH4
+Text GLabel 5400 3800 3    20   BiDi ~ 0
 LATCH2
+Text GLabel 5400 3750 1    20   BiDi ~ 0
+LATCH1
 Wire Wire Line
 	3000 5150 3000 5200
 Wire Wire Line
@@ -32312,10 +32312,10 @@ Wire Wire Line
 	3000 5150 3100 5150
 Connection ~ 6800 2800
 $Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT2
+L controllerpro-eagle-import:NINTENDO-MULTI PORT1
 U 1 1 5C81F385
 P 9900 3200
-F 0 "PORT2" V 9214 3200 59  0000 C CNN
+F 0 "PORT1" V 9214 3200 59  0000 C CNN
 F 1 "NINTENDO-MULTI" V 9319 3200 59  0000 C CNN
 F 2 "controllerpro:NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
 F 3 "" H 9900 3200 50  0001 C CNN
