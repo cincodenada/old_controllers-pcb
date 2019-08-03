@@ -93,7 +93,7 @@ AR Path="/5D48A94A" Ref="R?"  Part="1"
 AR Path="/5D46F38B/5D48A94A" Ref="R1"  Part="1" 
 F 0 "R1" V 5700 2750 50  0000 L CNN
 F 1 "R" H 5770 2755 50  0001 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 5630 2800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5630 2800 50  0001 C CNN
 F 3 "" H 5700 2800 50  0001 C CNN
 	1    5700 2800
 	0    1    1    0   
@@ -156,7 +156,7 @@ AR Path="/5D48A972" Ref="R?"  Part="1"
 AR Path="/5D46F38B/5D48A972" Ref="R3"  Part="1" 
 F 0 "R3" V 5900 3100 50  0000 L CNN
 F 1 "R" V 5870 3005 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 5730 3050 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5730 3050 50  0001 C CNN
 F 3 "" H 5800 3050 50  0001 C CNN
 	1    5800 3050
 	0    1    1    0   
@@ -246,7 +246,7 @@ AR Path="/5D52D92E" Ref="R?"  Part="1"
 AR Path="/5D46F38B/5D52D92E" Ref="R2"  Part="1" 
 F 0 "R2" V 5700 5200 50  0000 L CNN
 F 1 "R" H 5770 5205 50  0001 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 5630 5250 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5630 5250 50  0001 C CNN
 F 3 "" H 5700 5250 50  0001 C CNN
 	1    5700 5250
 	0    1    1    0   
@@ -309,7 +309,7 @@ AR Path="/5D52D94F" Ref="R?"  Part="1"
 AR Path="/5D46F38B/5D52D94F" Ref="R4"  Part="1" 
 F 0 "R4" V 5900 5550 50  0000 L CNN
 F 1 "R" V 5870 5455 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 5730 5500 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5730 5500 50  0001 C CNN
 F 3 "" H 5800 5500 50  0001 C CNN
 	1    5800 5500
 	0    1    1    0   
