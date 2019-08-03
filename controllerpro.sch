@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:controllerpro-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -22,14 +21,12 @@ Text GLabel 4850 3800 2    20   BiDi ~ 0
 3VDATA[1..4]
 Text GLabel 3650 4250 1    20   BiDi ~ 0
 CLOCK
-Wire Wire Line
-	7550 2900 7550 3250
 Text GLabel 6050 2150 0    20   BiDi ~ 0
 5VDATA3
 Text GLabel 4400 5450 0    20   BiDi ~ 0
 5VDATA3
 Text GLabel 5500 2150 0    20   BiDi ~ 0
-5VDATA4
+5VDATA1
 Wire Wire Line
 	5500 4450 6350 4450
 Text GLabel 4400 5350 0    20   BiDi ~ 0
@@ -55,7 +52,7 @@ Wire Wire Line
 Text GLabel 4750 3650 0    20   BiDi ~ 0
 3VDATA3
 Text GLabel 5850 5400 0    20   BiDi ~ 0
-3VDATA4
+3VDATA1
 Wire Wire Line
 	5850 5550 5850 4650
 Text GLabel 4750 4900 3    20   BiDi ~ 0
@@ -82,7 +79,7 @@ Entry Wire Line
 	5550 5650 5650 5550
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY01
-U 1 0 57B2A199E46721A6
+U 1 1 E46721A6
 P 8800 5850
 F 0 "#SUPPLY01" H 8800 5850 50  0001 C CNN
 F 1 "GND" H 8725 5725 59  0000 L BNN
@@ -93,7 +90,7 @@ F 3 "" H 8800 5850 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY02
-U 1 0 484E0C833EFDB7C
+U 1 1 33EFDB7C
 P 750 3400
 F 0 "#SUPPLY02" H 750 3400 50  0001 C CNN
 F 1 "VCC" H 675 3525 59  0000 L BNN
@@ -104,7 +101,7 @@ F 3 "" H 750 3400 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY03
-U 1 0 C23B2A6DD5692080
+U 1 1 D5692080
 P 10200 2350
 F 0 "#SUPPLY03" H 10200 2350 50  0001 C CNN
 F 1 "VCC" H 10125 2475 59  0000 L BNN
@@ -115,7 +112,7 @@ F 3 "" H 10200 2350 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY06
-U 1 0 5AE663DFC21E2EB3
+U 1 1 C21E2EB3
 P 2950 5800
 F 0 "#SUPPLY06" H 2950 5800 50  0001 C CNN
 F 1 "GND" H 2875 5675 59  0000 L BNN
@@ -126,7 +123,7 @@ F 3 "" H 2950 5800 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:RN42 U$1
-U 1 0 850A8AB0BABD3B23
+U 1 1 BABD3B23
 P 3950 4850
 F 0 "U$1" H 3750 5180 59  0000 L BNN
 F 1 "RN42" H 3750 4350 59  0000 L BNN
@@ -137,7 +134,7 @@ F 3 "" H 3950 4850 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY04
-U 1 0 5EA88E956DF68C43
+U 1 1 6DF68C43
 P 3650 4850
 F 0 "#SUPPLY04" H 3650 4850 50  0001 C CNN
 F 1 "GND" H 3575 4725 59  0000 L BNN
@@ -148,7 +145,7 @@ F 3 "" H 3650 4850 50  0001 C CNN
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY05
-U 1 0 FDA4F4BDFD320F9F
+U 1 1 FD320F9F
 P 3650 4950
 F 0 "#SUPPLY05" H 3650 4950 50  0001 C CNN
 F 1 "VCC" H 3575 5075 59  0000 L BNN
@@ -169,75 +166,25 @@ $Comp
 L Connector:Conn_01x08_Female S3
 U 1 1 5AC6801A
 P 6550 3000
-F 0 "S3" H 6577 2976 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 6577 2885 50  0000 L CNN
+F 0 "S3" H 6450 2550 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 6577 2885 50  0001 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 3000 50  0001 C CNN
 F 3 "~" H 6550 3000 50  0001 C CNN
 	1    6550 3000
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x08_Male P3
-U 1 1 5AC68261
-P 6600 3000
-F 0 "P3" H 6706 3478 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 3387 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 3000 50  0001 C CNN
-F 3 "~" H 6600 3000 50  0001 C CNN
-	1    6600 3000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7550 2900 7450 2900
-Connection ~ 7550 2900
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT3
-U 1 0 DE7FE6B892AE2CB7
-P 7350 3200
-F 0 "PORT3" V 6825 3050 59  0000 L BNN
-F 1 "NINTENDO-MULTI" V 7850 3050 59  0000 L BNN
-F 2 "controllerpro:NINTENDO-MULTI" H 7350 3200 50  0001 C CNN
-F 3 "" H 7350 3200 50  0001 C CNN
-	1    7350 3200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7150 3300 7150 3250
-Wire Wire Line
-	7550 2500 7550 2900
-Wire Wire Line
-	6800 3300 6950 3300
-Wire Wire Line
-	6800 2900 7250 2900
-Wire Wire Line
-	6800 3100 6850 3100
-Connection ~ 7100 2800
-Wire Wire Line
-	7100 2800 7250 2800
-Wire Wire Line
-	7100 2800 7100 3150
-Wire Wire Line
-	6800 3400 6800 3500
-Wire Wire Line
-	6950 3300 6950 3400
-Wire Wire Line
-	6950 3400 7250 3400
 Wire Wire Line
 	6300 2300 6300 2800
 Wire Wire Line
 	6300 2800 6350 2800
 Wire Wire Line
-	7150 3250 7550 3250
-Wire Wire Line
-	7150 3300 7250 3300
-Wire Wire Line
 	5200 2900 6350 2900
 $Comp
-L Connector:Conn_01x08_Female S4
+L Connector:Conn_01x08_Female S1
 U 1 1 5ADE50AA
 P 6550 4350
-F 0 "S4" H 6577 4326 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 6577 4235 50  0000 L CNN
+F 0 "S1" H 6450 3900 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 6577 4235 50  0001 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
 F 3 "~" H 6550 4350 50  0001 C CNN
 	1    6550 4350
@@ -250,55 +197,23 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x08_Male P1
 U 1 1 5AE09F98
-P 9150 3000
-F 0 "P1" H 9256 3478 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 9256 3387 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 9150 3000 50  0001 C CNN
-F 3 "~" H 9150 3000 50  0001 C CNN
-	1    9150 3000
+P 6600 4350
+F 0 "P1" H 6650 3900 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 4737 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 4350 50  0001 C CNN
+F 3 "~" H 6600 4350 50  0001 C CNN
+	1    6600 4350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9350 2700 9350 2500
-Wire Wire Line
-	9700 3300 9700 3250
-Wire Wire Line
-	9350 3300 9500 3300
-Wire Wire Line
-	9350 2900 9800 2900
-Wire Wire Line
-	9350 3100 9400 3100
-Connection ~ 9650 2800
-Wire Wire Line
-	9650 2800 9800 2800
-Wire Wire Line
-	9650 2800 9650 3150
-Wire Wire Line
-	9350 3400 9350 3500
-Wire Wire Line
-	9500 3300 9500 3400
-Wire Wire Line
-	9500 3400 9800 3400
-Wire Wire Line
-	9700 3250 10100 3250
-Wire Wire Line
-	9700 3300 9800 3300
 Connection ~ 10200 2450
-Wire Wire Line
-	10100 2500 10100 2900
-Wire Wire Line
-	10100 2900 10000 2900
-Wire Wire Line
-	10100 3250 10100 2900
-Connection ~ 10100 2900
 Connection ~ 5200 4250
 Wire Wire Line
 	5200 4250 6350 4250
 $Comp
-L Connector:Conn_01x08_Female S1
+L Connector:Conn_01x08_Female S4
 U 1 1 5AE4B0ED
 P 9100 3000
-F 0 "S1" H 9127 2976 50  0000 L CNN
+F 0 "S4" H 9000 2550 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 9127 2885 50  0000 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 3000 50  0001 C CNN
 F 3 "~" H 9100 3000 50  0001 C CNN
@@ -309,8 +224,8 @@ $Comp
 L Connector:Conn_01x08_Female S2
 U 1 1 5AE4B18B
 P 9100 4350
-F 0 "S2" H 9127 4326 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 9127 4235 50  0000 L CNN
+F 0 "S2" H 9000 3900 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 9127 4235 50  0001 L CNN
 F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 4350 50  0001 C CNN
 F 3 "~" H 9100 4350 50  0001 C CNN
 	1    9100 4350
@@ -345,7 +260,7 @@ Connection ~ 8900 3900
 Wire Wire Line
 	5500 2150 5500 4450
 Text GLabel 5750 2300 0    20   BiDi ~ 0
-S_OR_NES4
+S_OR_NES1
 Entry Wire Line
 	5650 2200 5750 2300
 Wire Wire Line
@@ -355,7 +270,7 @@ Wire Wire Line
 Entry Wire Line
 	5950 2050 6050 2150
 Text GLabel 8600 2150 0    20   BiDi ~ 0
-5VDATA1
+5VDATA4
 Text GLabel 8050 2150 0    20   BiDi ~ 0
 5VDATA2
 Entry Wire Line
@@ -375,7 +290,7 @@ Wire Wire Line
 Wire Wire Line
 	8600 2150 8600 3100
 Text GLabel 8850 2300 0    20   BiDi ~ 0
-S_OR_NES1
+S_OR_NES4
 Entry Wire Line
 	8750 2200 8850 2300
 Wire Wire Line
@@ -401,7 +316,7 @@ Connection ~ 5200 3700
 Wire Wire Line
 	5200 3700 5200 4250
 Text GLabel 8200 5400 0    20   BiDi ~ 0
-3VDATA1
+3VDATA4
 Wire Wire Line
 	8200 5550 8200 3300
 Text GLabel 8400 5400 0    20   BiDi ~ 0
@@ -471,18 +386,6 @@ Connection ~ 8800 4750
 Connection ~ 8800 5750
 Wire Wire Line
 	6350 2700 6350 2450
-Wire Wire Line
-	6800 2700 6800 2500
-Wire Wire Line
-	6800 3000 7000 3000
-Text GLabel 7550 2900 2    50   Input ~ 0
-VCCA
-Text GLabel 10100 2900 2    50   Input ~ 0
-VCCA
-Text GLabel 9550 3550 3    50   Input ~ 0
-GNDA
-Text GLabel 7000 3550 3    50   Input ~ 0
-GNDA
 $Bitmap
 Pos 3700 6800
 Scale 1.000000
@@ -13384,62 +13287,7 @@ Wire Wire Line
 Wire Wire Line
 	4750 3650 4700 3700
 Wire Wire Line
-	9350 2500 9650 2500
-Wire Wire Line
-	9350 3500 9550 3500
-Connection ~ 9650 2500
-Wire Wire Line
-	9650 2500 10100 2500
-$Comp
-L Device:R R1
-U 1 1 5C5BB4CE
-P 6850 3250
-F 0 "R1" H 6920 3296 50  0000 L CNN
-F 1 "R" H 6920 3205 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6780 3250 50  0001 C CNN
-F 3 "" H 6850 3250 50  0001 C CNN
-	1    6850 3250
-	1    0    0    -1  
-$EndComp
-Connection ~ 6850 3100
-Wire Wire Line
-	6850 3100 7250 3100
-Wire Wire Line
 	4350 5600 4400 5550
-Wire Wire Line
-	6800 3500 7000 3500
-Wire Wire Line
-	7000 3550 7000 3500
-Wire Wire Line
-	7000 3450 6850 3450
-Connection ~ 7000 3450
-Wire Wire Line
-	6850 3450 6850 3400
-$Comp
-L Device:R R2
-U 1 1 5C5D526F
-P 9400 3250
-F 0 "R2" H 9470 3296 50  0000 L CNN
-F 1 "R" H 9470 3205 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9330 3250 50  0001 C CNN
-F 3 "" H 9400 3250 50  0001 C CNN
-	1    9400 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 3100 9800 3100
-Connection ~ 9400 3100
-Wire Wire Line
-	9550 3550 9550 3500
-Wire Wire Line
-	9550 3450 9400 3450
-Wire Wire Line
-	9400 3450 9400 3400
-Wire Wire Line
-	9650 3450 9550 3450
-Connection ~ 9550 3450
-Wire Wire Line
-	7100 3450 7000 3450
 $Comp
 L controllerpro-eagle-import:Teensy3.2 U1
 U 1 1 5C5FF923
@@ -32138,92 +31986,6 @@ Wire Wire Line
 	750  3800 850  3800
 Wire Wire Line
 	850  3800 850  3700
-Wire Wire Line
-	7100 2500 7550 2500
-Wire Wire Line
-	6800 2500 7100 2500
-Connection ~ 7100 2500
-$Comp
-L Jumper:SolderJumper_2_Open JP3
-U 1 1 5C5F06B9
-P 7100 2650
-F 0 "JP3" V 7054 2718 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 7145 2718 50  0000 L CNN
-F 2 "t32_ref:SOLDERJUMPER" H 7100 2650 50  0001 C CNN
-F 3 "~" H 7100 2650 50  0001 C CNN
-	1    7100 2650
-	0    1    1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Bridged JP2
-U 1 1 5C5F08A2
-P 6950 2800
-F 0 "JP2" H 6950 3005 50  0000 C CNN
-F 1 "SolderJumper_2_Bridged" H 6950 2914 50  0000 C CNN
-F 2 "t32_ref:SOLDERJUMPER" H 6950 2800 50  0001 C CNN
-F 3 "~" H 6950 2800 50  0001 C CNN
-	1    6950 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP4
-U 1 1 5C5F0F77
-P 7100 3300
-F 0 "JP4" V 7054 3368 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 7145 3368 50  0000 L CNN
-F 2 "t32_ref:SOLDERJUMPER" H 7100 3300 50  0001 C CNN
-F 3 "~" H 7100 3300 50  0001 C CNN
-	1    7100 3300
-	0    1    1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP7
-U 1 1 5C5F13FB
-P 9650 3300
-F 0 "JP7" V 9604 3368 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 9695 3368 50  0000 L CNN
-F 2 "t32_ref:SOLDERJUMPER" H 9650 3300 50  0001 C CNN
-F 3 "~" H 9650 3300 50  0001 C CNN
-	1    9650 3300
-	0    1    1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP6
-U 1 1 5C5F14F0
-P 9650 2650
-F 0 "JP6" V 9604 2718 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 9695 2718 50  0000 L CNN
-F 2 "t32_ref:SOLDERJUMPER" H 9650 2650 50  0001 C CNN
-F 3 "~" H 9650 2650 50  0001 C CNN
-	1    9650 2650
-	0    1    1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Bridged JP5
-U 1 1 5C5F15B9
-P 9500 2800
-F 0 "JP5" H 9500 3005 50  0000 C CNN
-F 1 "SolderJumper_2_Bridged" H 9500 2914 50  0000 C CNN
-F 2 "t32_ref:SOLDERJUMPER" H 9500 2800 50  0001 C CNN
-F 3 "~" H 9500 2800 50  0001 C CNN
-	1    9500 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7100 2800 6800 2800
-Wire Wire Line
-	9350 2800 9650 2800
-Connection ~ 9350 2800
-Connection ~ 7000 3500
-Wire Wire Line
-	7000 3500 7250 3500
-Wire Wire Line
-	7000 3500 7000 3450
-Connection ~ 9550 3500
-Wire Wire Line
-	9550 3500 9800 3500
-Wire Wire Line
-	9550 3500 9550 3450
 Text GLabel 3250 4800 2    39   Input ~ 0
 BT_TX
 Text GLabel 3550 4600 0    39   Input ~ 0
@@ -32240,8 +32002,6 @@ Entry Wire Line
 	5300 3900 5400 3800
 Wire Wire Line
 	5400 3800 7950 3800
-Wire Wire Line
-	7950 4350 7950 3800
 Entry Wire Line
 	5300 4450 5400 4350
 Wire Wire Line
@@ -32299,63 +32059,30 @@ LATCH4
 Text GLabel 5400 3000 3    20   BiDi ~ 0
 LATCH3
 Text GLabel 5400 4350 3    20   BiDi ~ 0
-LATCH4
+LATCH1
 Text GLabel 5400 3800 3    20   BiDi ~ 0
 LATCH2
 Text GLabel 5400 3750 1    20   BiDi ~ 0
-LATCH1
+LATCH4
 Wire Wire Line
 	3000 5150 3000 5200
 Wire Wire Line
 	3000 5200 2850 5200
 Wire Wire Line
 	3000 5150 3100 5150
-Connection ~ 6800 2800
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI PORT1
-U 1 1 5C81F385
-P 9900 3200
-F 0 "PORT1" V 9214 3200 59  0000 C CNN
-F 1 "NINTENDO-MULTI" V 9319 3200 59  0000 C CNN
-F 2 "controllerpro:NINTENDO-MULTI" H 9900 3200 50  0001 C CNN
-F 3 "" H 9900 3200 50  0001 C CNN
-	1    9900 3200
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	9800 3000 9550 3000
+	7950 4350 7950 3800
 $Comp
-L Device:R R3
-U 1 1 5C8374C5
-P 7000 3150
-F 0 "R3" H 7070 3196 50  0000 L CNN
-F 1 "R" H 7070 3105 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6930 3150 50  0001 C CNN
-F 3 "" H 7000 3150 50  0001 C CNN
-	1    7000 3150
+L Connector:Conn_01x08_Male P3
+U 1 1 5AC68261
+P 6600 3000
+F 0 "P3" H 6650 2550 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 3387 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 6600 3000 50  0001 C CNN
+F 3 "~" H 6600 3000 50  0001 C CNN
+	1    6600 3000
 	1    0    0    -1  
 $EndComp
-Connection ~ 7000 3000
-Wire Wire Line
-	7000 3000 7250 3000
-$Comp
-L Device:R R4
-U 1 1 5C837509
-P 9550 3150
-F 0 "R4" H 9620 3196 50  0000 L CNN
-F 1 "R" H 9620 3105 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 9480 3150 50  0001 C CNN
-F 3 "" H 9550 3150 50  0001 C CNN
-	1    9550 3150
-	1    0    0    -1  
-$EndComp
-Connection ~ 9550 3000
-Wire Wire Line
-	9550 3000 9350 3000
-Wire Wire Line
-	9550 3450 9550 3300
-Wire Wire Line
-	7000 3450 7000 3300
 Wire Bus Line
 	3200 5250 4300 5250
 Wire Bus Line
@@ -32363,15 +32090,35 @@ Wire Bus Line
 Wire Bus Line
 	5300 3100 5300 4300
 Wire Bus Line
-	4500 2050 8500 2050
+	4850 2200 4850 3450
+Wire Bus Line
+	4500 2050 4500 5550
 Wire Bus Line
 	4850 5650 8300 5650
 Wire Bus Line
-	4850 2200 8750 2200
-Wire Bus Line
-	4850 2200 4850 3450
-Wire Bus Line
 	4850 3550 4850 5650
 Wire Bus Line
-	4500 2050 4500 5550
+	4850 2200 8750 2200
+Wire Bus Line
+	4500 2050 8500 2050
+$Sheet
+S 6800 2650 900  2200
+U 5D46F38B
+F0 "Child Board" 50
+F1 "ChildBoard.sch" 50
+F2 "LATCH_A" I L 6800 3000 50 
+F3 "FAST_DATA_A" I L 6800 3300 50 
+F4 "CLK_A" I L 6800 2900 50 
+F5 "SNES_NES_A" I L 6800 2800 50 
+F6 "SLOW_DATA_A" I L 6800 3100 50 
+F7 "LATCH_B" I L 6800 4350 50 
+F8 "FAST_DATA_B" I L 6800 4650 50 
+F9 "CLK_B" I L 6800 4250 50 
+F10 "SNES_NES_B" I L 6800 4150 50 
+F11 "SLOW_DATA_B" I L 6800 4450 50 
+F12 "VCC_A" I L 6800 2700 50 
+F13 "GND_A" I L 6800 3400 50 
+F14 "VCC_B" I L 6800 4050 50 
+F15 "GND_B" I L 6800 4750 50 
+$EndSheet
 $EndSCHEMATC
