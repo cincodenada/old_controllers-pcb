@@ -13,58 +13,58 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 4500 5200 0    20   BiDi ~ 0
-5VDATA[1..4]
+Text GLabel 4500 5350 3    20   BiDi ~ 0
+SLOW_DATA[1..4]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
-DETECT[1..4]
+S_OR_NES[1..4]
 Text GLabel 4850 3800 2    20   BiDi ~ 0
-3VDATA[1..4]
+FAST_DATA[1..4]
 Text GLabel 3650 4150 1    20   BiDi ~ 0
 CLOCK
 Text GLabel 6050 2150 0    20   BiDi ~ 0
-5VDATA3
-Text GLabel 4400 5450 0    20   BiDi ~ 0
-5VDATA3
+SLOW_DATA3
+Text GLabel 4400 5250 0    20   BiDi ~ 0
+SLOW_DATA3
 Text GLabel 5500 2150 0    20   BiDi ~ 0
-5VDATA1
+SLOW_DATA1
 Wire Wire Line
 	5500 4450 6350 4450
+Text GLabel 4400 5150 0    20   BiDi ~ 0
+SLOW_DATA4
+Text GLabel 4400 5450 0    20   BiDi ~ 0
+SLOW_DATA1
 Text GLabel 4400 5350 0    20   BiDi ~ 0
-5VDATA4
-Text GLabel 4400 5650 0    20   BiDi ~ 0
-5VDATA1
-Text GLabel 4400 5550 0    20   BiDi ~ 0
-5VDATA2
+SLOW_DATA2
 Text GLabel 6300 2300 0    20   BiDi ~ 0
-DETECT3
+S_OR_NES3
 Text GLabel 4750 3450 0    20   BiDi ~ 0
-DETECT3
+S_OR_NES3
 Text GLabel 4750 3250 0    20   BiDi ~ 0
-DETECT1
+S_OR_NES1
 Text GLabel 4750 3350 0    20   BiDi ~ 0
-DETECT2
+S_OR_NES2
 Text GLabel 5650 5400 0    20   BiDi ~ 0
-3VDATA3
+FAST_DATA3
 Wire Wire Line
 	5650 5550 5650 3300
 Text GLabel 4750 3650 0    20   BiDi ~ 0
-3VDATA3
+FAST_DATA3
 Text GLabel 5850 5400 0    20   BiDi ~ 0
-3VDATA1
+FAST_DATA1
 Wire Wire Line
 	5850 5550 5850 4650
 Text GLabel 4750 4900 3    20   BiDi ~ 0
-3VDATA4
+FAST_DATA4
 Text GLabel 4750 3850 0    20   BiDi ~ 0
-3VDATA1
+FAST_DATA1
 Text GLabel 4750 3750 0    20   BiDi ~ 0
-3VDATA2
+FAST_DATA2
 Wire Wire Line
-	3750 5050 3550 5050
+	3750 4950 3550 4950
 Wire Wire Line
-	3550 5050 3550 4550
+	3550 4950 3550 4450
 Wire Wire Line
-	3550 4550 3750 4550
+	3550 4450 3750 4450
 Entry Wire Line
 	5400 2050 5500 2150
 Entry Wire Line
@@ -122,34 +122,34 @@ $EndComp
 $Comp
 L controllerpro-eagle-import:RN42 U$1
 U 1 1 BABD3B23
-P 3950 4850
-F 0 "U$1" H 3750 5180 59  0000 L BNN
-F 1 "RN42" H 3750 4350 59  0000 L BNN
-F 2 "controllerpro:RN42" H 3950 4850 50  0001 C CNN
-F 3 "" H 3950 4850 50  0001 C CNN
-	1    3950 4850
+P 3950 4750
+F 0 "U$1" H 3750 5080 59  0000 L BNN
+F 1 "RN42" H 3750 4250 59  0000 L BNN
+F 2 "controllerpro:RN42" H 3950 4750 50  0001 C CNN
+F 3 "" H 3950 4750 50  0001 C CNN
+	1    3950 4750
 	-1   0    0    1   
 $EndComp
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY04
 U 1 1 6DF68C43
-P 3650 4850
-F 0 "#SUPPLY04" H 3650 4850 50  0001 C CNN
-F 1 "GND" H 3575 4725 59  0000 L BNN
-F 2 "" H 3650 4850 50  0001 C CNN
-F 3 "" H 3650 4850 50  0001 C CNN
-	1    3650 4850
+P 3650 4750
+F 0 "#SUPPLY04" H 3650 4750 50  0001 C CNN
+F 1 "GND" H 3575 4625 59  0000 L BNN
+F 2 "" H 3650 4750 50  0001 C CNN
+F 3 "" H 3650 4750 50  0001 C CNN
+	1    3650 4750
 	0    1    1    0   
 $EndComp
 $Comp
 L controllerpro-eagle-import:VCC #SUPPLY05
 U 1 1 FD320F9F
-P 3650 4950
-F 0 "#SUPPLY05" H 3650 4950 50  0001 C CNN
-F 1 "VCC" H 3575 5075 59  0000 L BNN
-F 2 "" H 3650 4950 50  0001 C CNN
-F 3 "" H 3650 4950 50  0001 C CNN
-	1    3650 4950
+P 3650 4850
+F 0 "#SUPPLY05" H 3650 4850 50  0001 C CNN
+F 1 "VCC" H 3575 4975 59  0000 L BNN
+F 2 "" H 3650 4850 50  0001 C CNN
+F 3 "" H 3650 4850 50  0001 C CNN
+	1    3650 4850
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -249,7 +249,7 @@ Connection ~ 8900 3900
 Wire Wire Line
 	5500 2150 5500 4450
 Text GLabel 5750 2300 0    20   BiDi ~ 0
-DETECT1
+S_OR_NES1
 Entry Wire Line
 	5650 2200 5750 2300
 Wire Wire Line
@@ -259,9 +259,9 @@ Wire Wire Line
 Entry Wire Line
 	5950 2050 6050 2150
 Text GLabel 8600 2150 0    20   BiDi ~ 0
-5VDATA4
+SLOW_DATA4
 Text GLabel 8050 2150 0    20   BiDi ~ 0
-5VDATA2
+SLOW_DATA2
 Entry Wire Line
 	7950 2050 8050 2150
 Wire Wire Line
@@ -279,13 +279,13 @@ Wire Wire Line
 Wire Wire Line
 	8600 2150 8600 3100
 Text GLabel 8850 2300 0    20   BiDi ~ 0
-DETECT4
+S_OR_NES4
 Entry Wire Line
 	8750 2200 8850 2300
 Wire Wire Line
 	8850 2300 8850 2800
 Text GLabel 8300 2300 0    20   BiDi ~ 0
-DETECT2
+S_OR_NES2
 Entry Wire Line
 	8200 2200 8300 2300
 Wire Wire Line
@@ -305,11 +305,11 @@ Connection ~ 5200 3700
 Wire Wire Line
 	5200 3700 5200 4150
 Text GLabel 8200 5400 0    20   BiDi ~ 0
-3VDATA4
+FAST_DATA4
 Wire Wire Line
 	8200 5550 8200 3300
 Text GLabel 8400 5400 0    20   BiDi ~ 0
-3VDATA2
+FAST_DATA2
 Wire Wire Line
 	8400 5550 8400 4650
 Entry Wire Line
@@ -325,19 +325,19 @@ Entry Wire Line
 Entry Wire Line
 	4750 3850 4850 3750
 Wire Wire Line
-	4350 5700 4400 5650
-Wire Wire Line
 	4350 5500 4400 5450
 Wire Wire Line
-	4350 5400 4400 5350
+	4350 5300 4400 5250
+Wire Wire Line
+	4350 5200 4400 5150
+Entry Wire Line
+	4500 5050 4400 5150
+Entry Wire Line
+	4500 5150 4400 5250
 Entry Wire Line
 	4500 5250 4400 5350
 Entry Wire Line
 	4500 5350 4400 5450
-Entry Wire Line
-	4500 5450 4400 5550
-Entry Wire Line
-	4500 5550 4400 5650
 Wire Wire Line
 	4700 3300 4750 3250
 Wire Wire Line
@@ -13276,7 +13276,7 @@ Wire Wire Line
 Wire Wire Line
 	4750 3650 4700 3700
 Wire Wire Line
-	4350 5600 4400 5550
+	4350 5400 4400 5350
 $Comp
 L controllerpro-eagle-import:Teensy3.2 U1
 U 1 1 5C5FF923
@@ -31922,11 +31922,11 @@ AE 42 60 82
 EndData
 $EndBitmap
 Wire Wire Line
+	4350 5200 2850 5200
+Wire Wire Line
 	4350 5400 2850 5400
 Wire Wire Line
-	4350 5600 2850 5600
-Wire Wire Line
-	3750 4650 3150 4650
+	3750 4550 3150 4550
 Wire Wire Line
 	2850 4500 2900 4500
 Wire Wire Line
@@ -31944,19 +31944,15 @@ Wire Wire Line
 Wire Wire Line
 	2850 3300 4700 3300
 Wire Wire Line
-	4350 4900 4350 5300
-Wire Wire Line
-	4350 5300 2850 5300
+	2850 5300 4350 5300
 Wire Wire Line
 	2850 5500 4350 5500
-Wire Wire Line
-	2850 5700 4350 5700
 Wire Wire Line
 	5200 4150 2900 4150
 Wire Wire Line
 	2900 4150 2900 4500
 Wire Wire Line
-	3250 4750 3750 4750
+	3250 4650 3750 4650
 $Comp
 L Jumper:SolderJumper_2_Open JP1
 U 1 1 5C5D5D6A
@@ -31970,84 +31966,16 @@ F 3 "~" H 600 3650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	850  3800 850  3700
-Text GLabel 3250 4800 2    39   Input ~ 0
+Text GLabel 3250 4700 2    39   Input ~ 0
 BT_TX
-Text GLabel 3550 4600 0    39   Input ~ 0
+Text GLabel 3550 4500 0    39   Input ~ 0
 BT_TS
-Entry Wire Line
-	5300 3100 5400 3000
-Entry Wire Line
-	5300 3850 5400 3750
-Wire Wire Line
-	5400 3750 7950 3750
-Entry Wire Line
-	5300 3900 5400 3800
-Wire Wire Line
-	5400 3800 7950 3800
-Entry Wire Line
-	5300 4450 5400 4350
-Wire Wire Line
-	4750 4900 4350 4900
-Wire Wire Line
-	2850 5100 3150 5100
-Wire Wire Line
-	2850 4700 3050 4700
-Wire Wire Line
-	2850 4800 3100 4800
 Wire Wire Line
 	2850 5000 3250 5000
 Wire Wire Line
 	2850 4900 3150 4900
-Text GLabel 3150 4700 2    39   Input ~ 0
+Text GLabel 3150 4600 2    39   Input ~ 0
 BT_RX
-Wire Wire Line
-	3150 4650 3150 4900
-Wire Wire Line
-	3250 4750 3250 5000
-Wire Bus Line
-	5300 4300 4300 4300
-Connection ~ 5300 4300
-Wire Bus Line
-	5300 4300 5300 4450
-Wire Bus Line
-	4300 4300 4300 5250
-Wire Wire Line
-	3050 4400 3050 4700
-Wire Wire Line
-	3100 4800 3100 4400
-Entry Wire Line
-	3050 4400 3150 4300
-Entry Wire Line
-	3100 4400 3200 4300
-Connection ~ 4300 4300
-Entry Wire Line
-	3100 5150 3200 5250
-Wire Wire Line
-	3150 5100 3150 5150
-Entry Wire Line
-	3150 5150 3250 5250
-Text GLabel 3000 5150 0    20   BiDi ~ 0
-S_OR_NES2
-Text GLabel 3150 5100 2    20   BiDi ~ 0
-S_OR_NES1
-Text GLabel 3050 4650 0    20   BiDi ~ 0
-S_OR_NES3
-Text GLabel 3100 4750 0    20   BiDi ~ 0
-S_OR_NES4
-Text GLabel 5400 3000 3    20   BiDi ~ 0
-S_OR_NES3
-Text GLabel 5400 4350 3    20   BiDi ~ 0
-S_OR_NES1
-Text GLabel 5400 3800 3    20   BiDi ~ 0
-S_OR_NES2
-Text GLabel 5400 3750 1    20   BiDi ~ 0
-S_OR_NES4
-Wire Wire Line
-	3000 5150 3000 5200
-Wire Wire Line
-	3000 5200 2850 5200
-Wire Wire Line
-	3000 5150 3100 5150
 $Comp
 L Connector:Conn_01x08_Male P3
 U 1 1 5AC68261
@@ -32059,8 +31987,6 @@ F 3 "~" H 6600 3000 50  0001 C CNN
 	1    6600 3000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7950 3800 7950 4350
 Wire Wire Line
 	6350 4250 5400 4250
 Connection ~ 5200 4150
@@ -32088,31 +32014,21 @@ Wire Wire Line
 Text GLabel 3800 4200 1    20   BiDi ~ 0
 LATCH
 Wire Wire Line
-	5400 4350 6350 4350
-Wire Wire Line
-	5400 3000 6350 3000
-Wire Wire Line
 	6350 3200 5250 3200
 Wire Wire Line
 	5250 4200 5250 4550
 Wire Wire Line
 	5250 4550 6350 4550
 Wire Wire Line
-	8900 3000 7950 3000
-Wire Wire Line
-	7950 3000 7950 3750
-Wire Wire Line
 	8900 3200 7800 3200
-Wire Wire Line
-	8900 4350 7950 4350
 Wire Wire Line
 	7800 4550 8900 4550
 Wire Wire Line
 	7800 3650 7800 4550
 Text GLabel 4750 3550 0    20   BiDi ~ 0
-DETECT4
+S_OR_NES4
 Text GLabel 5300 4350 0    20   BiDi ~ 0
-S_OR_NES[1..4]
+TBD[1..4]
 $Sheet
 S 6800 2650 900  2200
 U 5D46F38B
@@ -32132,8 +32048,8 @@ F12 "LATCH_B" I L 6800 4550 50
 F13 "LATCH_A" I L 6800 3200 50 
 F14 "SNES_NES_A" I L 6800 3000 50 
 F15 "SNES_NES_B" I L 6800 4350 50 
-F16 "DETECT_A" I L 6800 2800 50 
-F17 "DETECT_B" I L 6800 4150 50 
+F16 "S_OR_NES_A" I L 6800 2800 50 
+F17 "S_OR_NES_B" I L 6800 4150 50 
 $EndSheet
 $Comp
 L controllerpro-eagle-import:GND #SUPPLY?
@@ -32152,15 +32068,20 @@ Wire Wire Line
 	600  3800 850  3800
 Connection ~ 600  3500
 Wire Bus Line
-	3200 5250 4300 5250
-Wire Bus Line
-	3150 4300 4300 4300
-Wire Bus Line
-	5300 3100 5300 4300
+	4500 1850 4500 2050
+Connection ~ 4500 2050
+Wire Wire Line
+	3250 4650 3250 5000
+Wire Wire Line
+	3150 4550 3150 4900
+Wire Wire Line
+	4750 4900 4300 4900
+Wire Wire Line
+	4300 4900 4300 5100
+Wire Wire Line
+	4300 5100 2850 5100
 Wire Bus Line
 	4850 2200 4850 3450
-Wire Bus Line
-	4500 2050 4500 5550
 Wire Bus Line
 	4850 5650 8300 5650
 Wire Bus Line
@@ -32169,4 +32090,6 @@ Wire Bus Line
 	4850 2200 8750 2200
 Wire Bus Line
 	4500 2050 8500 2050
+Wire Bus Line
+	4500 2050 4500 5350
 $EndSCHEMATC
