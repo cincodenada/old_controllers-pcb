@@ -17,9 +17,9 @@ Text GLabel 4500 5350 3    20   BiDi ~ 0
 SLOW_DATA[1..4]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
 S_OR_NES[1..4]
-Text GLabel 4850 3800 2    20   BiDi ~ 0
+Text GLabel 5050 3800 2    20   BiDi ~ 0
 FAST_DATA[1..4]
-Text GLabel 3650 4150 1    20   BiDi ~ 0
+Text GLabel 3650 4250 1    20   BiDi ~ 0
 CLOCK
 Text GLabel 6050 2150 0    20   BiDi ~ 0
 SLOW_DATA3
@@ -37,27 +37,25 @@ Text GLabel 4400 5350 0    20   BiDi ~ 0
 SLOW_DATA2
 Text GLabel 6300 2300 0    20   BiDi ~ 0
 S_OR_NES3
-Text GLabel 4750 3450 0    20   BiDi ~ 0
+Text GLabel 4750 3950 0    20   BiDi ~ 0
 S_OR_NES3
-Text GLabel 4750 3250 0    20   BiDi ~ 0
+Text GLabel 4750 3750 0    20   BiDi ~ 0
 S_OR_NES1
-Text GLabel 4750 3350 0    20   BiDi ~ 0
+Text GLabel 4750 3850 0    20   BiDi ~ 0
 S_OR_NES2
 Text GLabel 5650 5400 0    20   BiDi ~ 0
 FAST_DATA3
 Wire Wire Line
 	5650 5550 5650 3300
-Text GLabel 4750 3650 0    20   BiDi ~ 0
-FAST_DATA3
 Text GLabel 5850 5400 0    20   BiDi ~ 0
 FAST_DATA1
 Wire Wire Line
 	5850 5550 5850 4650
-Text GLabel 4750 4900 3    20   BiDi ~ 0
+Text GLabel 4950 3300 2    20   BiDi ~ 0
 FAST_DATA4
-Text GLabel 4750 3850 0    20   BiDi ~ 0
+Text GLabel 4950 5700 2    20   BiDi ~ 0
 FAST_DATA1
-Text GLabel 4750 3750 0    20   BiDi ~ 0
+Text GLabel 4950 5600 2    20   BiDi ~ 0
 FAST_DATA2
 Wire Wire Line
 	3750 4950 3550 4950
@@ -70,9 +68,7 @@ Entry Wire Line
 Entry Wire Line
 	6200 2200 6300 2300
 Entry Wire Line
-	4750 3650 4850 3550
-Entry Wire Line
-	4750 4900 4850 4800
+	4950 5700 5050 5600
 Entry Wire Line
 	5550 5650 5650 5550
 $Comp
@@ -123,8 +119,8 @@ $Comp
 L controllerpro-eagle-import:RN42 U$1
 U 1 1 BABD3B23
 P 3950 4750
-F 0 "U$1" H 3750 5080 59  0000 L BNN
-F 1 "RN42" H 3750 4250 59  0000 L BNN
+F 0 "U$1" H 4050 5000 59  0000 L BNN
+F 1 "RN42" H 4050 4350 59  0000 L BNN
 F 2 "controllerpro:RN42" H 3950 4750 50  0001 C CNN
 F 3 "" H 3950 4750 50  0001 C CNN
 	1    3950 4750
@@ -303,7 +299,7 @@ Wire Wire Line
 	8300 4150 8900 4150
 Connection ~ 5200 3700
 Wire Wire Line
-	5200 3700 5200 4150
+	5200 3700 5200 4250
 Text GLabel 8200 5400 0    20   BiDi ~ 0
 FAST_DATA4
 Wire Wire Line
@@ -320,10 +316,6 @@ Wire Wire Line
 	8200 3300 8900 3300
 Wire Wire Line
 	8400 4650 8900 4650
-Entry Wire Line
-	4750 3750 4850 3650
-Entry Wire Line
-	4750 3850 4850 3750
 Wire Wire Line
 	4350 5500 4400 5450
 Wire Wire Line
@@ -339,21 +331,13 @@ Entry Wire Line
 Entry Wire Line
 	4500 5350 4400 5450
 Wire Wire Line
-	4700 3300 4750 3250
+	4700 3800 4750 3750
 Wire Wire Line
-	4700 3400 4750 3350
+	4700 3900 4750 3850
 Wire Wire Line
-	4700 3500 4750 3450
+	4700 4000 4750 3950
 Wire Wire Line
-	4700 3600 4750 3550
-Entry Wire Line
-	4850 3450 4750 3550
-Entry Wire Line
-	4850 3350 4750 3450
-Entry Wire Line
-	4850 3250 4750 3350
-Entry Wire Line
-	4850 3150 4750 3250
+	4700 4100 4750 4050
 Wire Wire Line
 	6250 4750 6350 4750
 Wire Wire Line
@@ -13269,12 +13253,6 @@ C8 E0 30 DD 22 84 10 42 06 87 E9 16 21 84 10 32 38 4C B7 08 21 84 90 C1 61 BA 45
 FF 01 85 04 BD F0 E8 99 FA 9D 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
-Wire Wire Line
-	4750 3850 4700 3900
-Wire Wire Line
-	4750 3750 4700 3800
-Wire Wire Line
-	4750 3650 4700 3700
 Wire Wire Line
 	4350 5400 4400 5350
 $Comp
@@ -31928,29 +31906,19 @@ Wire Wire Line
 Wire Wire Line
 	3750 4550 3150 4550
 Wire Wire Line
-	2850 4500 2900 4500
+	2850 4100 4700 4100
+Wire Wire Line
+	2850 4000 4700 4000
 Wire Wire Line
 	2850 3900 4700 3900
 Wire Wire Line
 	2850 3800 4700 3800
 Wire Wire Line
-	2850 3700 4700 3700
-Wire Wire Line
-	2850 3600 4700 3600
-Wire Wire Line
-	2850 3500 4700 3500
-Wire Wire Line
-	2850 3400 4700 3400
-Wire Wire Line
-	2850 3300 4700 3300
-Wire Wire Line
 	2850 5300 4350 5300
 Wire Wire Line
 	2850 5500 4350 5500
 Wire Wire Line
-	5200 4150 2900 4150
-Wire Wire Line
-	2900 4150 2900 4500
+	5200 4250 2900 4250
 Wire Wire Line
 	3250 4650 3750 4650
 $Comp
@@ -31987,36 +31955,26 @@ F 3 "~" H 6600 3000 50  0001 C CNN
 	1    6600 3000
 	1    0    0    -1  
 $EndComp
+Connection ~ 5200 4250
 Wire Wire Line
-	6350 4250 5400 4250
-Connection ~ 5200 4150
+	2950 4300 5250 4300
 Wire Wire Line
-	2850 4600 2950 4600
-Wire Wire Line
-	2950 4600 2950 4200
-Wire Wire Line
-	2950 4200 5250 4200
-Wire Wire Line
-	5250 4200 5250 3650
+	5250 4300 5250 3650
 Wire Wire Line
 	5250 3650 7800 3650
 Wire Wire Line
 	7800 3650 7800 3200
-Connection ~ 5250 4200
+Connection ~ 5250 4300
 Connection ~ 7800 3650
 Wire Wire Line
 	5250 3650 5250 3200
 Connection ~ 5250 3650
-Wire Wire Line
-	5400 4150 5200 4150
-Wire Wire Line
-	5400 4250 5400 4150
-Text GLabel 3800 4200 1    20   BiDi ~ 0
+Text GLabel 3800 4300 1    20   BiDi ~ 0
 LATCH
 Wire Wire Line
 	6350 3200 5250 3200
 Wire Wire Line
-	5250 4200 5250 4550
+	5250 4300 5250 4550
 Wire Wire Line
 	5250 4550 6350 4550
 Wire Wire Line
@@ -32025,10 +31983,8 @@ Wire Wire Line
 	7800 4550 8900 4550
 Wire Wire Line
 	7800 3650 7800 4550
-Text GLabel 4750 3550 0    20   BiDi ~ 0
+Text GLabel 4750 4050 0    20   BiDi ~ 0
 S_OR_NES4
-Text GLabel 5300 4350 0    20   BiDi ~ 0
-TBD[1..4]
 $Sheet
 S 6800 2650 900  2200
 U 5D46F38B
@@ -32075,21 +32031,49 @@ Wire Wire Line
 Wire Wire Line
 	3150 4550 3150 4900
 Wire Wire Line
-	4750 4900 4300 4900
+	2950 4800 2850 4800
 Wire Wire Line
-	4300 4900 4300 5100
+	2900 4700 2850 4700
 Wire Wire Line
-	4300 5100 2850 5100
+	2900 4250 2900 4700
+Wire Wire Line
+	2950 4300 2950 4800
+Entry Wire Line
+	4950 5600 5050 5500
+Wire Wire Line
+	5200 4250 6350 4250
+Entry Wire Line
+	4850 3650 4750 3750
+Entry Wire Line
+	4850 3750 4750 3850
+Entry Wire Line
+	4850 3850 4750 3950
+Entry Wire Line
+	4850 3950 4750 4050
+Text GLabel 4950 3400 2    20   BiDi ~ 0
+FAST_DATA3
+Entry Wire Line
+	4950 3300 5050 3400
+Entry Wire Line
+	5050 3500 4950 3400
+Wire Wire Line
+	4950 3300 2850 3300
+Wire Wire Line
+	4950 3400 2850 3400
+Wire Wire Line
+	4950 5600 2850 5600
+Wire Wire Line
+	4950 5700 2850 5700
 Wire Bus Line
-	4850 2200 4850 3450
+	5050 3400 5050 5650
 Wire Bus Line
-	4850 5650 8300 5650
+	4500 2050 4500 5350
 Wire Bus Line
-	4850 3550 4850 5650
+	5050 5650 8300 5650
 Wire Bus Line
 	4850 2200 8750 2200
 Wire Bus Line
 	4500 2050 8500 2050
 Wire Bus Line
-	4500 2050 4500 5350
+	4850 2200 4850 3950
 $EndSCHEMATC
