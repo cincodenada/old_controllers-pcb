@@ -14,14 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Connection ~ 5400 3700
-Wire Wire Line
-	5400 3800 5400 3700
-Text GLabel 5400 3800 3    50   Input ~ 0
-GNDA
 Connection ~ 6700 2500
-Text GLabel 6700 2500 2    50   Input ~ 0
-VCCA
 Text HLabel 5900 2700 0    50   Input ~ 0
 LATCH_A
 Text HLabel 5900 3500 0    50   Input ~ 0
@@ -49,8 +42,6 @@ SLOW_DATA_A
 Text HLabel 5400 3700 0    50   Input ~ 0
 GND_A
 Connection ~ 6700 4950
-Text GLabel 6700 4950 2    50   Input ~ 0
-VCCA
 Wire Wire Line
 	6700 4950 6700 5750
 Wire Wire Line
@@ -106,11 +97,6 @@ Text HLabel 5900 5950 0    50   Input ~ 0
 FAST_DATA_B
 Text HLabel 5900 5150 0    50   Input ~ 0
 LATCH_B
-Text GLabel 5400 6250 3    50   Input ~ 0
-GNDA
-Wire Wire Line
-	5400 6250 5400 6150
-Connection ~ 5400 6150
 Wire Wire Line
 	6700 5750 6100 5750
 $Comp
@@ -221,4 +207,18 @@ NoConn ~ 6500 2700
 NoConn ~ 6500 2900
 NoConn ~ 6500 5150
 NoConn ~ 6500 5350
+Connection ~ 5400 6150
+Wire Wire Line
+	5400 6250 5400 6150
+Text GLabel 5400 6250 3    50   Input ~ 0
+GNDA
+Connection ~ 5400 3700
+Wire Wire Line
+	5400 3800 5400 3700
+Text GLabel 5400 3800 3    50   Input ~ 0
+GNDA
+Text GLabel 6700 2500 2    50   Input ~ 0
+VCCA
+Text GLabel 6700 4950 2    50   Input ~ 0
+VCCA
 $EndSCHEMATC

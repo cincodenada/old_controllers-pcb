@@ -187,8 +187,6 @@ Wire Wire Line
 Wire Wire Line
 	6350 2450 8900 2450
 Connection ~ 5200 3700
-Wire Wire Line
-	5200 3700 5200 4250
 Text GLabel 8200 5400 0    20   BiDi ~ 0
 S_OR_NES4
 Text GLabel 8400 5400 0    20   BiDi ~ 0
@@ -31851,8 +31849,6 @@ Entry Wire Line
 Entry Wire Line
 	4850 3500 4750 3400
 Wire Wire Line
-	2900 4250 5200 4250
-Wire Wire Line
 	2850 4100 4950 4100
 Wire Wire Line
 	2850 4000 4950 4000
@@ -31899,10 +31895,7 @@ Wire Wire Line
 Wire Wire Line
 	5500 2150 5500 4350
 Wire Wire Line
-	5200 4250 5200 4450
-Wire Wire Line
 	5200 4450 6350 4450
-Connection ~ 5200 4250
 Wire Wire Line
 	8900 4350 8050 4350
 Wire Wire Line
@@ -32046,10 +32039,10 @@ Wire Wire Line
 Wire Wire Line
 	3100 4550 3100 5050
 $Comp
-L controllerpro-eagle-import:VCC SUPPLY?
+L controllerpro-eagle-import:VCC #SUPPLY0102
 U 1 1 5D664135
 P 3500 4950
-F 0 "SUPPLY?" H 3500 4950 50  0001 C CNN
+F 0 "#SUPPLY0102" H 3500 4950 50  0001 C CNN
 F 1 "VCC" H 3500 5100 59  0000 C CNN
 F 2 "" H 3500 4950 50  0001 C CNN
 F 3 "" H 3500 4950 50  0001 C CNN
@@ -32059,10 +32052,10 @@ $EndComp
 Wire Wire Line
 	3750 4950 3600 4950
 $Comp
-L controllerpro-eagle-import:RN42 U1
+L controllerpro-eagle-import:RN42 U2
 U 1 1 BABD3B23
 P 3950 4850
-F 0 "U1" H 4000 4450 59  0000 L BNN
+F 0 "U2" H 4000 4450 59  0000 L BNN
 F 1 "RN42" H 4000 5100 59  0000 L BNN
 F 2 "controllerpro:RN42" H 3950 4850 50  0001 C CNN
 F 3 "" H 3950 4850 50  0001 C CNN
@@ -32081,4 +32074,11 @@ Wire Bus Line
 	4850 2200 8750 2200
 Wire Bus Line
 	4500 2050 8500 2050
+Wire Wire Line
+	5200 4250 5200 4450
+Wire Wire Line
+	5200 3700 5200 4250
+Connection ~ 5200 4250
+Wire Wire Line
+	2900 4250 5200 4250
 $EndSCHEMATC
