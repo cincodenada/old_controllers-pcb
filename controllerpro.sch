@@ -31794,8 +31794,6 @@ $EndComp
 Wire Wire Line
 	850  3800 850  3700
 Wire Wire Line
-	2850 5000 3250 5000
-Wire Wire Line
 	2850 4900 3150 4900
 Wire Wire Line
 	5250 3650 7800 3650
@@ -31980,72 +31978,6 @@ F 3 "~" H 6600 4350 50  0001 C CNN
 	1    6600 4350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5250 4300 5250 4550
-Wire Wire Line
-	5250 4300 5250 3650
-Wire Wire Line
-	2950 4300 2950 4800
-Text GLabel 3800 4300 1    20   BiDi ~ 0
-CLOCK
-Connection ~ 5250 4300
-Wire Wire Line
-	2950 4300 5250 4300
-Wire Wire Line
-	3250 4650 3250 5000
-Wire Wire Line
-	3150 4550 3150 4900
-Text GLabel 3150 4600 2    39   Input ~ 0
-BT_RX
-Text GLabel 3550 4500 0    39   Input ~ 0
-BT_TS
-Text GLabel 3250 4700 2    39   Input ~ 0
-BT_TX
-Wire Wire Line
-	3250 4650 3750 4650
-Wire Wire Line
-	3750 4550 3150 4550
-$Comp
-L controllerpro-eagle-import:VCC #SUPPLY05
-U 1 1 FD320F9F
-P 3650 4850
-F 0 "#SUPPLY05" H 3650 4850 50  0001 C CNN
-F 1 "VCC" H 3575 4975 59  0000 L BNN
-F 2 "" H 3650 4850 50  0001 C CNN
-F 3 "" H 3650 4850 50  0001 C CNN
-	1    3650 4850
-	0    -1   -1   0   
-$EndComp
-$Comp
-L controllerpro-eagle-import:GND #SUPPLY04
-U 1 1 6DF68C43
-P 3650 4750
-F 0 "#SUPPLY04" H 3650 4750 50  0001 C CNN
-F 1 "GND" H 3575 4625 59  0000 L BNN
-F 2 "" H 3650 4750 50  0001 C CNN
-F 3 "" H 3650 4750 50  0001 C CNN
-	1    3650 4750
-	0    1    1    0   
-$EndComp
-$Comp
-L controllerpro-eagle-import:RN42 U$1
-U 1 1 BABD3B23
-P 3950 4750
-F 0 "U$1" H 4050 5000 59  0000 L BNN
-F 1 "RN42" H 4050 4350 59  0000 L BNN
-F 2 "controllerpro:RN42" H 3950 4750 50  0001 C CNN
-F 3 "" H 3950 4750 50  0001 C CNN
-	1    3950 4750
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3550 4450 3750 4450
-Wire Wire Line
-	3550 4950 3550 4450
-Wire Wire Line
-	3750 4950 3550 4950
-Text GLabel 3650 4250 1    20   BiDi ~ 0
-LATCH
 $Comp
 L Connector:Conn_01x08_Male P3
 U 1 1 5AC68261
@@ -32058,6 +31990,85 @@ F 3 "~" H 6600 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6800 2900
+NoConn ~ 6350 2900
+NoConn ~ 6350 4250
+NoConn ~ 6800 4250
+NoConn ~ 8900 4250
+NoConn ~ 8900 2900
+NoConn ~ 2850 5100
+NoConn ~ 2850 3500
+NoConn ~ 2850 3600
+NoConn ~ 2850 3700
+Text Label 2900 4250 0    50   ~ 0
+LATCH
+$Comp
+L controllerpro-eagle-import:GND #SUPPLY04
+U 1 1 6DF68C43
+P 3650 4850
+F 0 "#SUPPLY04" H 3650 4850 50  0001 C CNN
+F 1 "GND" H 3575 4725 59  0000 L BNN
+F 2 "" H 3650 4850 50  0001 C CNN
+F 3 "" H 3650 4850 50  0001 C CNN
+	1    3650 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 4650 3150 4650
+Wire Wire Line
+	3250 4750 3750 4750
+Wire Wire Line
+	2950 4350 5250 4350
+Connection ~ 5250 4350
+Wire Wire Line
+	2950 4350 2950 4800
+Text Label 2950 4350 0    50   ~ 0
+CLOCK
+Wire Wire Line
+	5250 4350 5250 3650
+Wire Wire Line
+	5250 4350 5250 4550
+Text Label 3150 4650 0    50   ~ 0
+BT_RX
+Text Label 3250 4750 0    50   ~ 0
+BT_TX
+Wire Wire Line
+	2850 5000 3250 5000
+Wire Wire Line
+	3100 4550 3750 4550
+Text Label 3100 4550 0    50   ~ 0
+BT_TS
+Wire Wire Line
+	3750 5050 3100 5050
+Wire Wire Line
+	3150 4650 3150 4900
+Wire Wire Line
+	3250 4750 3250 5000
+Wire Wire Line
+	3100 4550 3100 5050
+$Comp
+L controllerpro-eagle-import:VCC SUPPLY?
+U 1 1 5D664135
+P 3500 4950
+F 0 "SUPPLY?" H 3500 4950 50  0001 C CNN
+F 1 "VCC" H 3500 5100 59  0000 C CNN
+F 2 "" H 3500 4950 50  0001 C CNN
+F 3 "" H 3500 4950 50  0001 C CNN
+	1    3500 4950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3750 4950 3600 4950
+$Comp
+L controllerpro-eagle-import:RN42 U1
+U 1 1 BABD3B23
+P 3950 4850
+F 0 "U1" H 4000 4450 59  0000 L BNN
+F 1 "RN42" H 4000 5100 59  0000 L BNN
+F 2 "controllerpro:RN42" H 3950 4850 50  0001 C CNN
+F 3 "" H 3950 4850 50  0001 C CNN
+	1    3950 4850
+	-1   0    0    1   
+$EndComp
 Wire Bus Line
 	5050 3900 5050 5650
 Wire Bus Line

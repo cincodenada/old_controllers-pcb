@@ -217,4 +217,8 @@ Text HLabel 4900 4750 0    50   Input ~ 0
 S_OR_NES_B
 Text HLabel 5100 2300 0    50   Input ~ 0
 S_OR_NES_A
+NoConn ~ 6500 2700
+NoConn ~ 6500 2900
+NoConn ~ 6500 5150
+NoConn ~ 6500 5350
 $EndSCHEMATC
