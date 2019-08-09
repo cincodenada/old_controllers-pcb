@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:controllerpro-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -17,32 +18,32 @@ Text GLabel 4500 5350 3    20   BiDi ~ 0
 SLOW_DATA[1..4]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
 S_OR_NES[1..4]
-Text GLabel 5050 3800 2    20   BiDi ~ 0
+Text GLabel 5050 4850 2    20   BiDi ~ 0
 FAST_DATA[1..4]
 Text GLabel 3650 4250 1    20   BiDi ~ 0
 CLOCK
 Text GLabel 6050 2150 0    20   BiDi ~ 0
 SLOW_DATA3
 Text GLabel 4400 5250 0    20   BiDi ~ 0
-SLOW_DATA3
+SLOW_DATA4
 Text GLabel 5500 2150 0    20   BiDi ~ 0
 SLOW_DATA1
 Wire Wire Line
 	5500 4450 6350 4450
 Text GLabel 4400 5150 0    20   BiDi ~ 0
-SLOW_DATA4
-Text GLabel 4400 5450 0    20   BiDi ~ 0
 SLOW_DATA1
+Text GLabel 4400 5450 0    20   BiDi ~ 0
+SLOW_DATA3
 Text GLabel 4400 5350 0    20   BiDi ~ 0
 SLOW_DATA2
 Text GLabel 6300 2300 0    20   BiDi ~ 0
 S_OR_NES3
-Text GLabel 4750 3950 0    20   BiDi ~ 0
-S_OR_NES3
-Text GLabel 4750 3750 0    20   BiDi ~ 0
-S_OR_NES1
-Text GLabel 4750 3850 0    20   BiDi ~ 0
+Text GLabel 4750 5600 2    20   BiDi ~ 0
+S_OR_NES4
+Text GLabel 4750 3300 2    20   BiDi ~ 0
 S_OR_NES2
+Text GLabel 4750 3400 2    20   BiDi ~ 0
+S_OR_NES3
 Text GLabel 5650 5400 0    20   BiDi ~ 0
 FAST_DATA3
 Wire Wire Line
@@ -51,12 +52,12 @@ Text GLabel 5850 5400 0    20   BiDi ~ 0
 FAST_DATA1
 Wire Wire Line
 	5850 5550 5850 4650
-Text GLabel 4950 3300 2    20   BiDi ~ 0
-FAST_DATA4
-Text GLabel 4950 5700 2    20   BiDi ~ 0
-FAST_DATA1
-Text GLabel 4950 5600 2    20   BiDi ~ 0
+Text GLabel 4950 3800 2    20   BiDi ~ 0
 FAST_DATA2
+Text GLabel 4950 4100 2    20   BiDi ~ 0
+FAST_DATA3
+Text GLabel 4950 4000 2    20   BiDi ~ 0
+FAST_DATA4
 Wire Wire Line
 	3750 4950 3550 4950
 Wire Wire Line
@@ -68,7 +69,7 @@ Entry Wire Line
 Entry Wire Line
 	6200 2200 6300 2300
 Entry Wire Line
-	4950 5700 5050 5600
+	4750 5700 4850 5600
 Entry Wire Line
 	5550 5650 5650 5550
 $Comp
@@ -330,14 +331,6 @@ Entry Wire Line
 	4500 5250 4400 5350
 Entry Wire Line
 	4500 5350 4400 5450
-Wire Wire Line
-	4700 3800 4750 3750
-Wire Wire Line
-	4700 3900 4750 3850
-Wire Wire Line
-	4700 4000 4750 3950
-Wire Wire Line
-	4700 4100 4750 4050
 Wire Wire Line
 	6250 4750 6350 4750
 Wire Wire Line
@@ -31906,19 +31899,9 @@ Wire Wire Line
 Wire Wire Line
 	3750 4550 3150 4550
 Wire Wire Line
-	2850 4100 4700 4100
-Wire Wire Line
-	2850 4000 4700 4000
-Wire Wire Line
-	2850 3900 4700 3900
-Wire Wire Line
-	2850 3800 4700 3800
-Wire Wire Line
 	2850 5300 4350 5300
 Wire Wire Line
 	2850 5500 4350 5500
-Wire Wire Line
-	5200 4250 2900 4250
 Wire Wire Line
 	3250 4650 3750 4650
 $Comp
@@ -31983,8 +31966,8 @@ Wire Wire Line
 	7800 4550 8900 4550
 Wire Wire Line
 	7800 3650 7800 4550
-Text GLabel 4750 4050 0    20   BiDi ~ 0
-S_OR_NES4
+Text GLabel 4750 5700 2    20   BiDi ~ 0
+S_OR_NES1
 $Sheet
 S 6800 2650 900  2200
 U 5D46F38B
@@ -32002,16 +31985,14 @@ F10 "VCC_B" I L 6800 4050 50
 F11 "GND_B" I L 6800 4750 50 
 F12 "LATCH_B" I L 6800 4550 50 
 F13 "LATCH_A" I L 6800 3200 50 
-F14 "SNES_NES_A" I L 6800 3000 50 
-F15 "SNES_NES_B" I L 6800 4350 50 
-F16 "S_OR_NES_A" I L 6800 2800 50 
-F17 "S_OR_NES_B" I L 6800 4150 50 
+F14 "S_OR_NES_A" I L 6800 2800 50 
+F15 "S_OR_NES_B" I L 6800 4150 50 
 $EndSheet
 $Comp
-L controllerpro-eagle-import:GND #SUPPLY?
+L controllerpro-eagle-import:GND #SUPPLY0101
 U 1 1 5D675733
 P 750 3600
-F 0 "#SUPPLY?" H 750 3600 50  0001 C CNN
+F 0 "#SUPPLY0101" H 750 3600 50  0001 C CNN
 F 1 "GND" V 900 3500 59  0000 L BNN
 F 2 "" H 750 3600 50  0001 C CNN
 F 3 "" H 750 3600 50  0001 C CNN
@@ -32039,33 +32020,43 @@ Wire Wire Line
 Wire Wire Line
 	2950 4300 2950 4800
 Entry Wire Line
-	4950 5600 5050 5500
+	4750 5600 4850 5500
 Wire Wire Line
 	5200 4250 6350 4250
 Entry Wire Line
-	4850 3650 4750 3750
+	5050 4200 4950 4100
 Entry Wire Line
-	4850 3750 4750 3850
+	5050 4000 4950 3900
 Entry Wire Line
-	4850 3850 4750 3950
+	5050 3900 4950 3800
+Text GLabel 4950 3900 2    20   BiDi ~ 0
+FAST_DATA1
 Entry Wire Line
-	4850 3950 4750 4050
-Text GLabel 4950 3400 2    20   BiDi ~ 0
-FAST_DATA3
+	4750 3300 4850 3400
 Entry Wire Line
-	4950 3300 5050 3400
-Entry Wire Line
-	5050 3500 4950 3400
+	4850 3500 4750 3400
 Wire Wire Line
-	4950 3300 2850 3300
+	2900 4250 5200 4250
 Wire Wire Line
-	4950 3400 2850 3400
+	2850 4100 4950 4100
 Wire Wire Line
-	4950 5600 2850 5600
+	2850 4000 4950 4000
 Wire Wire Line
-	4950 5700 2850 5700
+	2850 3900 4950 3900
+Entry Wire Line
+	5050 4100 4950 4000
+Wire Wire Line
+	4750 5600 2850 5600
+Wire Wire Line
+	2850 5700 4750 5700
+Wire Wire Line
+	4950 3800 2850 3800
+Wire Wire Line
+	4750 3300 2850 3300
+Wire Wire Line
+	2850 3400 4750 3400
 Wire Bus Line
-	5050 3400 5050 5650
+	4850 2200 4850 5600
 Wire Bus Line
 	4500 2050 4500 5350
 Wire Bus Line
@@ -32075,5 +32066,5 @@ Wire Bus Line
 Wire Bus Line
 	4500 2050 8500 2050
 Wire Bus Line
-	4850 2200 4850 3950
+	5050 3900 5050 5650
 $EndSCHEMATC
