@@ -192,13 +192,13 @@ Wire Wire Line
 Wire Wire Line
 	5400 2300 5100 2300
 Wire Wire Line
-	5400 2600 5400 3700
+	5400 2600 5400 3050
 Wire Wire Line
-	5900 2900 6100 2900
+	5900 2900 5950 2900
 Wire Wire Line
-	5400 5050 5400 6150
+	5400 5050 5400 5500
 Wire Wire Line
-	5900 5350 6100 5350
+	5900 5350 5950 5350
 Text HLabel 4900 4750 0    50   Input ~ 0
 S_OR_NES_B
 Text HLabel 5100 2300 0    50   Input ~ 0
@@ -221,4 +221,54 @@ Text GLabel 6700 2500 2    50   Input ~ 0
 VCCA
 Text GLabel 6700 4950 2    50   Input ~ 0
 VCCA
+$Comp
+L Device:R R1
+U 1 1 5D55E38A
+P 5700 3050
+F 0 "R1" V 5800 3050 50  0000 C CNN
+F 1 "10k" V 5700 3050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5630 3050 50  0001 C CNN
+F 3 "~" H 5700 3050 50  0001 C CNN
+	1    5700 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D55FB63
+P 5700 5500
+F 0 "R2" V 5800 5500 50  0000 C CNN
+F 1 "10k" V 5700 5500 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5630 5500 50  0001 C CNN
+F 3 "~" H 5700 5500 50  0001 C CNN
+	1    5700 5500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5950 2900 5950 3050
+Wire Wire Line
+	5950 3050 5850 3050
+Connection ~ 5950 2900
+Wire Wire Line
+	5950 2900 6100 2900
+Wire Wire Line
+	5550 3050 5400 3050
+Connection ~ 5400 3050
+Wire Wire Line
+	5400 3050 5400 3700
+Wire Wire Line
+	5950 5350 5950 5500
+Wire Wire Line
+	5950 5500 5850 5500
+Connection ~ 5950 5350
+Wire Wire Line
+	5950 5350 6100 5350
+Wire Wire Line
+	5550 5500 5400 5500
+Connection ~ 5400 5500
+Wire Wire Line
+	5400 5500 5400 6150
+Text Notes 5550 5700 0    50   ~ 0
+Optional
+Text Notes 5550 3250 0    50   ~ 0
+Optional
 $EndSCHEMATC
