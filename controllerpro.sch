@@ -31961,31 +31961,19 @@ Wire Wire Line
 Wire Wire Line
 	8300 2300 8300 4150
 $Comp
-L Connector:Conn_01x08_Male P1
-U 1 1 5AE09F98
-P 6600 4350
-F 0 "P1" H 6650 3900 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 4737 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 4350 50  0001 C CNN
-F 3 "~" H 6600 4350 50  0001 C CNN
-	1    6600 4350
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Conn_01x08_Male P3
 U 1 1 5AC68261
-P 6600 3000
-F 0 "P3" H 6650 2550 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 3387 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 3000 50  0001 C CNN
-F 3 "~" H 6600 3000 50  0001 C CNN
-	1    6600 3000
+P 6550 3000
+F 0 "P3" H 6600 2550 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6656 3387 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6550 3000 50  0001 C CNN
+F 3 "~" H 6550 3000 50  0001 C CNN
+	1    6550 3000
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6800 2900
 NoConn ~ 6350 2900
 NoConn ~ 6350 4250
-NoConn ~ 6800 4250
 NoConn ~ 8900 4250
 NoConn ~ 8900 2900
 NoConn ~ 2850 5100
@@ -32069,6 +32057,70 @@ Wire Wire Line
 Connection ~ 5200 4250
 Wire Wire Line
 	2900 4250 5200 4250
+$Comp
+L Connector:Conn_01x08_Male P2
+U 1 1 5D591976
+P 6600 3000
+F 0 "P2" H 6650 2550 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 3387 50  0001 C CNN
+F 2 "controllerpro:PinHeader_1x08_P2.54mm_Vertical" H 6600 3000 50  0001 C CNN
+F 3 "~" H 6600 3000 50  0001 C CNN
+	1    6600 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2700 6800 2700
+Wire Wire Line
+	6750 2800 6800 2800
+Wire Wire Line
+	6750 3000 6800 3000
+Wire Wire Line
+	6750 3100 6800 3100
+Wire Wire Line
+	6800 3200 6750 3200
+Wire Wire Line
+	6750 3300 6800 3300
+Wire Wire Line
+	6750 3400 6800 3400
+NoConn ~ 6750 2900
+NoConn ~ 6800 4250
+$Comp
+L Connector:Conn_01x08_Male P1
+U 1 1 5AE09F98
+P 6600 4350
+F 0 "P1" H 6650 3900 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 4737 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 4350 50  0001 C CNN
+F 3 "~" H 6600 4350 50  0001 C CNN
+	1    6600 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x08_Male P4
+U 1 1 5D593207
+P 6550 4350
+F 0 "P4" H 6600 3900 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6656 4737 50  0001 C CNN
+F 2 "controllerpro:PinHeader_1x08_P2.54mm_Vertical" H 6550 4350 50  0001 C CNN
+F 3 "~" H 6550 4350 50  0001 C CNN
+	1    6550 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 4050 6800 4050
+Wire Wire Line
+	6750 4150 6800 4150
+Wire Wire Line
+	6750 4350 6800 4350
+Wire Wire Line
+	6750 4450 6800 4450
+Wire Wire Line
+	6750 4550 6800 4550
+Wire Wire Line
+	6750 4650 6800 4650
+Wire Wire Line
+	6750 4750 6800 4750
+NoConn ~ 6750 4250
 Wire Bus Line
 	5050 3900 5050 5650
 Wire Bus Line

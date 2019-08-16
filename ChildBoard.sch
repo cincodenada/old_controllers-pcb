@@ -20,7 +20,7 @@ LATCH_A
 Text HLabel 5900 3500 0    50   Input ~ 0
 FAST_DATA_A
 Wire Wire Line
-	6700 2500 6700 3300
+	6700 2500 6700 2700
 Wire Wire Line
 	6700 2000 6700 2500
 Text HLabel 5900 2500 0    50   Input ~ 0
@@ -43,7 +43,7 @@ Text HLabel 5400 3700 0    50   Input ~ 0
 GND_A
 Connection ~ 6700 4950
 Wire Wire Line
-	6700 4950 6700 5750
+	6700 4950 6700 5150
 Wire Wire Line
 	6700 4450 6700 4950
 Connection ~ 5400 2000
@@ -99,17 +99,6 @@ Text HLabel 5900 5150 0    50   Input ~ 0
 LATCH_B
 Wire Wire Line
 	6700 5750 6100 5750
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI_LARGE CP1
-U 1 1 5D52D928
-P 6300 5550
-F 0 "CP1" V 7300 5300 59  0000 C CNN
-F 1 "NINTENDO-MULTI_LARGE" V 7200 5800 59  0000 C CNN
-F 2 "controllerpro:NINTENDO-MULTI" H 6300 5550 50  0001 C CNN
-F 3 "" H 6300 5550 50  0001 C CNN
-	1    6300 5550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5400 4750 6100 4750
 Wire Wire Line
@@ -176,17 +165,6 @@ F 3 "~" H 5400 2150 50  0001 C CNN
 	1    5400 2150
 	0    1    1    0   
 $EndComp
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI_LARGE CP0
-U 1 1 5D48E58B
-P 6300 3100
-F 0 "CP0" V 7300 2850 59  0000 C CNN
-F 1 "NINTENDO-MULTI_LARGE" V 7200 3350 59  0000 C CNN
-F 2 "controllerpro:NINTENDO-MULTI" H 6300 3100 50  0001 C CNN
-F 3 "" H 6300 3100 50  0001 C CNN
-	1    6300 3100
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5400 2300 6100 2300
 Wire Wire Line
@@ -203,9 +181,7 @@ Text HLabel 4900 4750 0    50   Input ~ 0
 S_OR_NES_B
 Text HLabel 5100 2300 0    50   Input ~ 0
 S_OR_NES_A
-NoConn ~ 6500 2700
 NoConn ~ 6500 2900
-NoConn ~ 6500 5150
 NoConn ~ 6500 5350
 Connection ~ 5400 6150
 Wire Wire Line
@@ -271,4 +247,36 @@ Text Notes 5550 5700 0    50   ~ 0
 Optional
 Text Notes 5550 3250 0    50   ~ 0
 Optional
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 11
+U 1 1 5D5859CE
+P 6300 3100
+F 0 "11" V 5114 3100 59  0000 C CNN
+F 1 "NINTENDO-MULTI-MULTI_LARGE" V 5219 3100 59  0000 C CNN
+F 2 "controllerpro:NINTENDO-MULTI-MULTI" H 6300 3100 50  0001 C CNN
+F 3 "" H 6300 3100 50  0001 C CNN
+	1    6300 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 2700 6700 2700
+Connection ~ 6700 2700
+Wire Wire Line
+	6700 2700 6700 3300
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 21
+U 1 1 5D58B3B5
+P 6300 5550
+F 0 "21" V 5114 5550 59  0000 C CNN
+F 1 "NINTENDO-MULTI-MULTI_LARGE" V 5219 5550 59  0000 C CNN
+F 2 "controllerpro:NINTENDO-MULTI-MULTI" H 6300 5550 50  0001 C CNN
+F 3 "" H 6300 5550 50  0001 C CNN
+	1    6300 5550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 5150 6700 5150
+Connection ~ 6700 5150
+Wire Wire Line
+	6700 5150 6700 5750
 $EndSCHEMATC
