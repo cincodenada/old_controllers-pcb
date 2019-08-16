@@ -104,30 +104,8 @@ F 3 "" H 2950 5800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6250 3400 6350 3400
-$Comp
-L Connector:Conn_01x08_Female S1
-U 1 1 5ADE50AA
-P 6550 4350
-F 0 "S1" H 6450 3900 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 6577 4235 50  0001 L CNN
-F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
-F 3 "~" H 6550 4350 50  0001 C CNN
-	1    6550 4350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10200 2450 10200 3900
-$Comp
-L Connector:Conn_01x08_Female S4
-U 1 1 5AE4B0ED
-P 9100 3000
-F 0 "S4" H 9000 2550 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 9127 2885 50  0001 L CNN
-F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 3000 50  0001 C CNN
-F 3 "~" H 9100 3000 50  0001 C CNN
-	1    9100 3000
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Conn_01x08_Female S2
 U 1 1 5AE4B18B
@@ -31861,8 +31839,6 @@ Wire Wire Line
 Wire Wire Line
 	2850 5700 4750 5700
 Wire Wire Line
-	4950 3800 2850 3800
-Wire Wire Line
 	4750 3300 2850 3300
 Wire Wire Line
 	2850 3400 4750 3400
@@ -31972,14 +31948,6 @@ F 3 "~" H 6550 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6800 2900
-NoConn ~ 6350 2900
-NoConn ~ 6350 4250
-NoConn ~ 8900 4250
-NoConn ~ 8900 2900
-NoConn ~ 2850 5100
-NoConn ~ 2850 3500
-NoConn ~ 2850 3600
-NoConn ~ 2850 3700
 Text Label 2900 4250 0    50   ~ 0
 LATCH
 $Comp
@@ -32121,6 +32089,70 @@ Wire Wire Line
 Wire Wire Line
 	6750 4750 6800 4750
 NoConn ~ 6750 4250
+Entry Wire Line
+	4250 3500 4350 3600
+Entry Wire Line
+	4250 3600 4350 3700
+Entry Wire Line
+	4250 3700 4350 3800
+Wire Wire Line
+	2850 3700 4250 3700
+Wire Wire Line
+	2850 3600 4250 3600
+Wire Wire Line
+	2850 3500 4250 3500
+Entry Wire Line
+	4350 5000 4250 5100
+Wire Wire Line
+	4250 5100 2850 5100
+Entry Wire Line
+	8300 1900 8400 2000
+Entry Wire Line
+	8000 1900 8100 2000
+Wire Wire Line
+	8400 2000 8400 2900
+Wire Wire Line
+	8400 2900 8900 2900
+$Comp
+L Connector:Conn_01x08_Female S4
+U 1 1 5AE4B0ED
+P 9100 3000
+F 0 "S4" H 9000 2550 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 9127 2885 50  0001 L CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 9100 3000 50  0001 C CNN
+F 3 "~" H 9100 3000 50  0001 C CNN
+	1    9100 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2000 8100 4250
+Wire Wire Line
+	8100 4250 8900 4250
+$Comp
+L Connector:Conn_01x08_Female S1
+U 1 1 5ADE50AA
+P 6550 4350
+F 0 "S1" H 6450 3900 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 6577 4235 50  0001 L CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
+F 3 "~" H 6550 4350 50  0001 C CNN
+	1    6550 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4250 5550 4250
+Wire Wire Line
+	5550 4250 5550 2000
+Wire Wire Line
+	6350 2900 5800 2900
+Wire Wire Line
+	5800 2900 5800 2000
+Wire Bus Line
+	4350 1900 8300 1900
+Wire Wire Line
+	2850 3800 4950 3800
+Wire Bus Line
+	4350 1900 4350 5000
 Wire Bus Line
 	5050 3900 5050 5650
 Wire Bus Line
@@ -32133,4 +32165,24 @@ Wire Bus Line
 	4850 2200 8750 2200
 Wire Bus Line
 	4500 2050 8500 2050
+Entry Wire Line
+	5700 1900 5800 2000
+Entry Wire Line
+	5450 1900 5550 2000
+Text GLabel 5800 2000 2    20   BiDi ~ 0
+EXTRA3
+Text GLabel 5550 2000 2    20   BiDi ~ 0
+EXTRA1
+Text GLabel 8100 2000 2    20   BiDi ~ 0
+EXTRA2
+Text GLabel 8400 2000 2    20   BiDi ~ 0
+EXTRA4
+Text GLabel 4250 3500 2    20   BiDi ~ 0
+EXTRA2
+Text GLabel 4250 3600 2    20   BiDi ~ 0
+EXTRA1
+Text GLabel 4250 3700 2    20   BiDi ~ 0
+EXTRA4
+Text GLabel 4250 5100 2    20   BiDi ~ 0
+EXTRA3
 $EndSCHEMATC

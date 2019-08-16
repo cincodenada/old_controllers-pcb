@@ -14,15 +14,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Connection ~ 6700 2500
 Text HLabel 5900 2700 0    50   Input ~ 0
 LATCH_A
 Text HLabel 5900 3500 0    50   Input ~ 0
 FAST_DATA_A
-Wire Wire Line
-	6700 2500 6700 2700
-Wire Wire Line
-	6700 2000 6700 2500
 Text HLabel 5900 2500 0    50   Input ~ 0
 CLK_A
 Wire Wire Line
@@ -30,32 +25,16 @@ Wire Wire Line
 Wire Wire Line
 	5400 3700 6100 3700
 Wire Wire Line
-	6700 3300 6100 3300
-Wire Wire Line
 	5900 2500 6100 2500
-Wire Wire Line
-	6700 2500 6500 2500
 Text HLabel 4900 2000 0    50   Input ~ 0
 VCC_A
 Text HLabel 5900 2900 0    50   Input ~ 0
 SLOW_DATA_A
 Text HLabel 5400 3700 0    50   Input ~ 0
 GND_A
-Connection ~ 6700 4950
-Wire Wire Line
-	6700 4950 6700 5150
-Wire Wire Line
-	6700 4450 6700 4950
-Connection ~ 5400 2000
-Wire Wire Line
-	5400 2000 6700 2000
 Connection ~ 5400 2300
 Wire Wire Line
-	5400 2000 4900 2000
-Wire Wire Line
 	5900 2700 6100 2700
-Wire Wire Line
-	6700 4950 6500 4950
 Wire Wire Line
 	5900 4950 6100 4950
 Wire Wire Line
@@ -68,9 +47,6 @@ Text HLabel 5400 6150 0    50   Input ~ 0
 GND_B
 Text HLabel 5900 5350 0    50   Input ~ 0
 SLOW_DATA_B
-Connection ~ 5400 4450
-Wire Wire Line
-	5400 4450 4900 4450
 Text HLabel 4900 4450 0    50   Input ~ 0
 VCC_B
 Wire Wire Line
@@ -90,15 +66,11 @@ F 3 "~" H 5400 4900 50  0001 C CNN
 $EndComp
 Text HLabel 5900 4950 0    50   Input ~ 0
 CLK_B
-Wire Wire Line
-	5400 4450 6700 4450
 Connection ~ 5400 4750
 Text HLabel 5900 5950 0    50   Input ~ 0
 FAST_DATA_B
 Text HLabel 5900 5150 0    50   Input ~ 0
 LATCH_B
-Wire Wire Line
-	6700 5750 6100 5750
 Wire Wire Line
 	5400 4750 6100 4750
 Wire Wire Line
@@ -193,10 +165,6 @@ Wire Wire Line
 	5400 3800 5400 3700
 Text GLabel 5400 3800 3    50   Input ~ 0
 GNDA
-Text GLabel 6700 2500 2    50   Input ~ 0
-VCCA
-Text GLabel 6700 4950 2    50   Input ~ 0
-VCCA
 $Comp
 L Device:R R1
 U 1 1 5D55E38A
@@ -248,10 +216,27 @@ Optional
 Text Notes 5550 3250 0    50   ~ 0
 Optional
 $Comp
-L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 11
+L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 2111
+U 1 1 5D58B3B5
+P 6300 5550
+F 0 "2111" V 5114 5550 59  0000 C CNN
+F 1 "NINTENDO-MULTI-MULTI_LARGE" V 5219 5550 59  0000 C CNN
+F 2 "controllerpro:NINTENDO-MULTI-MULTI" H 6300 5550 50  0001 C CNN
+F 3 "" H 6300 5550 50  0001 C CNN
+	1    6300 5550
+	0    1    1    0   
+$EndComp
+Connection ~ 5400 4450
+Wire Wire Line
+	5400 4450 4900 4450
+Wire Wire Line
+	5400 2000 4900 2000
+Connection ~ 5400 2000
+$Comp
+L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 1111
 U 1 1 5D5859CE
 P 6300 3100
-F 0 "11" V 5114 3100 59  0000 C CNN
+F 0 "1111" V 5114 3100 59  0000 C CNN
 F 1 "NINTENDO-MULTI-MULTI_LARGE" V 5219 3100 59  0000 C CNN
 F 2 "controllerpro:NINTENDO-MULTI-MULTI" H 6300 3100 50  0001 C CNN
 F 3 "" H 6300 3100 50  0001 C CNN
@@ -259,24 +244,39 @@ F 3 "" H 6300 3100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6500 2700 6700 2700
-Connection ~ 6700 2700
+	6700 4950 6500 4950
+Text GLabel 6700 4950 2    50   Input ~ 0
+VCCA
+Connection ~ 6700 4950
 Wire Wire Line
-	6700 2700 6700 3300
-$Comp
-L controllerpro-eagle-import:NINTENDO-MULTI-MULTI_LARGE 21
-U 1 1 5D58B3B5
-P 6300 5550
-F 0 "21" V 5114 5550 59  0000 C CNN
-F 1 "NINTENDO-MULTI-MULTI_LARGE" V 5219 5550 59  0000 C CNN
-F 2 "controllerpro:NINTENDO-MULTI-MULTI" H 6300 5550 50  0001 C CNN
-F 3 "" H 6300 5550 50  0001 C CNN
-	1    6300 5550
-	0    1    1    0   
-$EndComp
+	5400 4450 6700 4450
 Wire Wire Line
-	6500 5150 6700 5150
+	6700 4450 6700 4950
+Wire Wire Line
+	6700 5750 6100 5750
 Connection ~ 6700 5150
 Wire Wire Line
+	6500 5150 6700 5150
+Wire Wire Line
+	6700 4950 6700 5150
+Wire Wire Line
 	6700 5150 6700 5750
+Wire Wire Line
+	5400 2000 6700 2000
+Wire Wire Line
+	6700 3300 6100 3300
+Wire Wire Line
+	6700 2700 6700 3300
+Wire Wire Line
+	6500 2700 6700 2700
+Connection ~ 6700 2700
+Text GLabel 6700 2500 2    50   Input ~ 0
+VCCA
+Wire Wire Line
+	6700 2000 6700 2500
+Connection ~ 6700 2500
+Wire Wire Line
+	6700 2500 6500 2500
+Wire Wire Line
+	6700 2500 6700 2700
 $EndSCHEMATC
