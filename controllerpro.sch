@@ -19,7 +19,7 @@ SLOW_DATA[1..4]
 Text GLabel 4850 3100 2    20   BiDi ~ 0
 FAST_DATA[1..4]
 Text GLabel 5050 4850 2    20   BiDi ~ 0
-S_OR_NES[1..4]
+ENABLE[1..4]
 Text GLabel 6050 2150 0    20   BiDi ~ 0
 SLOW_DATA3
 Text GLabel 4400 5250 0    20   BiDi ~ 0
@@ -41,15 +41,15 @@ FAST_DATA2
 Text GLabel 4750 3400 2    20   BiDi ~ 0
 FAST_DATA3
 Text GLabel 5650 5400 0    20   BiDi ~ 0
-S_OR_NES3
+ENABLE3
 Text GLabel 5850 5400 0    20   BiDi ~ 0
-S_OR_NES1
+ENABLE1
 Text GLabel 4950 3800 2    20   BiDi ~ 0
-S_OR_NES2
+ENABLE2
 Text GLabel 4950 4100 2    20   BiDi ~ 0
-S_OR_NES3
+ENABLE3
 Text GLabel 4950 4000 2    20   BiDi ~ 0
-S_OR_NES4
+ENABLE4
 Entry Wire Line
 	5400 2050 5500 2150
 Entry Wire Line
@@ -102,8 +102,6 @@ F 3 "" H 2950 5800 50  0001 C CNN
 	1    2950 5800
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6250 3500 6350 3500
 Wire Wire Line
 	10200 2450 10200 3900
 $Comp
@@ -160,9 +158,9 @@ Wire Wire Line
 	6350 2450 8900 2450
 Connection ~ 5200 3700
 Text GLabel 8200 5400 0    20   BiDi ~ 0
-S_OR_NES4
+ENABLE4
 Text GLabel 8400 5400 0    20   BiDi ~ 0
-S_OR_NES2
+ENABLE2
 Entry Wire Line
 	8100 5650 8200 5550
 Entry Wire Line
@@ -181,8 +179,6 @@ Entry Wire Line
 	4500 5250 4400 5350
 Entry Wire Line
 	4500 5350 4400 5450
-Wire Wire Line
-	6250 4850 6350 4850
 Wire Wire Line
 	8900 4850 8800 4850
 Wire Wire Line
@@ -31803,7 +31799,7 @@ Entry Wire Line
 Entry Wire Line
 	5050 3900 4950 3800
 Text GLabel 4950 3900 2    20   BiDi ~ 0
-S_OR_NES1
+ENABLE1
 Entry Wire Line
 	4750 3300 4850 3400
 Entry Wire Line
@@ -31935,12 +31931,12 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x08_Male P2
 U 1 1 5D591976
-P 6600 3100
-F 0 "P2" H 6650 2650 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 3487 50  0001 C CNN
-F 2 "controllerpro:PinHeader_1x08_P2.54mm_Vertical" H 6600 3100 50  0001 C CNN
-F 3 "~" H 6600 3100 50  0001 C CNN
-	1    6600 3100
+P 6600 3000
+F 0 "P2" H 6650 2550 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 3387 50  0001 C CNN
+F 2 "controllerpro:PinHeader_1x08_P2.54mm_Vertical" H 6600 3000 50  0001 C CNN
+F 3 "~" H 6600 3000 50  0001 C CNN
+	1    6600 3000
 	1    0    0    -1  
 $EndComp
 Entry Wire Line
@@ -31977,12 +31973,12 @@ $EndComp
 $Comp
 L Connector:Conn_01x08_Female S1
 U 1 1 5ADE50AA
-P 6550 4450
-F 0 "S1" H 6450 4000 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 6577 4335 50  0001 L CNN
-F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4450 50  0001 C CNN
-F 3 "~" H 6550 4450 50  0001 C CNN
-	1    6550 4450
+P 6550 4350
+F 0 "S1" H 6450 3900 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 6577 4235 50  0001 L CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 4350 50  0001 C CNN
+F 3 "~" H 6550 4350 50  0001 C CNN
+	1    6550 4350
 	1    0    0    -1  
 $EndComp
 Entry Wire Line
@@ -31990,63 +31986,30 @@ Entry Wire Line
 Entry Wire Line
 	5450 1900 5550 2000
 Text GLabel 5800 2000 2    20   BiDi ~ 0
-EXTRA3
+S_OR_NES3
 Text GLabel 5550 2000 2    20   BiDi ~ 0
-EXTRA1
+S_OR_NES1
 Text GLabel 8100 2000 2    20   BiDi ~ 0
-EXTRA2
+S_OR_NES2
 Text GLabel 8400 2000 2    20   BiDi ~ 0
-EXTRA4
+S_OR_NES4
 Text GLabel 4250 3500 2    20   BiDi ~ 0
-EXTRA2
+S_OR_NES2
 Text GLabel 4250 3600 2    20   BiDi ~ 0
-EXTRA1
+S_OR_NES1
 Text GLabel 4250 3700 2    20   BiDi ~ 0
-EXTRA4
+S_OR_NES4
 Text GLabel 4250 5100 2    20   BiDi ~ 0
-EXTRA3
-$Comp
-L Connector:Conn_01x08_Female S3
-U 1 1 5AC6801A
-P 6550 3100
-F 0 "S3" H 6450 2650 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 6577 2985 50  0001 L CNN
-F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 3100 50  0001 C CNN
-F 3 "~" H 6550 3100 50  0001 C CNN
-	1    6550 3100
-	1    0    0    -1  
-$EndComp
-$Sheet
-S 6800 2750 900  2200
-U 5D46F38B
-F0 "Child Board" 50
-F1 "ChildBoard.sch" 50
-F2 "S_OR_NES_A" I L 6800 3300 50 
-F3 "CLK_A" I L 6800 3200 50 
-F4 "SLOW_DATA_A" I L 6800 3000 50 
-F5 "S_OR_NES_B" I L 6800 4650 50 
-F6 "CLK_B" I L 6800 4550 50 
-F7 "SLOW_DATA_B" I L 6800 4350 50 
-F8 "VCC_A" I L 6800 3500 50 
-F9 "GND_A" I L 6800 2800 50 
-F10 "VCC_B" I L 6800 4850 50 
-F11 "GND_B" I L 6800 4150 50 
-F12 "LATCH_B" I L 6800 4450 50 
-F13 "LATCH_A" I L 6800 3100 50 
-F14 "FAST_DATA_A" I L 6800 2900 50 
-F15 "FAST_DATA_B" I L 6800 4250 50 
-F16 "ENABLE_A" I L 6800 3400 50 
-F17 "ENABLE_B" I L 6800 4750 50 
-$EndSheet
+S_OR_NES3
 $Comp
 L Connector:Conn_01x08_Male P1
 U 1 1 5AE09F98
-P 6600 4450
-F 0 "P1" H 6650 4000 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 6706 4837 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 4450 50  0001 C CNN
-F 3 "~" H 6600 4450 50  0001 C CNN
-	1    6600 4450
+P 6600 4350
+F 0 "P1" H 6650 3900 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 6706 4737 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 4350 50  0001 C CNN
+F 3 "~" H 6600 4350 50  0001 C CNN
+	1    6600 4350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -32068,30 +32031,17 @@ Wire Wire Line
 Wire Wire Line
 	6350 3000 6050 3000
 Wire Wire Line
-	6350 2900 6300 2900
+	6350 2450 6350 2700
 Wire Wire Line
-	6350 2450 6350 2800
+	6300 2300 6300 2800
 Wire Wire Line
-	6300 2300 6300 2900
+	5750 2300 5750 4150
 Wire Wire Line
-	6350 4250 5750 4250
+	6350 3900 6350 4050
 Wire Wire Line
-	5750 2300 5750 4250
+	5550 2000 5550 4250
 Wire Wire Line
-	6350 3900 6350 4150
-Connection ~ 6250 4850
-Wire Wire Line
-	6250 4850 6250 5750
-Wire Wire Line
-	5550 4750 6350 4750
-Wire Wire Line
-	5550 2000 5550 4750
-Wire Wire Line
-	6250 3500 6250 4850
-Wire Wire Line
-	5800 3400 6350 3400
-Wire Wire Line
-	5800 2000 5800 3400
+	5800 2000 5800 2900
 Connection ~ 8800 4850
 Wire Wire Line
 	8800 3500 8800 4850
@@ -32114,6 +32064,57 @@ Wire Wire Line
 Wire Wire Line
 	8900 4250 8300 4250
 Wire Wire Line
+	8300 2300 8300 4250
+$Sheet
+S 6800 2650 900  2200
+U 5D46F38B
+F0 "Child Board" 50
+F1 "ChildBoard.sch" 50
+F2 "S_OR_NES_A" I L 6800 3200 50 
+F3 "CLK_A" I L 6800 3100 50 
+F4 "SLOW_DATA_A" I L 6800 2900 50 
+F5 "S_OR_NES_B" I L 6800 4650 50 
+F6 "CLK_B" I L 6800 4550 50 
+F7 "SLOW_DATA_B" I L 6800 4350 50 
+F8 "VCC_A" I L 6800 3400 50 
+F9 "GND_A" I L 6800 2700 50 
+F10 "VCC_B" I L 6800 4750 50 
+F11 "GND_B" I L 6800 4050 50 
+F12 "LATCH_B" I L 6800 4450 50 
+F13 "LATCH_A" I L 6800 3000 50 
+F14 "FAST_DATA_A" I L 6800 2800 50 
+F15 "FAST_DATA_B" I L 6800 4150 50 
+F16 "ENABLE_A" I L 6800 3300 50 
+$EndSheet
+Wire Wire Line
+	6350 3400 6250 3400
+Wire Wire Line
+	6250 3400 6250 4750
+Wire Wire Line
+	6350 4750 6250 4750
+Connection ~ 6250 4750
+Wire Wire Line
+	6250 4750 6250 5750
+Wire Wire Line
+	6350 4150 5750 4150
+Wire Wire Line
+	6350 2800 6300 2800
+$Comp
+L Connector:Conn_01x08_Female S3
+U 1 1 5AC6801A
+P 6550 3000
+F 0 "S3" H 6450 2550 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 6577 2885 50  0001 L CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.54mm" H 6550 3000 50  0001 C CNN
+F 3 "~" H 6550 3000 50  0001 C CNN
+	1    6550 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4250 5550 4250
+Wire Wire Line
+	6350 2900 5800 2900
+Wire Wire Line
 	2850 3800 4950 3800
 Wire Bus Line
 	4350 1900 8300 1900
@@ -32131,6 +32132,4 @@ Wire Bus Line
 	4850 2200 8750 2200
 Wire Bus Line
 	4500 2050 8500 2050
-Wire Wire Line
-	8300 2300 8300 4250
 $EndSCHEMATC
