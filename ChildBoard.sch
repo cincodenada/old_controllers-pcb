@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:controllerpro-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -214,11 +213,9 @@ Optional
 Text Notes 5550 3250 0    50   ~ 0
 Optional
 Wire Wire Line
-	6700 4950 6500 4950
+	6800 4950 6500 4950
 Wire Wire Line
-	6500 5150 6700 5150
-Wire Wire Line
-	6700 4950 6700 5150
+	6800 4950 6800 5150
 $Comp
 L controllerpro-eagle-import:NINTENDO-MULTI_LARGE ?
 U 1 1 5D6706DA
@@ -241,7 +238,7 @@ F 3 "" H 6300 5550 50  0001 C CNN
 	1    6300 5550
 	0    1    1    0   
 $EndComp
-Text HLabel 6700 2500 2    50   Input ~ 0
+Text HLabel 6800 2500 2    50   Input ~ 0
 ENABLE_A
 Text HLabel 4300 4450 0    50   Input ~ 0
 VCC_B
@@ -260,13 +257,37 @@ Wire Wire Line
 Wire Wire Line
 	4300 2000 5400 2000
 Wire Wire Line
-	6700 2500 6500 2500
+	6800 2500 6500 2500
 Wire Wire Line
-	6700 2500 6700 2700
-Wire Wire Line
-	6700 2700 6500 2700
+	6800 2500 6800 2700
 Wire Wire Line
 	4300 3300 6100 3300
-Text HLabel 6700 4950 2    50   Input ~ 0
+Text HLabel 6800 4950 2    50   Input ~ 0
 ENABLE_B
+$Comp
+L Jumper:SolderJumper_2_Open JP?
+U 1 1 5DA036A9
+P 6650 2700
+AR Path="/5DA036A9" Ref="JP?"  Part="1" 
+AR Path="/5D46F38B/5DA036A9" Ref="JP?"  Part="1" 
+F 0 "JP?" V 6604 2768 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 6695 2768 50  0001 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 6650 2700 50  0001 C CNN
+F 3 "~" H 6650 2700 50  0001 C CNN
+	1    6650 2700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP?
+U 1 1 5DA053CC
+P 6650 5150
+AR Path="/5DA053CC" Ref="JP?"  Part="1" 
+AR Path="/5D46F38B/5DA053CC" Ref="JP?"  Part="1" 
+F 0 "JP?" V 6604 5218 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 6695 5218 50  0001 L CNN
+F 2 "t32_ref:SOLDERJUMPER" H 6650 5150 50  0001 C CNN
+F 3 "~" H 6650 5150 50  0001 C CNN
+	1    6650 5150
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
