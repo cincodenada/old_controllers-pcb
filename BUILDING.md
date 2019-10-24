@@ -1,6 +1,6 @@
 # Building Controller Pro v0.9
 
-_This document last updated 2019-10-23_
+_This document last updated 2019-10-24_
 
 ## Supplies
 
@@ -54,14 +54,14 @@ Then go ahead and solder them in, just make sure to heat the short pins so there
 
 ### Main board (back)
 
-Next, flip the board over and add the four 8-pin receptacles. If using the jig, insert them into the slots as follows, put the board on, solder, and then pop the receptacles out. You may need to use a hand or clip to hold the board in place against the jig.
+Next, add the four 8-pin receptacles. If using the jig, insert them into the slots as follows, put the board on, solder, and then pop the receptacles out. You may need to use a hand or clip to hold the board in place against the jig.
 
 ![8-pin receptacles in jig](img/sz/400/8pin_headers_frame.jpg)
 ![Board on jig with 8-pin receptacles in place](img/sz/400/8pin_headers_with_board.jpg)
 ![Soldering 8-pin headers in](img/sz/400/8pin_headers_fromfront.jpg)
 ![Removing 8-pin headers](img/sz/400/8pin_headers_remove.jpg)
 
-If not using a jig, it may be easier to solder them from the back, since these are right-angle headers:
+If not using a jig, flip the board over and add the receptacles. It may be easier to solder them from the back, since these are right-angle headers:
 
 ![8-pin receptacles being soldered from the front](img/sz/600/8pin_headers_fromback.jpg)
 
@@ -97,7 +97,7 @@ You should end up with all four 4-pin headers clipped, four 3-pin clipped, and f
 
 ![End result](img/sz/600/headers_clipped.jpg)
 
-Once clipped, you can put them in placed - again, if using the jig, place them long-end down. Otherwise, I advise using an alligator clip/helping hand/etc to hold the headers in place:
+Once clipped, you can put them in place - again, if using the jig, place them long-end down. Otherwise, I advise using an alligator clip/helping hand/etc to hold the headers in place:
 
 ![Headers in place without jig](img/sz/400/headers_in_place.jpg)
 ![Headers in place without jig](img/sz/400/headers_in_frame.jpg)
