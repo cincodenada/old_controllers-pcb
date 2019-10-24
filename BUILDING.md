@@ -52,7 +52,7 @@ Then go ahead and solder them in, just make sure to heat the short pins so there
 
 ![Main board with teensy headers](img/sz/600/teensy_headers.jpg)
 
-### Main board (front)
+### Main board (back)
 
 Next, flip the board over and add the four 8-pin receptacles. If using the jig, insert them into the slots as follows, put the board on, solder, and then pop the receptacles out. You may need to use a hand or clip to hold the board in place against the jig.
 
@@ -61,7 +61,7 @@ Next, flip the board over and add the four 8-pin receptacles. If using the jig, 
 ![Soldering 8-pin headers in](img/sz/400/8pin_headers_fromfront.jpg)
 ![Removing 8-pin headers](img/sz/400/8pin_headers_remove.jpg)
 
-If not using a jig, it may be easier to solder them from the front, since these are right-angle headers:
+If not using a jig, it may be easier to solder them from the back, since these are right-angle headers:
 
 ![8-pin receptacles being soldered from the front](img/sz/600/8pin_headers_fromback.jpg)
 
