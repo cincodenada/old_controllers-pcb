@@ -120,7 +120,7 @@ At this point you should have two side boards, a main board, and a Teensy:
 
 First, put the Teensy on the main board. The last two pins will overhang the end, they are unused in this design:
 
-![Teensy plugged in, with pins overhanging](teensy_overhang.jpg)
+![Teensy plugged in, with pins overhanging](img/sz/400/teensy_overhang.jpg)
 
 Then, plug the sideboards into the main board using the 8-pin headers:
 
