@@ -12,12 +12,12 @@ For starters, here's what you should have:
 - 2 Child boards
 - 4 8-pin headers
 - 4 8-pin receptacles (right-angle)
-- 2 Teensy receptacles (12-pin)
-- 4 pull-down resistors (plus extras)
+- 2 12-pin Teensy receptacles
+- 4 pull-down resistors (kit may include extras)
 - 8 3-pin 4mm headers
 - 4 4-pin 4mm headers
 
-I use a 3D printed jig (`solder_helper()` in `controllers.scad`) to help hold things in place while soldering them. If you have access to a 3D printer, I recommend it, it should be a pretty quick print, although it may require a well-calibrated printer. It's designed to be able to pause the print and insert 3mm nuts to screw bolts into to hold it off the table:
+I use a 3D printed jig ([STL available from the models repo on GitHub](https://github.com/cincodenada/old_controllers-models/blob/master/stl/solder_helper.stl), generated from `solder_helper()` in `controllers.scad`) to help hold things in place while soldering them. If you have access to a 3D printer, I recommend it, it should be a pretty quick print, although it may require a well-calibrated printer. It's designed to be able to pause the print and insert 3mm nuts to screw bolts into to hold it off the table:
 
 ![Jig standing on screws](img/sz/400/jig.jpg)
 
