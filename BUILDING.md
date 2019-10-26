@@ -126,3 +126,7 @@ Then, plug the sideboards into the main board using the 8-pin headers:
 
 ![Assembled, top side](img/sz/400/boards_together.jpg)
 ![Assembled, bottom side](img/sz/400/boards_together_upside_down.jpg)
+
+## Case
+
+Full case details will be added shortly, but in brief: you'll need two copies of `modular_side.stl` and one copy of `modular_bottom.stl` from the [models repo](https://github.com/cincodenada/old_controllers-models/tree/master/stl). You can also print two copies of `socket_plates.stl` to provide a back for the ports in the side modules. Insert the main board into `modular_bottom`, and then add the `modular_side` pieces to each side. 
