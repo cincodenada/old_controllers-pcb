@@ -127,6 +127,10 @@ Then, plug the sideboards into the main board using the 8-pin headers:
 ![Assembled, top side](img/sz/400/boards_together.jpg)
 ![Assembled, bottom side](img/sz/400/boards_together_upside_down.jpg)
 
+## Firmware
+
+If you were given a Teensy it should already be programmed. If not, and you don't want to bother getting your Arduino environment set up with the custom Teensyduino code, I've posted a compiled HEX file ([direct download link](https://www.hackster.io/code_files/399383/download)) on the [Hackster.io](https://www.hackster.io/cincodenada/controller-pro-9f80e8#code) that you should be able to upload directly with the [Teensy Loader](https://www.pjrc.com/teensy/loader.html).
+
 ## Case
 
 Full case details will be added shortly, but in brief: you'll need two copies of `modular_side.stl` and one copy of `modular_bottom.stl` from the [models repo](https://github.com/cincodenada/old_controllers-models/tree/master/stl). You can also print two copies of `socket_plates.stl` to provide a back for the ports in the side modules. Insert the main board into `modular_bottom`, and then add the `modular_side` pieces to each side. 
