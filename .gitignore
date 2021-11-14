@@ -1,2 +1,10 @@
 *.[slb]#*
 *.epf
+*.bak
+*.bak
+*-bak
+fp-info-cache
+_autosave*
+*.bck
+*.dcm
+*-cache.lib
